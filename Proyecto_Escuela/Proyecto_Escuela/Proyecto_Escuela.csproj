@@ -66,6 +66,12 @@
     <Compile Include="Secuencia_2.Designer.cs">
       <DependentUpon>Secuencia_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Secuencia_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secuencia_3.Designer.cs">
+      <DependentUpon>Secuencia_3.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Describe.resx">
       <DependentUpon>Describe.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Secuencia_2.resx">
       <DependentUpon>Secuencia_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secuencia_3.resx">
+      <DependentUpon>Secuencia_3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
