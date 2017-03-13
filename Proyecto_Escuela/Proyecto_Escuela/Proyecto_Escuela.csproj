@@ -89,6 +89,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Secuencia_1.resx">
       <DependentUpon>Secuencia_1.cs</DependentUpon>
@@ -114,6 +115,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\34605-NZPAI2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha_ab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha_ab1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\draco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sapo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llave - copia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\espada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rafael_Pombo-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\niños.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rafael_Pombo-21.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
