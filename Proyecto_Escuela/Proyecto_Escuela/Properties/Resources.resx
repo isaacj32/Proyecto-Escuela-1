@@ -118,12 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flecha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="flecha_ab1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flecha_ab1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="barita" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,9 +136,6 @@
   <data name="Sapo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sapo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="34605-NZPAI2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\34605-NZPAI2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="flecha1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flecha1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,13 +145,16 @@
   <data name="buho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Rafael_Pombo-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="felicitaciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\felicitaciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="llave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\llave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rafael_Pombo_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rafael_Pombo-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="llave - copia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\llave - copia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Rafael_Pombo-21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rafael_Pombo-21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_34605_NZPAI2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\34605-NZPAI2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

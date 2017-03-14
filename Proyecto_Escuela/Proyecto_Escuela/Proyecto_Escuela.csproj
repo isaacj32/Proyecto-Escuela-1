@@ -52,11 +52,11 @@
     <Compile Include="Controllers\Secuencia_3Controller.cs" />
     <Compile Include="Models\DescribeImage.cs" />
     <Compile Include="Models\Text.cs" />
-    <Compile Include="Views\Describe.cs">
+    <Compile Include="Views\DescribeImagen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Describe.Designer.cs">
-      <DependentUpon>Describe.cs</DependentUpon>
+    <Compile Include="Views\DescribeImagen.Designer.cs">
+      <DependentUpon>DescribeImagen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,8 +84,8 @@
     <Compile Include="Views\Texto.Designer.cs">
       <DependentUpon>Texto.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Describe.resx">
-      <DependentUpon>Describe.cs</DependentUpon>
+    <EmbeddedResource Include="Views\DescribeImagen.resx">
+      <DependentUpon>DescribeImagen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,9 +123,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\34605-NZPAI2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\flecha.png" />
   </ItemGroup>
   <ItemGroup>
@@ -159,9 +156,6 @@
     <None Include="Resources\espada.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Rafael_Pombo-2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\niños.png" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +163,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="holi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\34605-NZPAI2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rafael_Pombo-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\felicitaciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llave.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
