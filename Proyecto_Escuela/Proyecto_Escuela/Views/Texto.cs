@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto_Escuela.Models;
+using Proyecto_Escuela.Controllers;
 
 namespace Proyecto_Escuela
 {
@@ -86,6 +88,17 @@ namespace Proyecto_Escuela
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+    }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DescribeImagenModel model = new DescribeImagenModel();
+            model.setDescription("holi");
+            MenuActividadesController menu = new MenuActividadesController(model);
+            this.Dispose();
         }
     }
 }

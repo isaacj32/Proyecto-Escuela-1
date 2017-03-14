@@ -222,7 +222,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.Image = global::Proyecto_Escuela.Properties.Resources.llave___copia;
+            this.pictureBox5.Image = global::Proyecto_Escuela.Properties.Resources.llave;
             this.pictureBox5.Location = new System.Drawing.Point(869, 52);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(100, 50);

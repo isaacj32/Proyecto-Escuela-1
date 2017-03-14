@@ -1,4 +1,5 @@
 ﻿using Proyecto_Escuela.Models;
+using Proyecto_Escuela.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Proyecto_Escuela.Controllers
     {
         private Text texto = new Text();
         private Texto vistaTexto = new Texto();
+        //private SecuenciaImagenes secuencia = new SecuenciaImagenes(8);
 
         public TextoController()
         {
@@ -21,7 +23,8 @@ namespace Proyecto_Escuela.Controllers
             vistaTexto.setTiempo(texto.getTiempo());
             vistaTexto.getTimer().Start();
             vistaTexto.Show();
-            
+            //secuencia.Show();
+
         }
     }
 }

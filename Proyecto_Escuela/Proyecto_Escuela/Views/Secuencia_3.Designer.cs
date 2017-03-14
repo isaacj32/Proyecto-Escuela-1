@@ -241,7 +241,7 @@
             // pictureBox18
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox18.BackgroundImage = global::Proyecto_Escuela.Properties.Resources.llave___copia;
+            this.pictureBox18.BackgroundImage = global::Proyecto_Escuela.Properties.Resources.llave;
             this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox18.Location = new System.Drawing.Point(251, 439);
             this.pictureBox18.Name = "pictureBox18";
