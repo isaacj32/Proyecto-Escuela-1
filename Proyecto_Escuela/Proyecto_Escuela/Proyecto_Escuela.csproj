@@ -61,23 +61,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Secuencia_1.cs">
+    <Compile Include="Views\SecuenciaImagenes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Secuencia_1.Designer.cs">
-      <DependentUpon>Secuencia_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Secuencia_2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Secuencia_2.Designer.cs">
-      <DependentUpon>Secuencia_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Secuencia_3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Secuencia_3.Designer.cs">
-      <DependentUpon>Secuencia_3.cs</DependentUpon>
+    <Compile Include="Views\SecuenciaImagenes.Designer.cs">
+      <DependentUpon>SecuenciaImagenes.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Texto.cs">
       <SubType>Form</SubType>
@@ -98,14 +86,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\Secuencia_1.resx">
-      <DependentUpon>Secuencia_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Secuencia_2.resx">
-      <DependentUpon>Secuencia_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Secuencia_3.resx">
-      <DependentUpon>Secuencia_3.cs</DependentUpon>
+    <EmbeddedResource Include="Views\SecuenciaImagenes.resx">
+      <DependentUpon>SecuenciaImagenes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Texto.resx">
       <DependentUpon>Texto.cs</DependentUpon>
