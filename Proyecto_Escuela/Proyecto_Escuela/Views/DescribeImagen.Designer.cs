@@ -1,6 +1,6 @@
-﻿namespace Proyecto_Escuela
+﻿namespace Proyecto_Escuela.Views
 {
-    partial class Descibe_Imagen
+    partial class DescribeImagen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Descibe_Imagen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DescribeImagen));
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.respuesta = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imagen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagen)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,12 +86,12 @@
             this.label5.TabIndex = 40;
             this.label5.Text = "Titulo";
             // 
-            // textBox1
+            // respuesta
             // 
-            this.textBox1.Location = new System.Drawing.Point(310, 444);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(388, 20);
-            this.textBox1.TabIndex = 39;
+            this.respuesta.Location = new System.Drawing.Point(310, 444);
+            this.respuesta.Name = "respuesta";
+            this.respuesta.Size = new System.Drawing.Size(388, 20);
+            this.respuesta.TabIndex = 39;
             // 
             // pictureBox3
             // 
@@ -115,16 +115,17 @@
             this.pictureBox2.TabIndex = 42;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // imagen
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(310, 113);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(388, 309);
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
+            this.imagen.BackColor = System.Drawing.Color.Transparent;
+            this.imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imagen.Location = new System.Drawing.Point(310, 113);
+            this.imagen.Name = "imagen";
+            this.imagen.Size = new System.Drawing.Size(388, 309);
+            this.imagen.TabIndex = 41;
+            this.imagen.TabStop = false;
             // 
-            // Descibe_Imagen
+            // DescribeImagen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,17 +133,17 @@
             this.ClientSize = new System.Drawing.Size(1008, 537);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imagen);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.respuesta);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "Descibe_Imagen";
+            this.Name = "DescribeImagen";
             this.Text = "Escuela";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,9 +154,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imagen;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox respuesta;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
     }

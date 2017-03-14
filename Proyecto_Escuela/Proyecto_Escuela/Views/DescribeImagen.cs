@@ -7,19 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto_Escuela.Controllers;
 
-namespace Proyecto_Escuela
+namespace Proyecto_Escuela.Views
 {
-    public partial class Descibe_Imagen : Form
+    public partial class DescribeImagen : Form
     {
-        public Descibe_Imagen()
+        DescribeImagenController describeImagen;
+            public DescribeImagen(DescribeImagenController controller)
         {
             InitializeComponent();
+            describeImagen = controller;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool acierto = describeImagen.compararRespuesta();
+            if (acierto == true)
+            {
+                imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.felicitaciones;
+            }
+        }
 
+        public string GetRespuesta()
+        {
+            return respuesta.Text;
         }
     }
 }
