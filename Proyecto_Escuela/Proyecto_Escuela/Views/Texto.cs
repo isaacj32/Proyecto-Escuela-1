@@ -69,7 +69,23 @@ namespace Proyecto_Escuela
             else
             {
                 timer1.Stop();
+                //MessageBox.Show("Se agotó el tiempo" + "\n¿Desea aumentar el tiempo de lectura?", "",MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (MessageBox.Show("Se agotó el tiempo\n¿Desea aumentar el tiempo de lectura?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                     == DialogResult.Yes)
+                {
+                    tiempo = 30;
+                    timer1.Start();
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

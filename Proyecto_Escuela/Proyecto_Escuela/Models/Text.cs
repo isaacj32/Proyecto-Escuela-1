@@ -19,7 +19,7 @@ namespace Proyecto_Escuela.Models
             + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         private string titulo = "tu puta madre";
         private Image imagen;
-        private int tiempo = 60;
+        private int tiempo = 5;
 
         public void setTexto(string texto)
         {
