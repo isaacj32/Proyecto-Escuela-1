@@ -17,14 +17,31 @@ namespace Proyecto_Escuela
             InitializeComponent();
         }
 
+        //Código que permite arrastrar la imagen a otro PictureBox
         private void pictureBox5_MouseDown(object sender, MouseEventArgs e)
         {
-            pictureBox5.DoDragDrop(pictureBox5.Image, DragDropEffects.Copy);
-        }        
+            pictureBox5.DoDragDrop(pictureBox5.Image, DragDropEffects.Move);
+        }
 
+        private void pictureBox6_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBox6.DoDragDrop(pictureBox6.Image, DragDropEffects.Move);
+        }
+
+        private void pictureBox7_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBox7.DoDragDrop(pictureBox7.Image, DragDropEffects.Move);
+        }
+
+        private void pictureBox8_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBox8.DoDragDrop(pictureBox8.Image, DragDropEffects.Move);
+        }
+
+        //Código que permite al PictureBox recibir la imagen
         private void pictureBox1_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Copy;
+            e.Effect = DragDropEffects.Move;
         }
 
         private void pictureBox1_DragDrop(object sender, DragEventArgs e)
@@ -34,7 +51,7 @@ namespace Proyecto_Escuela
 
         private void pictureBox2_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Copy;
+            e.Effect = DragDropEffects.Move;
         }
 
         private void pictureBox2_DragDrop(object sender, DragEventArgs e)
@@ -44,7 +61,7 @@ namespace Proyecto_Escuela
 
         private void pictureBox3_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Copy;
+            e.Effect = DragDropEffects.Move;
         }
 
         private void pictureBox3_DragDrop(object sender, DragEventArgs e)
@@ -54,7 +71,7 @@ namespace Proyecto_Escuela
 
         private void pictureBox4_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Copy;
+            e.Effect = DragDropEffects.Move;
         }
 
         private void pictureBox4_DragDrop(object sender, DragEventArgs e)
@@ -68,6 +85,6 @@ namespace Proyecto_Escuela
             pictureBox2.AllowDrop = true;
             pictureBox3.AllowDrop = true;
             pictureBox4.AllowDrop = true;
-        }
+        }        
     }
 }

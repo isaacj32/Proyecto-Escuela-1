@@ -196,6 +196,7 @@
             this.pictureBox8.Size = new System.Drawing.Size(100, 50);
             this.pictureBox8.TabIndex = 28;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox8_MouseDown);
             // 
             // pictureBox7
             // 
@@ -205,15 +206,18 @@
             this.pictureBox7.Size = new System.Drawing.Size(100, 50);
             this.pictureBox7.TabIndex = 27;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox7_MouseDown);
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
+            this.pictureBox6.Image = global::Proyecto_Escuela.Properties.Resources.buho;
             this.pictureBox6.Location = new System.Drawing.Point(869, 134);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 50);
             this.pictureBox6.TabIndex = 26;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox6_MouseDown);
             // 
             // pictureBox5
             // 

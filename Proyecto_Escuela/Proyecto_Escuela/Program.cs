@@ -16,7 +16,7 @@ namespace Proyecto_Escuela
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Secuencia_1());
+            Application.Run(new Secuencia_2());
         }
     }
 }

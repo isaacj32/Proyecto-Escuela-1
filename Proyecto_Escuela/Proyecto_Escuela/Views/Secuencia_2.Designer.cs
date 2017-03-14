@@ -191,20 +191,24 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.White;
+            this.pictureBox7.Image = global::Proyecto_Escuela.Properties.Resources.espada;
             this.pictureBox7.Location = new System.Drawing.Point(869, 221);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(100, 50);
             this.pictureBox7.TabIndex = 64;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
+            this.pictureBox8.Image = global::Proyecto_Escuela.Properties.Resources.espada;
             this.pictureBox8.Location = new System.Drawing.Point(869, 165);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(100, 50);
             this.pictureBox8.TabIndex = 63;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
             // 
             // pictureBox11
             // 
@@ -214,6 +218,8 @@
             this.pictureBox11.Size = new System.Drawing.Size(100, 50);
             this.pictureBox11.TabIndex = 60;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
+            this.pictureBox11.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // pictureBox12
             // 
@@ -223,42 +229,52 @@
             this.pictureBox12.Size = new System.Drawing.Size(100, 50);
             this.pictureBox12.TabIndex = 59;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
+            this.pictureBox12.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
+            this.pictureBox9.Image = global::Proyecto_Escuela.Properties.Resources.espada;
             this.pictureBox9.Location = new System.Drawing.Point(869, 333);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(100, 50);
             this.pictureBox9.TabIndex = 58;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
             // 
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.White;
+            this.pictureBox10.Image = global::Proyecto_Escuela.Properties.Resources.espada;
             this.pictureBox10.Location = new System.Drawing.Point(869, 277);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(100, 50);
             this.pictureBox10.TabIndex = 57;
             this.pictureBox10.TabStop = false;
+            this.pictureBox10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
+            this.pictureBox6.Image = global::Proyecto_Escuela.Properties.Resources.espada;
             this.pictureBox6.Location = new System.Drawing.Point(869, 109);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 50);
             this.pictureBox6.TabIndex = 47;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.Image = global::Proyecto_Escuela.Properties.Resources.draco;
             this.pictureBox5.Location = new System.Drawing.Point(869, 53);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(100, 50);
             this.pictureBox5.TabIndex = 46;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
             // 
             // pictureBox4
             // 
@@ -268,6 +284,8 @@
             this.pictureBox4.Size = new System.Drawing.Size(100, 50);
             this.pictureBox4.TabIndex = 45;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
+            this.pictureBox4.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // pictureBox3
             // 
@@ -277,6 +295,8 @@
             this.pictureBox3.Size = new System.Drawing.Size(100, 50);
             this.pictureBox3.TabIndex = 44;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
+            this.pictureBox3.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // pictureBox1
             // 
@@ -286,6 +306,8 @@
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
+            this.pictureBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // pictureBox2
             // 
@@ -295,6 +317,8 @@
             this.pictureBox2.Size = new System.Drawing.Size(100, 50);
             this.pictureBox2.TabIndex = 42;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
+            this.pictureBox2.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // button3
             // 
@@ -337,6 +361,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Secuencia_2";
             this.Text = "Secuencia_2";
+            this.Load += new System.EventHandler(this.Secuencia_2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
