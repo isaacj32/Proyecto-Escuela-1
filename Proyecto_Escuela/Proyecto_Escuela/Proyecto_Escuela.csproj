@@ -46,39 +46,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Vista\Describe.cs">
+    <Compile Include="Controllers\DescribeImageController.cs" />
+    <Compile Include="Controllers\Secuencia1_Controller1.cs" />
+    <Compile Include="Controllers\Secuencia_2Controller.cs" />
+    <Compile Include="Controllers\Secuencia_3Controller.cs" />
+    <Compile Include="Models\DescribeImage.cs" />
+    <Compile Include="Models\Text.cs" />
+    <Compile Include="Views\Describe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Describe.Designer.cs">
+    <Compile Include="Views\Describe.Designer.cs">
       <DependentUpon>Describe.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vista\Secuencia_1.cs">
+    <Compile Include="Views\Secuencia_1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Secuencia_1.Designer.cs">
+    <Compile Include="Views\Secuencia_1.Designer.cs">
       <DependentUpon>Secuencia_1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Secuencia_2.cs">
+    <Compile Include="Views\Secuencia_2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Secuencia_2.Designer.cs">
+    <Compile Include="Views\Secuencia_2.Designer.cs">
       <DependentUpon>Secuencia_2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Secuencia_3.cs">
+    <Compile Include="Views\Secuencia_3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Secuencia_3.Designer.cs">
+    <Compile Include="Views\Secuencia_3.Designer.cs">
       <DependentUpon>Secuencia_3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Texto.cs">
+    <Compile Include="Views\Texto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Texto.Designer.cs">
+    <Compile Include="Views\Texto.Designer.cs">
       <DependentUpon>Texto.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vista\Describe.resx">
+    <EmbeddedResource Include="Views\Describe.resx">
       <DependentUpon>Describe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -91,16 +97,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Vista\Secuencia_1.resx">
+    <EmbeddedResource Include="Views\Secuencia_1.resx">
       <DependentUpon>Secuencia_1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Secuencia_2.resx">
+    <EmbeddedResource Include="Views\Secuencia_2.resx">
       <DependentUpon>Secuencia_2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Secuencia_3.resx">
+    <EmbeddedResource Include="Views\Secuencia_3.resx">
       <DependentUpon>Secuencia_3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Texto.resx">
+    <EmbeddedResource Include="Views\Texto.resx">
       <DependentUpon>Texto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -160,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Rafael_Pombo-21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="holi\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
