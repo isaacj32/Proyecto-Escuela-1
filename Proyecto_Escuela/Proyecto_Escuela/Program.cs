@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Escuela.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace Proyecto_Escuela
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Secuencia_2());
+            TextoController tc = new TextoController();
+            Application.Run();
         }
     }
 }
