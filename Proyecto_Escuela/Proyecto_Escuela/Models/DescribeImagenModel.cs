@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Escuela.Models
 {
-    class DescribeImage
+    public class DescribeImagenModel
     {
         private Image image;
         private string description;
 
-        public DescribeImage() { }
+        public DescribeImagenModel() { }
 
         public Image getImage()
         {

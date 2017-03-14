@@ -46,19 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\DescribeImageController.cs" />
+    <Compile Include="Controllers\DescribeImagenController.cs" />
     <Compile Include="Controllers\Secuencia1_Controller1.cs" />
     <Compile Include="Controllers\Secuencia_2Controller.cs" />
     <Compile Include="Controllers\Secuencia_3Controller.cs" />
     <Compile Include="Controllers\TextoController.cs" />
-    <Compile Include="Models\DescribeImage.cs" />
+    <Compile Include="Models\DescribeImagenModel.cs" />
     <Compile Include="Models\Text.cs" />
-    <Compile Include="Views\Describe.cs" />
-    <Compile Include="Views\Describe.Designer.cs">
-      <DependentUpon>Describe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\DescribeImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DescribeImagen.Designer.cs">
+      <DependentUpon>DescribeImagen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MenuActividadesController.cs" />
+    <Compile Include="Views\MenuActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MenuActividades.Designer.cs">
+      <DependentUpon>MenuActividades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SecuenciaImagenes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,9 +80,6 @@
     <Compile Include="Views\Texto.Designer.cs">
       <DependentUpon>Texto.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Describe.resx">
-      <DependentUpon>Describe.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -84,6 +90,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\DescribeImagen.resx">
+      <DependentUpon>DescribeImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MenuActividades.resx">
+      <DependentUpon>MenuActividades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SecuenciaImagenes.resx">
       <DependentUpon>SecuenciaImagenes.cs</DependentUpon>
     </EmbeddedResource>
