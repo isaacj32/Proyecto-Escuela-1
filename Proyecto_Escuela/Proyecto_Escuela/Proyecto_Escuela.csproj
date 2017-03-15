@@ -52,6 +52,7 @@
     <Compile Include="Controllers\Secuencia_3Controller.cs" />
     <Compile Include="Controllers\TextoController.cs" />
     <Compile Include="Models\DescribeImagenModel.cs" />
+    <Compile Include="Models\Estudiante.cs" />
     <Compile Include="Models\Text.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +63,12 @@
       <DependentUpon>DescribeImagen.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\MenuActividadesController.cs" />
+    <Compile Include="Views\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MenuActividades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="Views\DescribeImagen.resx">
       <DependentUpon>DescribeImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MenuActividades.resx">
       <DependentUpon>MenuActividades.cs</DependentUpon>
