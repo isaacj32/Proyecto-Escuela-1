@@ -71,6 +71,16 @@ namespace Proyecto_Escuela
             else
             {
                 timer1.Stop();
+                if(MessageBox.Show("¡Se agotó el tiempo!\n¿Deseas más tiempo para terminar la lectura?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    == DialogResult.Yes)
+                {
+                    tiempo = 30;
+                    timer1.Start();
+                }
+                else
+                {
+                    this.Dispose();
+                }
             }
         }
     }
