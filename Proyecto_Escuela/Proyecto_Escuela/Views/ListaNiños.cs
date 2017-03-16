@@ -16,5 +16,15 @@ namespace Proyecto_Escuela.Views
         {
             InitializeComponent();
         }
+
+        public Button getButton()
+        {
+            return niño_1;
+        }
+
+        private void niño_1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

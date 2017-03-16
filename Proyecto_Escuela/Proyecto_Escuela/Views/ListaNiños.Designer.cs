@@ -61,6 +61,7 @@
             this.niño_1.Size = new System.Drawing.Size(168, 109);
             this.niño_1.TabIndex = 0;
             this.niño_1.UseVisualStyleBackColor = true;
+            this.niño_1.Click += new System.EventHandler(this.niño_1_Click);
             // 
             // SeleccionNiño
             // 

@@ -10,12 +10,12 @@ namespace Proyecto_Escuela.Controllers
 {
     public class DescribeImagenController
     {
-        DescribeImagen describeImagenView;
+        DescripcionImagen describeImagenView;
         DescribeImagenModel describeImagenModel;
 
         public DescribeImagenController(DescribeImagenModel frame)
         {
-            describeImagenView = new DescribeImagen(this);
+            describeImagenView = new DescripcionImagen(this);
             describeImagenView.Show();
             describeImagenModel = frame;
         }
@@ -33,9 +33,6 @@ namespace Proyecto_Escuela.Controllers
                 return true;
             }
             return false;
-
         }
-    }
-
-    
+    }    
 }

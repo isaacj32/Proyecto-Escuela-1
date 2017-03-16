@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Escuela
 {
-    partial class Texto
+    partial class VistaLectura
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,9 +84,9 @@
             // button1
             // 
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(317, 464);
+            this.button1.Location = new System.Drawing.Point(317, 473);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(406, 61);
+            this.button1.Size = new System.Drawing.Size(162, 52);
             this.button1.TabIndex = 62;
             this.button1.Text = "Volver Atrás";
             this.button1.UseVisualStyleBackColor = true;
@@ -138,12 +139,22 @@
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(582, 473);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(162, 52);
+            this.button2.TabIndex = 66;
+            this.button2.Text = "Ir a Jugar!";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Texto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
             this.ClientSize = new System.Drawing.Size(1008, 537);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button1);
@@ -173,5 +184,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         public System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button2;
     }
 }

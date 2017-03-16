@@ -17,10 +17,20 @@ namespace Proyecto_Escuela.Views
         DescribeImagenController describeImagenController;
         DescribeImagenModel describeImagenModel;
 
-        public MenuActividades(DescribeImagenModel model)
+        public MenuActividades(string titulo)
         {
             InitializeComponent();
-            describeImagenModel = model;
+        }
+
+        //Getter y Setter de los componentes para su utilización
+        public Label getLabel1()
+        {
+            return label1;
+        }
+
+        public void setLabel1(string titulo)
+        {
+            label1.Text = titulo; 
         }
 
         private void button1_Click(object sender, EventArgs e)
