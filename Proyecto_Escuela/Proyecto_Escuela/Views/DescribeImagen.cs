@@ -27,6 +27,11 @@ namespace Proyecto_Escuela.Views
             {
                 imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.felicitaciones;
             }
+            else
+            {
+                imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.equivocacion;
+            }
+
         }
 
         public string GetRespuesta()
