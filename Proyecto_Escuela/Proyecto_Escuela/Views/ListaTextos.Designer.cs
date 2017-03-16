@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.titulo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.portada = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -56,15 +56,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(680, 468);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(698, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(298, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // titulo
             // 
             this.titulo.HeaderText = "Título";
@@ -78,6 +69,15 @@
             this.portada.Name = "portada";
             this.portada.ReadOnly = true;
             this.portada.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(698, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(298, 41);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 

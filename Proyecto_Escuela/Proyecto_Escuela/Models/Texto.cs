@@ -19,7 +19,7 @@ namespace Proyecto_Escuela.Models
             + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
             + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         private string titulo = "tu puta madre";
-        private Image imagen = Image.FromFile(@"C:\Users\Equipo\Source\Repos\Proyecto-Escuela\Proyecto_Escuela\Proyecto_Escuela\Resources\buho.png");
+        private Image imagen =Proyecto_Escuela.Properties.Resources.buho;
         private int tiempo = 5;
 
         //Getters y Setters para los atributos

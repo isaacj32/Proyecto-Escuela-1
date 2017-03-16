@@ -16,23 +16,27 @@ namespace Proyecto_Escuela
     {
         //Atrubuto tiempo, necesario para contar cuánto se demora el estudiante en leer el texto
         private int tiempo;
-
+        private string titulo;
+        private MenuActividadesController menuActividades;
         //Constructor
-        public VistaLectura()
+        public VistaLectura(string titulo)
         {
             InitializeComponent();
+            this.titulo = titulo;
+            tituloLabel.Text = titulo;
+
         }
 
         #region Getter y Setters
         //Getters y Seters para la modificación de los mismos
         public Label getLabel3()
         {
-            return label3;
+            return tituloLabel;
         }
 
         public void setLabel3(string texto)
         {
-            label3.Text = texto;
+            tituloLabel.Text = texto;
         }
 
         public Label getLabel4()
@@ -90,7 +94,13 @@ namespace Proyecto_Escuela
                     //this.Dispose();
                 }
             }
-        } 
+        }
         #endregion
+
+        private void jugar_Click(object sender, EventArgs e)
+        {
+            menuActividades = new MenuActividadesController(titulo);
+            this.Dispose();
+        }
     }
 }

@@ -15,14 +15,16 @@ namespace Proyecto_Escuela.Views
     {
         DescribeImagenController describeImagen;
 
-        public DescripcionImagen(DescribeImagenController controller)
+        public DescripcionImagen(DescribeImagenController controller, String texto)
         {
             InitializeComponent();
             describeImagen = controller;
+            textoLabel.Text = texto;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (respuesta.Enabled == true) { 
             bool acierto = describeImagen.compararRespuesta();
             if (acierto == true)
             {
@@ -33,6 +35,7 @@ namespace Proyecto_Escuela.Views
                 imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.equivocacion;
             }
 
+        }
         }
 
         public string GetRespuesta()

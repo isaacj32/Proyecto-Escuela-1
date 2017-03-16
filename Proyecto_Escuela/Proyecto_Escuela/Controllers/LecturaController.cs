@@ -9,15 +9,14 @@ using System.Windows.Forms;
 
 namespace Proyecto_Escuela.Controllers
 {
-    class LecturaController
-    {
-        Texto texto;
-        private VistaLectura vistaTexto = new VistaLectura();
+    public class LecturaController{
+        private VistaLectura vistaTexto;
         
 
         public LecturaController(Texto texto)
         {
-            vistaTexto.setLabel3(texto.getTitulo());
+            vistaTexto = new VistaLectura(texto.getTitulo());
+            vistaTexto.setLabel3(texto.getTitulo()); 
             vistaTexto.setTextBox(texto.getTexto());
             vistaTexto.setLabel4("Tiempo: " + texto.getTiempo().ToString());
             vistaTexto.setTiempo(texto.getTiempo());

@@ -67,6 +67,12 @@
       <DependentUpon>DescripcionImagen.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\MenuActividadesController.cs" />
+    <Compile Include="Views\ListaJuegos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ListaJuegos.Designer.cs">
+      <DependentUpon>ListaJuegos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListaNiños.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="Views\DescripcionImagen.resx">
       <DependentUpon>DescripcionImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListaJuegos.resx">
+      <DependentUpon>ListaJuegos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListaNiños.resx">
       <DependentUpon>ListaNiños.cs</DependentUpon>

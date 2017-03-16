@@ -15,27 +15,29 @@ namespace Proyecto_Escuela.Views
     public partial class MenuActividades : Form
     {
         DescribeImagenController describeImagenController;
-        DescribeImagenModel describeImagenModel;
+        DescribeImagenModel describeImagenModel = new DescribeImagenModel();
 
         public MenuActividades(string titulo)
         {
             InitializeComponent();
+            tituloLabel.Text = titulo;
         }
 
         //Getter y Setter de los componentes para su utilización
         public Label getLabel1()
         {
-            return label1;
+            return tituloLabel;
         }
 
         public void setLabel1(string titulo)
         {
-            label1.Text = titulo; 
+            tituloLabel.Text = titulo; 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            describeImagenController = new DescribeImagenController(describeImagenModel);
+            describeImagenModel.setDescription("holi");
+            describeImagenController = new DescribeImagenController(describeImagenModel, tituloLabel.Text);
             this.Dispose();
         }
     }
