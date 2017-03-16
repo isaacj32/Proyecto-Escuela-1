@@ -11,10 +11,11 @@ using Proyecto_Escuela.Controllers;
 
 namespace Proyecto_Escuela.Views
 {
-    public partial class DescribeImagen : Form
+    public partial class DescripcionImagen : Form
     {
         DescribeImagenController describeImagen;
-            public DescribeImagen(DescribeImagenController controller)
+
+        public DescripcionImagen(DescribeImagenController controller)
         {
             InitializeComponent();
             describeImagen = controller;

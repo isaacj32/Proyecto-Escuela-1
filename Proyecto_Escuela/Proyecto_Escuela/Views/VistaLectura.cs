@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Proyecto_Escuela.Controllers;
+using Proyecto_Escuela.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,20 +9,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Proyecto_Escuela.Models;
-using Proyecto_Escuela.Controllers;
 
 namespace Proyecto_Escuela
 {
-    public partial class Texto : Form
+    public partial class VistaLectura : Form
     {
+        //Atrubuto tiempo, necesario para contar cuánto se demora el estudiante en leer el texto
         private int tiempo;
 
-        public Texto()
+        //Constructor
+        public VistaLectura()
         {
             InitializeComponent();
         }
 
+        #region Getter y Setters
+        //Getters y Seters para la modificación de los mismos
         public Label getLabel3()
         {
             return label3;
@@ -28,7 +32,7 @@ namespace Proyecto_Escuela
 
         public void setLabel3(string texto)
         {
-            label3.Text=texto;
+            label3.Text = texto;
         }
 
         public Label getLabel4()
@@ -54,13 +58,16 @@ namespace Proyecto_Escuela
         public Timer getTimer()
         {
             return timer1;
-        }
+        } 
 
         public void setTiempo(int tiempo)
         {
             this.tiempo = tiempo;
         }
+        #endregion
 
+        #region Método de Timer
+        //Método que controla el tiempo de lectura del texto
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (tiempo > 0)
@@ -71,7 +78,7 @@ namespace Proyecto_Escuela
             else
             {
                 timer1.Stop();
-                if(MessageBox.Show("¡Se agotó el tiempo!\n¿Deseas más tiempo para terminar la lectura?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                if (MessageBox.Show("¡Se agotó el tiempo!\n¿Deseas más tiempo para terminar la lectura?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {
                     tiempo = 30;
@@ -79,9 +86,11 @@ namespace Proyecto_Escuela
                 }
                 else
                 {
-                    this.Dispose();
+                    Application.Exit();
+                    //this.Dispose();
                 }
             }
-        }
+        } 
+        #endregion
     }
 }
