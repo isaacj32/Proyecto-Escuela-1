@@ -130,6 +130,7 @@
             // 
             // jugar
             // 
+            this.jugar.Font = new System.Drawing.Font("PreCursive", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jugar.Location = new System.Drawing.Point(423, 455);
             this.jugar.Name = "jugar";
             this.jugar.Size = new System.Drawing.Size(162, 52);

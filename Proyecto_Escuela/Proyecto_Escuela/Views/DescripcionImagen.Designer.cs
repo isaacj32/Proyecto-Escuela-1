@@ -55,11 +55,12 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(830, 432);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 93);
             this.button1.TabIndex = 37;
-            this.button1.Text = "button1";
+            this.button1.Text = "Probar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -72,6 +73,7 @@
             this.button2.TabIndex = 38;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textoLabel
             // 

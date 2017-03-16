@@ -34,11 +34,41 @@ namespace Proyecto_Escuela.Views
             tituloLabel.Text = titulo; 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void MenuActividades_FormClosed(object sender, FormClosedEventArgs e)
         {
-            describeImagenModel.setDescription("holi");
-            describeImagenController = new DescribeImagenController(describeImagenModel, tituloLabel.Text);
-            this.Dispose();
+            Application.Exit();
+        }
+        public void JuegoTerminado(int i)
+        {
+            switch (i)
+            {
+                case 1:
+                    describe.Enabled = false;
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+            }
+        }
+
+        private void describe_Click(object sender, EventArgs e)
+        {
+            describeImagenModel.setDescription("tu mama en tanga");
+            describeImagenModel.setImage(Proyecto_Escuela.Properties.Resources.barita);
+            describeImagenController = new DescribeImagenController(describeImagenModel,describeImagenModel, this);
+            this.Visible = false;
+        }
+
+        public string GetTitulo()
+        {
+            return tituloLabel.Text;
         }
     }
 }

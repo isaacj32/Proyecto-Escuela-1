@@ -12,12 +12,13 @@ namespace Proyecto_Escuela.Controllers
     {
         DescripcionImagen describeImagenView;
         DescribeImagenModel describeImagenModel;
+        
 
-        public DescribeImagenController(DescribeImagenModel frame, string texto)
+        public DescribeImagenController(DescribeImagenModel frame,DescribeImagenModel model, MenuActividades menu)
         {
-            describeImagenView = new DescripcionImagen(this, texto);
+            describeImagenView = new DescripcionImagen(this, model, menu);
             describeImagenView.Show();
-            describeImagenModel = frame;
+            describeImagenModel = frame;           
 
         }
         public bool compararRespuesta()
