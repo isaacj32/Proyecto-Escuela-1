@@ -43,6 +43,7 @@ namespace Proyecto_Escuela.Views
             switch (i)
             {
                 case 1:
+                    describe.ForeColor = Color.Black;
                     describe.Enabled = false;
                     break;
                 case 2:
