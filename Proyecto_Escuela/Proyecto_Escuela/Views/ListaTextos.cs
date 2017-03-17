@@ -20,6 +20,7 @@ namespace Proyecto_Escuela.Views
         {
             this.texto = texto;
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         //Getter para usar el DataGrid en el controller
@@ -43,6 +44,12 @@ namespace Proyecto_Escuela.Views
             Image imagen;
             imagen = Image.FromFile(@"C:\Users\Equipo\Source\Repos\Proyecto-Escuela\Proyecto_Escuela\Proyecto_Escuela\Resources\buho.png");
             dataGridView1.Rows.Add(texto.getTitulo(), imagen);
+        }
+
+        //Evento para salir de la aplicación
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

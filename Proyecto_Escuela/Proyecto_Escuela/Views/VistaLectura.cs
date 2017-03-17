@@ -21,6 +21,7 @@ namespace Proyecto_Escuela
         public VistaLectura()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         #region Getter y Setters
@@ -64,9 +65,13 @@ namespace Proyecto_Escuela
         {
             this.tiempo = tiempo;
         }
-        #endregion
 
-        #region Método de Timer
+        public Button getButonActividades()
+        {
+            return button2;
+        }
+        #endregion
+        
         //Método que controla el tiempo de lectura del texto
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -90,7 +95,14 @@ namespace Proyecto_Escuela
                     //this.Dispose();
                 }
             }
-        } 
-        #endregion
+        }
+        
+        //Evento para volver al menú de textos a escoger
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Texto t = new Texto();
+            ListaTextosController ltc = new ListaTextosController(t);
+        }
     }
 }

@@ -10,19 +10,30 @@ namespace Proyecto_Escuela.Controllers
 {
     public class DescribeImagenController
     {
-        DescripcionImagen describeImagenView;
-        DescribeImagenModel describeImagenModel;
+        DescripcionImagen div;
+        DescribeImagenModel dim;
 
-        public DescribeImagenController(DescribeImagenModel frame)
+        public DescribeImagenController(string titulo)
         {
-            describeImagenView = new DescripcionImagen(this);
-            describeImagenView.Show();
-            describeImagenModel = frame;
+            div = new DescripcionImagen();
+            dim = new DescribeImagenModel();
+            div.getButton1().Click += new EventHandler(Click);
+            div.Show();
         }
-        public bool compararRespuesta()
+
+        public void Click(object sender, EventArgs e)
         {
-            string texto1 = describeImagenModel.getDescription();
-            string texto2 = describeImagenView.GetRespuesta();
+            bool acierto = CompararRespuesta();
+            if (acierto == true)
+            {
+                div.getImagen().BackgroundImage = Proyecto_Escuela.Properties.Resources.felicitaciones;
+            }
+        }
+
+        public bool CompararRespuesta()
+        {
+            string texto1 = dim.getDescripcion();
+            string texto2 = div.getRespuesta().Text;
             return compararTextos(texto1, texto2);
         }
 

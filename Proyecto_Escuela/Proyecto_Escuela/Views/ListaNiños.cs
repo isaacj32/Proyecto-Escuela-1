@@ -15,6 +15,7 @@ namespace Proyecto_Escuela.Views
         public SeleccionNiño()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         public Button getButton()

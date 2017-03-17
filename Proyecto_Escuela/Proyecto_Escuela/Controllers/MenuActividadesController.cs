@@ -15,7 +15,9 @@ namespace Proyecto_Escuela.Controllers
                 
         public MenuActividadesController(string titulo)
         {
-            
+            menu = new MenuActividades(titulo);
+            menu.getLabel1().Text = titulo;
+            menu.Show();
         }
         
     }

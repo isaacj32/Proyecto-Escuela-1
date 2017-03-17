@@ -16,6 +16,7 @@ namespace Proyecto_Escuela.Views
         public SecuenciaImagenes(int numImagenes)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             PictureBox[] pictureBox = new PictureBox[numImagenes];
             Rectangle[] recPicBox = new Rectangle[numImagenes];
             string pathImg = "C:\\Users\\Alejo Castaño Rojas\\Desktop\\DEVELOPMENT\\C#\\JuegosProyectoEscuela\\JuegosProyectoEscuela\\Resources";

@@ -12,27 +12,34 @@ using Proyecto_Escuela.Controllers;
 namespace Proyecto_Escuela.Views
 {
     public partial class DescripcionImagen : Form
-    {
-        DescribeImagenController describeImagen;
-
-        public DescripcionImagen(DescribeImagenController controller)
+    {        
+        public DescripcionImagen()
         {
             InitializeComponent();
-            describeImagen = controller;
+            StartPosition = FormStartPosition.CenterScreen;
         }
+
+        #region Getters de elementos del form
+        //Getters para los campos de respuesta e imagen
+        public TextBox getRespuesta()
+        {
+            return respuesta;
+        }
+
+        public PictureBox getImagen()
+        {
+            return imagen;
+        } 
+
+        public Button getButton1()
+        {
+            return button1;
+        }
+        #endregion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool acierto = describeImagen.compararRespuesta();
-            if (acierto == true)
-            {
-                imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.felicitaciones;
-            }
-        }
-
-        public string GetRespuesta()
-        {
-            return respuesta.Text;
+            
         }
     }
 }

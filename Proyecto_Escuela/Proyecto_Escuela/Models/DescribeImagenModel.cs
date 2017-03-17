@@ -9,29 +9,32 @@ namespace Proyecto_Escuela.Models
 {
     public class DescribeImagenModel
     {
-        private Image image;
-        private string description;
+        private Image imagen;
+        private string descripcion= "holi";
 
         public DescribeImagenModel() { }
 
-        public Image getImage()
+        #region Getters y Setters
+        //Getters y Setters del modelo para el juego
+        public Image getImagen()
         {
-            return image;
+            return imagen;
         }
 
-        public void setImage(Image image)
+        public void setImage(Image imagen)
         {
-            this.image = image;
+            this.imagen = imagen;
         }
 
-        public string getDescription()
+        public string getDescripcion()
         {
-            return description;
+            return descripcion;
         }
 
-        public void setDescription(string description)
+        public void setDescription(string descripcion)
         {
-            this.description = description;
-        }
+            this.descripcion = descripcion;
+        } 
+        #endregion
     }
 }

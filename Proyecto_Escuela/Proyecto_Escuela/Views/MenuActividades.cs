@@ -14,14 +14,15 @@ namespace Proyecto_Escuela.Views
 {
     public partial class MenuActividades : Form
     {
-        DescribeImagenController describeImagenController;
-        DescribeImagenModel describeImagenModel;
-
+        string titulo;
         public MenuActividades(string titulo)
         {
+            this.titulo = titulo;
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
+        #region Getters de componentes
         //Getter y Setter de los componentes para su utilización
         public Label getLabel1()
         {
@@ -30,13 +31,24 @@ namespace Proyecto_Escuela.Views
 
         public void setLabel1(string titulo)
         {
-            label1.Text = titulo; 
+            label1.Text = titulo;
+        } 
+        #endregion
+
+        private void botonSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void botonSecuencia_Click(object sender, EventArgs e)
         {
-            describeImagenController = new DescribeImagenController(describeImagenModel);
             this.Dispose();
+        }
+
+        private void botonDescripcion_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            DescribeImagenController dic = new DescribeImagenController(titulo);
         }
     }
 }
