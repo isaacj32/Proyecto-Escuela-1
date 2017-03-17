@@ -37,7 +37,7 @@
             // 
             this.tituloLabel.AutoSize = true;
             this.tituloLabel.Font = new System.Drawing.Font("PreCursive", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloLabel.Location = new System.Drawing.Point(444, 68);
+            this.tituloLabel.Location = new System.Drawing.Point(315, 60);
             this.tituloLabel.Name = "tituloLabel";
             this.tituloLabel.Size = new System.Drawing.Size(148, 64);
             this.tituloLabel.TabIndex = 2;
