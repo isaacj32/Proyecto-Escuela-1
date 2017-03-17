@@ -60,7 +60,7 @@ namespace Proyecto_Escuela.Views
 
         private void describe_Click(object sender, EventArgs e)
         {
-            describeImagenModel.setDescription("tu mama en tanga");
+            describeImagenModel.setDescription("varita magica");
             describeImagenModel.setImage(Proyecto_Escuela.Properties.Resources.barita);
             describeImagenController = new DescribeImagenController(describeImagenModel,describeImagenModel, this);
             this.Visible = false;
