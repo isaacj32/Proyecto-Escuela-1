@@ -8,15 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto_Escuela
+namespace Proyecto_Escuela.Views
 {
-    public partial class Descibe_Imagen : Form
+    public partial class SeleccionNiño : Form
     {
-        public Descibe_Imagen()
+        public SeleccionNiño()
         {
             InitializeComponent();
         }
 
-       
+        public Button getButton()
+        {
+            return niño_1;
+        }
+
+        private void niño_1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

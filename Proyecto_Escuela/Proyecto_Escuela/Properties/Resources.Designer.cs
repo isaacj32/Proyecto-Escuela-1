@@ -65,7 +65,7 @@ namespace Proyecto_Escuela.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _34605_NZPAI2 {
             get {
-                object obj = ResourceManager.GetObject("34605-NZPAI2", resourceCulture);
+                object obj = ResourceManager.GetObject("_34605_NZPAI2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,6 +113,16 @@ namespace Proyecto_Escuela.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap equivocacion {
+            get {
+                object obj = ResourceManager.GetObject("equivocacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap espada {
             get {
                 object obj = ResourceManager.GetObject("espada", resourceCulture);
@@ -123,9 +133,9 @@ namespace Proyecto_Escuela.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap flecha {
+        internal static System.Drawing.Bitmap felicitaciones {
             get {
-                object obj = ResourceManager.GetObject("flecha", resourceCulture);
+                object obj = ResourceManager.GetObject("felicitaciones", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,16 +153,6 @@ namespace Proyecto_Escuela.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap flecha_ab1 {
-            get {
-                object obj = ResourceManager.GetObject("flecha_ab1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap flecha1 {
             get {
                 object obj = ResourceManager.GetObject("flecha1", resourceCulture);
@@ -163,9 +163,9 @@ namespace Proyecto_Escuela.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap llave___copia {
+        internal static System.Drawing.Bitmap llave {
             get {
-                object obj = ResourceManager.GetObject("llave - copia", resourceCulture);
+                object obj = ResourceManager.GetObject("llave", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -185,17 +185,7 @@ namespace Proyecto_Escuela.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Rafael_Pombo_2 {
             get {
-                object obj = ResourceManager.GetObject("Rafael_Pombo-2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Rafael_Pombo_21 {
-            get {
-                object obj = ResourceManager.GetObject("Rafael_Pombo-21", resourceCulture);
+                object obj = ResourceManager.GetObject("Rafael_Pombo_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
