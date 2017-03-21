@@ -13,7 +13,7 @@ namespace Proyecto_Escuela.Controllers
     {
         //private Text texto = new Text();
         //private Texto vistaTexto = new Texto();
-        private SecuenciaImagenes secuencia = new SecuenciaImagenes(4);
+        private SecuenciaImagenes secuencia = new SecuenciaImagenes(5);
 
         public TextoController()
         {

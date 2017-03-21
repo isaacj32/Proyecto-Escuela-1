@@ -52,6 +52,9 @@
     <Compile Include="Controllers\Secuencia_3Controller.cs" />
     <Compile Include="Controllers\TextoController.cs" />
     <Compile Include="Models\DescribeImage.cs" />
+    <Compile Include="Models\smTile.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Models\Text.cs" />
     <Compile Include="Views\Describe.cs">
       <SubType>Form</SubType>
@@ -150,7 +153,13 @@
   <ItemGroup>
     <None Include="Resources\Rafael_Pombo-21.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\brokenLineSquareBorderSLT.jpg" />
+    <None Include="Resources\spaceSelected.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brokenLineSquareBorder.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

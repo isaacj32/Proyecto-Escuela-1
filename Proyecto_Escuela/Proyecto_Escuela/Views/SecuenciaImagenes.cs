@@ -8,143 +8,113 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Proyecto_Escuela.Models;
 
 namespace Proyecto_Escuela.Views
 {
     public partial class SecuenciaImagenes : Form
     {
-        int[] posicionPBx;
-        int[] posicionPBy;
+        #region Constantes
+        public const int maxAnchuraDelGrid = 4;
+        public const int maxAlturaDelGrid = 2;
+        public const int anchoImagen = 140;
+        public const int altoImagen = 120;
+        public const int bordeEnGrid = 60;
+        #endregion
 
+        private smTile[] grid;
+        private smTile[] encaje;
+
+        #region Empty constructor
+        /// <summary>
+        /// Empty constructor
+        /// </summary>
         public SecuenciaImagenes(int numImagenes)
         {
             InitializeComponent();
-            //PictureBox[] pictureBox = new PictureBox[numImagenes];
-            //Panel[] encajePB = new Panel[numImagenes];
-            //Rectangle[] recPicBox = new Rectangle[numImagenes];
-            //Rectangle[] recEncaje = new Rectangle[numImagenes];
-            Random rnd = new Random();
-            int alMargen = 50;
-
+            int xSpot;
+            int ySpot;
+            int pp, cont = 0;
             string pathImg = "C:\\Users\\Alejo Castaño Rojas\\Desktop\\DEVELOPMENT\\C#\\JuegosProyectoEscuela\\JuegosProyectoEscuela\\Resources";
-            string[] imagenes = Directory.GetFiles(pathImg, "*.jpg");
+            string[] imagenes = Directory.GetFiles(pathImg,"*.jpg");
+            Random rnd = new Random();
+            bool[] imgUsada = new bool[numImagenes];
+            // Initialize the grid
+            grid = new smTile[numImagenes];
 
-            //Visibilidad de los PictureBox
-            pb1.Visible = false;
-            pb2.Visible = false;
-            pb3.Visible = false;
-            pb4.Visible = false;
-            pb5.Visible = false;
-            pb6.Visible = false;
-            pb7.Visible = false;
-            pb8.Visible = false;
-            panel1.Visible = false;
-            panel2.Visible = false;
-            panel3.Visible = false;
-            panel4.Visible = false;
-            panel5.Visible = false;
-            panel6.Visible = false;
-            panel7.Visible = false;
-            panel8.Visible = false;
-
-            //Deshabilitación de los PictureBox
-            pb1.Enabled = false;
-            pb2.Enabled = false;
-            pb3.Enabled = false;
-            pb4.Enabled = false;
-            pb5.Enabled = false;
-            pb6.Enabled = false;
-            pb7.Enabled = false;
-            pb8.Enabled = false;
-            panel1.Enabled = false;
-            panel2.Enabled = false;
-            panel3.Enabled = false;
-            panel4.Enabled = false;
-            panel5.Enabled = false;
-            panel6.Enabled = false;
-            panel7.Enabled = false;
-            panel8.Enabled = false;
-
-            #region Visualizacion de imagenes
-            for (int i = 1; i < numImagenes + 1; i++)
+            // Initialize each tile in the grid
+            for (int row = 0; row < numImagenes; row++)
             {
-                switch (i)
+                try
+                    {
+                        pp = rnd.Next() % numImagenes;
+                    while (imgUsada[pp])
+                    {
+                        pp = rnd.Next() % numImagenes;
+                    }
+                    // Create the tile
+                    //Bitmap imagenPrueba = new Bitmap(imagenes[pp]);
+                    grid[row] = new smTile(imagenes[pp],pp);
+                    grid[row].PutItem(grid[row].FilledImage, grid[row].Order);
+                    imgUsada[pp] = true;
+
+                    // Set the location for the tile
+                    if(row < 4)
+                    {
+                        xSpot = (row * anchoImagen) + bordeEnGrid;
+                        ySpot = bordeEnGrid;
+                        grid[row].Location = new Point(xSpot, ySpot);
+                    }
+                    else
+                    {
+                        xSpot = ((row - 4) * anchoImagen) + bordeEnGrid;
+                        ySpot = altoImagen + bordeEnGrid + 30;
+                        grid[row].Location = new Point(xSpot, ySpot);
+                    }
+
+                        // Add the tile to the form
+                        this.Controls.Add(grid[row]);
+
+                    
+                }
+                    catch
+                    {
+                        // Just catch an exception, no error handling yet
+                        System.Console.WriteLine("Exception caught for tile[{0}]", row);
+                    }
+            }
+
+            for (int i = 0; i < numImagenes; i++)
+            {
+                try
                 {
-                    case 1:
-                        pb1.Visible = true;
-                        pb1.Enabled = true;
-                        panel1.Visible = true;
-                        panel1.Enabled = true;
-                        break;
-                    case 2:
-                        pb2.Visible = true;
-                        pb2.Enabled = true;
-                        panel2.Visible = true;
-                        panel2.Enabled = true;
-                        break;
-                    case 3:
-                        pb3.Visible = true;
-                        pb3.Enabled = true;
-                        panel3.Visible = true;
-                        panel3.Enabled = true;
-                        break;
-                    case 4:
-                        pb4.Visible = true;
-                        pb4.Enabled = true;
-                        panel4.Visible = true;
-                        panel4.Enabled = true;
-                        break;
-                    case 5:
-                        pb5.Visible = true;
-                        pb5.Enabled = true;
-                        panel5.Visible = true;
-                        panel5.Enabled = true;
-                        break;
-                    case 6:
-                        pb6.Visible = true;
-                        pb6.Enabled = true;
-                        panel6.Visible = true;
-                        panel6.Enabled = true;
-                        break;
-                    case 7:
-                        pb7.Visible = true;
-                        pb7.Enabled = true;
-                        panel7.Visible = true;
-                        panel7.Enabled = true;
-                        break;
-                    case 8:
-                        pb8.Visible = true;
-                        pb8.Enabled = true;
-                        panel8.Visible = true;
-                        panel8.Enabled = true;
-                        break;
+                    encaje[i] = new smTile(imagenes[i], i);
+                    // Set the location for the tile
+                    if (i < 4)
+                    {
+                        xSpot = (i * anchoImagen) + bordeEnGrid;
+                        ySpot = 3 * altoImagen;
+                        encaje[i].Location = new Point(xSpot, ySpot);
+                    }
+                    else
+                    {
+                        xSpot = ((i - 4) * anchoImagen) + bordeEnGrid;
+                        ySpot = 4 * altoImagen + bordeEnGrid;
+                        encaje[i].Location = new Point(xSpot, ySpot);
+                    }
+                    this.Controls.Add(encaje[i]);
+                }
+                catch
+                {
+                    Console.WriteLine("Error papuh");
                 }
             }
-            #endregion
-        }
 
-        public void Mover(PictureBox pb)
-        {
-            Point firstPoint = new Point();
-            pb.MouseDown += (ss, ee) =>
-            {
-                if (ee.Button == MouseButtons.Left)
-                {
-                    firstPoint = MousePosition;
-                }
-            };
+            //grid[0, 0].HasItem = true;
+            //grid[0, 0].BackgroundImage = grid[0, 0].FilledImage;
 
-            pb.MouseMove += (ss, ee) =>
-            {
-                if (ee.Button == MouseButtons.Left)
-                {
-                    Point temp = MousePosition;
-                    Point res = new Point(firstPoint.X - temp.X, firstPoint.Y - temp.Y);
-                    pb.Location = new Point(pb.Location.X - res.X, pb.Location.Y - res.Y);
-                    firstPoint = temp;
-                }
-            };
         }
+        #endregion
 
         private void SecuenciaImagenes_FormClosed(object sender, FormClosedEventArgs e)
         {
