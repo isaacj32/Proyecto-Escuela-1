@@ -128,8 +128,9 @@ namespace Proyecto_Escuela
         {
             // Cambia el cursor a la flecha
             this.Cursor = Cursors.Default;
-
             // Coloca in elemento aquí
+            this.filledImage =(Bitmap) e.Data.GetData(DataFormats.Bitmap);
+            //this.order =(int) e.Data.GetData();
             PutItem(this.filledImage, this.order);
         }
         #endregion

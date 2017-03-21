@@ -34,7 +34,7 @@ namespace Proyecto_Escuela.Views
             InitializeComponent();
             int xSpot;
             int ySpot;
-            int pp, cont = 0;
+            int pp;
             string pathImg = "C:\\Users\\Alejo Castaño Rojas\\Desktop\\DEVELOPMENT\\C#\\JuegosProyectoEscuela\\JuegosProyectoEscuela\\Resources";
             string[] imagenes = Directory.GetFiles(pathImg,"*.jpg");
             Random rnd = new Random();
@@ -54,7 +54,7 @@ namespace Proyecto_Escuela.Views
                     }
                     // Create the tile
                     //Bitmap imagenPrueba = new Bitmap(imagenes[pp]);
-                    grid[row] = new smTile(imagenes[pp],pp);
+                    grid[row] = new smTile(imagenes[pp],row);
                     grid[row].PutItem(grid[row].FilledImage, grid[row].Order);
                     imgUsada[pp] = true;
 
@@ -84,11 +84,13 @@ namespace Proyecto_Escuela.Views
                     }
             }
 
+            encaje = new smTile[numImagenes];
+
             for (int i = 0; i < numImagenes; i++)
             {
                 try
                 {
-                    encaje[i] = new smTile(imagenes[i], i);
+                    encaje[i] = new smTile();
                     // Set the location for the tile
                     if (i < 4)
                     {
@@ -119,6 +121,31 @@ namespace Proyecto_Escuela.Views
         private void SecuenciaImagenes_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnComprobacion_Click(object sender, EventArgs e)
+        {
+            bool res = false;
+            for(int i = 0; i < encaje.Length-1; i++)
+            {
+                if (encaje[i].Order < encaje[++i].Order)
+                {
+                    res = true;
+                }
+                else
+                {
+                    res = false;
+                    break;
+                }
+            }
+            if (res)
+            {
+                MessageBox.Show("Felicidades, ganaste un pack de CP");
+            }
+            else
+            {
+                MessageBox.Show("Que mal momo men :c");
+            }
         }
     }
 }

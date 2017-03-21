@@ -28,7 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnComprobacion = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnComprobacion
+            // 
+            this.btnComprobacion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprobacion.Location = new System.Drawing.Point(738, 551);
+            this.btnComprobacion.Name = "btnComprobacion";
+            this.btnComprobacion.Size = new System.Drawing.Size(190, 61);
+            this.btnComprobacion.TabIndex = 0;
+            this.btnComprobacion.Text = "Comprobar";
+            this.btnComprobacion.UseVisualStyleBackColor = true;
+            this.btnComprobacion.Click += new System.EventHandler(this.btnComprobacion_Click);
             // 
             // SecuenciaImagenes
             // 
@@ -36,6 +48,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 670);
+            this.Controls.Add(this.btnComprobacion);
             this.Name = "SecuenciaImagenes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SecuenciaImagenes";
@@ -45,5 +58,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnComprobacion;
     }
 }
