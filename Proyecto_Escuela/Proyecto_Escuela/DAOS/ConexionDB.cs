@@ -13,10 +13,11 @@ namespace Proyecto_Escuela.DAOS
 
         public ConexionDB()
         {
-            conexion = new MySqlConnection("server=localhost; port=3306; database=dbescuela; Uid=root; pwd=1234");
-        } 
+            conexion = new MySqlConnection("server="+Properties.Settings.Default.DBServer+ "; port=" + Properties.Settings.Default.DBPort + "; database=" + Properties.Settings.Default.DBName + "; Uid=" + Properties.Settings.Default.DBUser + "; pwd=" + Properties.Settings.Default.DBPassword);
 
-        public bool AbrirCOnexion()
+        }
+
+        public bool AbrirConexion()
         {
             try
             {
@@ -43,6 +44,11 @@ namespace Proyecto_Escuela.DAOS
                 throw e;
 
             }
+        }
+
+        public MySqlConnection GetConexion()
+        {
+            return conexion;
         }
     }
 }
