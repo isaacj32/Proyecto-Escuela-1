@@ -80,7 +80,7 @@ namespace Proyecto_Escuela.Views
         private void ConfiguracionEstudiantes_Load(object sender, EventArgs e)
         {
             
-            Listar(estudiante);
+            Listar();
                     
         }
 
