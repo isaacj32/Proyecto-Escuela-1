@@ -20,41 +20,7 @@ namespace Proyecto_Escuela.DAOS
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
-
-        public static int ElimminarJugador(MySqlConnection conexion, int documento)
-        {
-            int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("DELETE FROM Jugador WHERE documento='{0}'", documento), conexion);
-            retorno = comando.ExecuteNonQuery();
-            return retorno;
-        }
-        public static IList<Estudiante> BuscarJugador(MySqlConnection conexion, Jugador jugador)
-        {
-            List<Estudiante> lista = new List<Estudiante>();
-
-            MySqlCommand comando = new MySqlCommand(string.Format("SELECT documento, aciertos, errores FROM Jugador WHERE documento LIKE ('%{0}%')", jugador.GetDocumento()), conexion);
-            MySqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
-            {
-                Jugador estudiante = new Jugador();
-                estudiante.SetDocumento(jugador.GetDocumento().ToString());
-                estudiante.SetDesempeño(reader.GetInt32(1), reader.GetInt32(2));
-                lista.Add(estudiante);
-            }
-
-
-            return lista;
-        }
-
-        public static int ModificarEstudiante(MySqlConnection conexion, Jugador jugador)
-        {
-            int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("UPDATE Estudiante set aciertos='{1}', errores='{2}' WHERE documento='{0}'", jugador.GetDocumento(), jugador.GetDesempeño().GetAciertos(), jugador.GetDesempeño().GetErrores()), conexion);
-            retorno = comando.ExecuteNonQuery();
-            return retorno;
-        }
-
+        
         public static Jugador ObtenerJugador(MySqlConnection conexion, Jugador jugador)
         {
             Jugador estudiante = new Jugador();
@@ -68,6 +34,24 @@ namespace Proyecto_Escuela.DAOS
                 
             }
             return estudiante;
+        }
+
+        public static IList<Jugador> ListarJugadores(MySqlConnection conexion)
+        {
+            List<Jugador> lista = new List<Jugador>();
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM Jugador", conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+            
+            while (reader.Read())
+            {
+                Jugador jugador = new Jugador();
+                jugador.SetDocumento(reader.GetString(0));
+                jugador.SetDesempeño(reader.GetInt32(1), reader.GetInt32(2));
+                lista.Add(jugador);
+            }
+
+
+            return lista;
         }
     }
 }

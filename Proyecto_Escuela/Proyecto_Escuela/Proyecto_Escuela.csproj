@@ -52,9 +52,11 @@
   <ItemGroup>
     <Compile Include="Controllers\DescribeImagenController.cs" />
     <Compile Include="Controllers\EstudianteController.cs" />
+    <Compile Include="Controllers\JugadorController.cs" />
     <Compile Include="Controllers\ListaEstudianteController.cs" />
     <Compile Include="Controllers\ListaTextosController.cs" />
     <Compile Include="Controllers\LecturaController.cs" />
+    <Compile Include="Controllers\TextoController.cs" />
     <Compile Include="DAOS\ConexionDB.cs" />
     <Compile Include="DAOS\DAODescribeImagen.cs" />
     <Compile Include="DAOS\DAOEstudiante.cs" />
@@ -103,6 +105,12 @@
       <DependentUpon>DescripcionImagen.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\MenuActividadesController.cs" />
+    <Compile Include="Views\Estadistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Estadistica.Designer.cs">
+      <DependentUpon>Estadistica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,8 +172,14 @@
     <EmbeddedResource Include="Views\ConfiguracionEstudiantes.resx">
       <DependentUpon>ConfiguracionEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfigurarTexto.resx">
+      <DependentUpon>ConfigurarTexto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DescripcionImagen.resx">
       <DependentUpon>DescripcionImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Estadistica.resx">
+      <DependentUpon>Estadistica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

@@ -33,6 +33,7 @@
             this.atras = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.jugadores = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // estudiantes
@@ -53,6 +54,7 @@
             this.textos.TabIndex = 1;
             this.textos.Text = "Gestionar Textos";
             this.textos.UseVisualStyleBackColor = true;
+            this.textos.Click += new System.EventHandler(this.textos_Click);
             // 
             // atras
             // 
@@ -82,11 +84,21 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // jugadores
+            // 
+            this.jugadores.Location = new System.Drawing.Point(12, 317);
+            this.jugadores.Name = "jugadores";
+            this.jugadores.Size = new System.Drawing.Size(248, 95);
+            this.jugadores.TabIndex = 5;
+            this.jugadores.Text = "Gestionar Jugadores";
+            this.jugadores.UseVisualStyleBackColor = true;
+            // 
             // Configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
+            this.Controls.Add(this.jugadores);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.atras);
@@ -105,5 +117,6 @@
         private System.Windows.Forms.Button atras;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button jugadores;
     }
 }
