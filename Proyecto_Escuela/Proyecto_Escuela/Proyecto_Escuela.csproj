@@ -56,6 +56,7 @@
     <Compile Include="Controllers\ListaEstudianteController.cs" />
     <Compile Include="Controllers\ListaTextosController.cs" />
     <Compile Include="Controllers\LecturaController.cs" />
+    <Compile Include="Controllers\SecuenciaImagenController.cs" />
     <Compile Include="Controllers\TextoController.cs" />
     <Compile Include="DAOS\ConexionDB.cs" />
     <Compile Include="DAOS\DAODescribeImagen.cs" />
@@ -70,7 +71,11 @@
     <Compile Include="Models\DescribeImagenModel.cs" />
     <Compile Include="Models\Desempeño.cs" />
     <Compile Include="Models\Estudiante.cs" />
+    <Compile Include="Models\ImagenSecuencia.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Models\Jugador.cs" />
+    <Compile Include="Models\SecuenciaImagenModel.cs" />
     <Compile Include="Models\Texto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
