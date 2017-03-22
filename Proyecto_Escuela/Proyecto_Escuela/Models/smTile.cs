@@ -129,8 +129,10 @@ namespace Proyecto_Escuela
             // Cambia el cursor a la flecha
             this.Cursor = Cursors.Default;
             // Coloca in elemento aquí
+            //smTile used =(smTile) e.Data.GetData(DataFormats.Locale);
             this.filledImage =(Bitmap) e.Data.GetData(DataFormats.Bitmap);
-            //this.order =(int) e.Data.GetData();
+            //this.filledImage = (Bitmap)used.FilledImage;
+            //this.order = (int)used.Order;
             PutItem(this.filledImage, this.order);
         }
         #endregion
