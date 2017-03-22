@@ -27,10 +27,9 @@ namespace Proyecto_Escuela
                 {
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    //Texto t = new Texto();
-                    //ListaTextosController ltc = new ListaTextosController(t);
                     conexion.CerrarConexion();
-                    Application.Run(new ConfiguracionEstudiantes());
+                    new Inicio().Show();
+                    Application.Run();
                     
                 }
             }catch(MySqlException ex)

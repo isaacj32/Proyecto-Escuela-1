@@ -67,5 +67,16 @@ namespace Proyecto_Escuela.Properties {
                 return ((string)(this["DBPassword"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=1234;persistsecurityinfo=True;database=dbe" +
+            "scuela")]
+        public string dbescuelaConnectionString {
+            get {
+                return ((string)(this["dbescuelaConnectionString"]));
+            }
+        }
     }
 }

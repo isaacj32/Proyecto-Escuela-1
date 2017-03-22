@@ -8,21 +8,26 @@ namespace Proyecto_Escuela.Models
 {
     public class Estudiante
     {
-        private string nombre { get; set; }
-        private string apellidos { get; set; }
-        private int grupo { get; set; }
-        private int documento { get; set; }
+        protected int documento { get; set; }
+        protected string nombre { get; set; }
+        protected string apellidos { get; set; }
+        protected int grupo { get; set; }
+        protected string grado { get; set; }
+        protected string foto { get; set; }
+
 
         public Estudiante()
         {
         }
 
-        public Estudiante(string nombre, string apellido, int grupo, int documento)
+        public Estudiante(string nombre, string apellido, int grupo, int documento, string grado, string foto)
         {
             this.nombre = nombre;
             this.apellidos = apellido;
             this.grupo = grupo;
             this.documento = documento;
+            this.grado = grado;
+            this.foto = foto;
         }
 
         public string GetNombre()
@@ -41,6 +46,14 @@ namespace Proyecto_Escuela.Models
         {
             return documento;
         }
+        public string GetGrado()
+        {
+            return grado;
+        }
+        public string GetFoto()
+        {
+            return foto;
+        }
         public void SetNombre(string nombre)
         {
             this.nombre = nombre;
@@ -51,19 +64,26 @@ namespace Proyecto_Escuela.Models
         }
         public void SetGrupo(string grupo)
         {
-            if (!grupo.Equals(""))
+            if (!string.IsNullOrEmpty(grupo))
             {
                 this.grupo = int.Parse(grupo);
             }
-           
         }
         public void SetDocumento(string documento)
         {
-            if (!documento.Equals(""))
+            if (!string.IsNullOrEmpty(documento))
             {
                 this.documento = int.Parse(documento);
             }
            
+        }
+        public void SetGrado(string grado)
+        {
+            this.grado = grado;
+        }
+        public void SetFoto(string foto)
+        {
+            this.foto = foto;
         }
 
     }

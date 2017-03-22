@@ -11,6 +11,16 @@ namespace Proyecto_Escuela.Models
         int aciertos=0;
         int errores=0;
 
+        public Desempeño()
+        {
+        }
+
+        public Desempeño(int aciertos, int erroes)
+        {
+            this.aciertos = aciertos;
+            this.errores = erroes;
+        }
+
         public int GetAciertos()
         {
             return aciertos;

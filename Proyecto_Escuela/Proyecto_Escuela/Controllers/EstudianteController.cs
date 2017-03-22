@@ -39,13 +39,19 @@ namespace Proyecto_Escuela.Controllers
             return 0;
         }
 
-        public void Buscar(Estudiante estudiante, DataGridView tabla)
+        public void Buscar(Estudiante estudiante, DataGridView tabla, int x)
         {
             try
             {
                 if (conexion.AbrirConexion() == true)
                 {
-                    tabla.DataSource = DAOS.DAOEstudiante.BuscarEstudiante(conexion.GetConexion(), estudiante);
+                    IList<Estudiante> lista = DAOS.DAOEstudiante.BuscarEstudiante(conexion.GetConexion(), estudiante, x);
+                    tabla.Rows.Clear();
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo());
+                        Console.WriteLine("holi " + lista[i].GetDocumento());
+                    }
                     conexion.CerrarConexion();
                     
                 }
@@ -59,21 +65,18 @@ namespace Proyecto_Escuela.Controllers
 
         public Estudiante Seleccionar(DataGridView tabla)
         {
-            try
-            {
+            
                 if(tabla.SelectedRows.Count == 1)
                 {
                     int documento = Convert.ToInt32(tabla.CurrentRow.Cells[0].Value);
                     if (conexion.AbrirConexion() == true)
                     {
-                        Estudiante seleccionado = DAOEstudiante.ObtenerUsuario(conexion.GetConexion(),documento);
+                        Estudiante seleccionado = DAOEstudiante.ObtenerEstudiante(conexion.GetConexion(),documento);
+                        conexion.CerrarConexion();
                         return seleccionado;                        
                     }
                 }
-            } catch(MySqlException ex)
-            {
-                MessageBox.Show("Debe seleccionar un registro");
-            }
+            
             return null;
         }
 
@@ -117,7 +120,50 @@ namespace Proyecto_Escuela.Controllers
                 conexion.CerrarConexion();
             }
             return 0;
-        } 
+        }
+
+        public void Listar(DataGridView tabla)
+        {
+            try
+            {
+                if (conexion.AbrirConexion() == true)
+                {
+                    IList<Estudiante> lista = DAOS.DAOEstudiante.ListarEstudiantes(conexion.GetConexion());
+                    tabla.Rows.Clear();
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo());
+                        Console.WriteLine("holi " + lista[i].GetDocumento());
+                    }
+                    conexion.CerrarConexion();
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                conexion.CerrarConexion();
+            }
+        }
+        //public Estudiante select(int documento){
+        //    try
+        //    {
+
+        //        if (conexion.AbrirConexion() == true)
+        //        {
+        //            Estudiante seleccionado = DAOEstudiante.ObtenerUsuario(conexion.GetConexion(), documento);
+        //            conexion.CerrarConexion();
+        //            return seleccionado;
+        //        }
+
+
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        MessageBox.Show(ex.Message+" Debe seleccionar un registro.");
+        //    }
+        //    return null;
+        //    } 
     }
     
 }

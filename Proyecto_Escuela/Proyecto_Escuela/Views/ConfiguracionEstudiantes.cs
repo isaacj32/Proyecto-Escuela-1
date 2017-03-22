@@ -17,6 +17,7 @@ namespace Proyecto_Escuela.Views
     {
         EstudianteController estudianteController = new EstudianteController();
         Estudiante estudiante = new Estudiante();
+        Estudiante limpio = new Estudiante();
         public ConfiguracionEstudiantes()
         {
             InitializeComponent();
@@ -28,15 +29,23 @@ namespace Proyecto_Escuela.Views
             estudiante.SetNombre(nombre.Text);
             estudiante.SetDocumento(documento.Text);
             estudiante.SetGrupo(grupo.Text);
-            Listar(estudiante);
+            if (string.IsNullOrEmpty(documento.Text))
+            {
+                estudianteController.Buscar(estudiante, tabla, 0);
+            }
+            else
+            {
+                estudianteController.Buscar(estudiante, tabla, 1);
+            }
         }
 
         private void guardar_Click(object sender, EventArgs e)
-        {
+        {            
             estudiante.SetApellido(apellido.Text);
             estudiante.SetNombre(nombre.Text);
             estudiante.SetDocumento(documento.Text);
             estudiante.SetGrupo(grupo.Text);
+            estudiante.SetGrado(grado.SelectedItem.ToString());
 
             if (documento.ReadOnly == false)
             {
@@ -46,7 +55,8 @@ namespace Proyecto_Escuela.Views
                     apellido.Clear();
                     documento.Clear();
                     grupo.Clear();
-                    Listar(estudiante);
+                    grado.SelectedIndex = 0;                   
+                    Listar(limpio);
                 }
             }
             else
@@ -57,7 +67,10 @@ namespace Proyecto_Escuela.Views
                     apellido.Clear();
                     documento.Clear();
                     grupo.Clear();
-                    Listar(estudiante);
+                    grado.SelectedIndex = 0;
+                    Listar(limpio);
+                    documento.ReadOnly = false;
+
                 }
             }
 
@@ -66,30 +79,34 @@ namespace Proyecto_Escuela.Views
 
         private void ConfiguracionEstudiantes_Load(object sender, EventArgs e)
         {
-            try
-            {                
-                Listar(estudiante);
-            }
-            catch(MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
+            Listar(estudiante);
+                    
         }
 
         private void Listar(Estudiante estudiante)
         {
-           estudianteController.Buscar(estudiante, tabla);
+            estudianteController.Listar(tabla);
         }
 
         private void modificar_Click(object sender, EventArgs e)
         {
-            estudiante = estudianteController.Seleccionar(tabla);
-            documento.Text = estudiante.GetDocumento().ToString();
-            nombre.Text = estudiante.GetNombre();
-            apellido.Text = estudiante.GetApellido();
-            grupo.Text = estudiante.GetGrupo().ToString();
+            try
+            {
+                estudiante = estudianteController.Seleccionar(tabla);
+                documento.Text = estudiante.GetDocumento().ToString();
+                nombre.Text = estudiante.GetNombre();
+                apellido.Text = estudiante.GetApellido();
+                grupo.Text = estudiante.GetGrupo().ToString();
+                asignarGrado(estudiante.GetGrado());
+                documento.ReadOnly = true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message + " Debe seleccionar un registro.");
+            }
 
-        }
+}
 
         private void eliminar_Click(object sender, EventArgs e)
         {
@@ -98,8 +115,11 @@ namespace Proyecto_Escuela.Views
                 estudiante = estudianteController.Seleccionar(tabla);
                 documento.Text = estudiante.GetDocumento().ToString();
                 nombre.Text = estudiante.GetNombre();
-                apellido.Text = estudiante.GetApellido();
+                apellido.Text = estudiante.GetApellido();                
                 grupo.Text = estudiante.GetGrupo().ToString();
+                asignarGrado(estudiante.GetGrado());
+
+
             }
             else
             {
@@ -112,7 +132,9 @@ namespace Proyecto_Escuela.Views
                         apellido.Clear();
                         documento.Clear();
                         grupo.Clear();
-                        Listar(estudiante);
+                        grado.SelectedIndex = 0;
+
+                        Listar(limpio);
                     }
                 }
                 else
@@ -122,7 +144,38 @@ namespace Proyecto_Escuela.Views
             }
         }
 
-            
-        
+        private void clear_Click(object sender, EventArgs e)
+        {
+            nombre.Clear();
+            apellido.Clear();
+            documento.Clear();
+            grupo.Clear();
+            Listar(limpio);
+            grado.SelectedIndex = 0;
+            documento.ReadOnly = false;
+        }
+
+        private void asignarGrado(string grado)
+        {
+            switch (grado)
+            {
+                case "Primero":
+                    this.grado.SelectedIndex = 1;
+                    break;
+                case "Segundo":
+                    this.grado.SelectedIndex = 2;
+
+                    break;
+                case "Tercero":
+                    this.grado.SelectedIndex = 3;
+                    break;
+            }
+        }
+
+        private void aceptar_Click(object sender, EventArgs e)
+        {
+            new Configuracion().Show();
+            this.Dispose();
+        }
     }
 }

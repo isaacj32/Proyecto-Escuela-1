@@ -14,6 +14,11 @@ namespace Proyecto_Escuela.DAOS
         public ConexionDB()
         {
             conexion = new MySqlConnection("server="+Properties.Settings.Default.DBServer+ "; port=" + Properties.Settings.Default.DBPort + "; database=" + Properties.Settings.Default.DBName + "; Uid=" + Properties.Settings.Default.DBUser + "; pwd=" + Properties.Settings.Default.DBPassword);
+        }
+
+        public ConexionDB(string user, string password)
+        {
+            conexion = new MySqlConnection("server=" + Properties.Settings.Default.DBServer + "; port=" + Properties.Settings.Default.DBPort + "; database=" + Properties.Settings.Default.DBName + "; Uid=" + user + "; pwd=" + password);
 
         }
 
