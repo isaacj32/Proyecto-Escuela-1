@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using Proyecto_Escuela.DAOS;
 using Proyecto_Escuela.Models;
-using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace Proyecto_Escuela.Controllers
 {
-    public class EstudianteController
+    public class TextoController
     {
         ConexionDB conexion = new ConexionDB();
-        public EstudianteController()
+        public TextoController()
         {
 
         }
 
-        public int Agregar(Estudiante estudiante)
+        public int Agregar(Texto texto)
         {
             try
             {
-                if(conexion.AbrirConexion()== true)
+                if (conexion.AbrirConexion() == true)
                 {
                     int resultado;
-                    resultado = DAOS.DAOEstudiante.AgregarEstudiante(conexion.GetConexion(), estudiante);
+                    resultado = DAOS.DAOTexto.AgregarTexto(conexion.GetConexion(), texto);
                     conexion.CerrarConexion();
                     return resultado;
-                } 
+                }
                 conexion.CerrarConexion();
             }
             catch (MySqlException ex)
@@ -39,55 +39,54 @@ namespace Proyecto_Escuela.Controllers
             return 0;
         }
 
-        public void Buscar(Estudiante estudiante, DataGridView tabla, int x)
+        public void Buscar(string titulo, DataGridView tabla)
         {
             try
             {
                 if (conexion.AbrirConexion() == true)
                 {
-                    IList<Estudiante> lista = DAOS.DAOEstudiante.BuscarEstudiante(conexion.GetConexion(), estudiante, x);
+                    IList<Texto> lista = DAOS.DAOTexto.BuscarTexto(conexion.GetConexion(), titulo);
                     tabla.Rows.Clear();
                     for (int i = 0; i < lista.Count; i++)
                     {
-                        tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo());
-                        Console.WriteLine("holi " + lista[i].GetDocumento());
+                        tabla.Rows.Add(lista[i].getTitulo(), lista[i].getTiempo());
                     }
                     conexion.CerrarConexion();
-                    
+
                 }
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
                 conexion.CerrarConexion();
-            }            
+            }
         }
 
-        public Estudiante Seleccionar(DataGridView tabla)
+        public Texto Seleccionar(DataGridView tabla)
         {
-            
-                if(tabla.SelectedRows.Count == 1)
+
+            if (tabla.SelectedRows.Count == 1)
+            {
+                string titulo = Convert.ToString(tabla.CurrentRow.Cells[0].Value);
+                if (conexion.AbrirConexion() == true)
                 {
-                    int documento = Convert.ToInt32(tabla.CurrentRow.Cells[0].Value);
-                    if (conexion.AbrirConexion() == true)
-                    {
-                        Estudiante seleccionado = DAOEstudiante.ObtenerEstudiante(conexion.GetConexion(),documento);
-                        conexion.CerrarConexion();
-                        return seleccionado;                        
-                    }
+                    Texto texto = DAOTexto.ObtenerTexto(conexion.GetConexion(), titulo);
+                    conexion.CerrarConexion();
+                    return texto;
                 }
-            
+            }
+
             return null;
         }
 
-        public int Editar(Estudiante estudiante)
+        public int Editar(Texto texto)
         {
             try
             {
                 if (conexion.AbrirConexion() == true)
                 {
                     int resultado;
-                    resultado = DAOS.DAOEstudiante.ModificarEstudiante(conexion.GetConexion(), estudiante);
+                    resultado = DAOS.DAOTexto.ModificarTexto(conexion.GetConexion(), texto);
                     conexion.CerrarConexion();
                     return resultado;
                 }
@@ -101,14 +100,14 @@ namespace Proyecto_Escuela.Controllers
             return 0;
         }
 
-        public int Eliminar(int documento)
+        public int Eliminar(string titulo)
         {
             try
             {
                 if (conexion.AbrirConexion() == true)
                 {
                     int resultado;
-                    resultado = DAOS.DAOEstudiante.ElimminarEstudiante(conexion.GetConexion(), documento);
+                    resultado = DAOS.DAOTexto.EliminarTexto(conexion.GetConexion(), titulo);
                     conexion.CerrarConexion();
                     return resultado;
                 }
@@ -128,11 +127,11 @@ namespace Proyecto_Escuela.Controllers
             {
                 if (conexion.AbrirConexion() == true)
                 {
-                    IList<Estudiante> lista = DAOS.DAOEstudiante.ListarEstudiantes(conexion.GetConexion());
+                    IList<Texto> lista = DAOS.DAOTexto.ListarTextos(conexion.GetConexion());
                     tabla.Rows.Clear();
                     for (int i = 0; i < lista.Count; i++)
                     {
-                        tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo());
+                        tabla.Rows.Add(lista[i].getTitulo(), lista[i].getTiempo());
                     }
                     conexion.CerrarConexion();
 
@@ -144,7 +143,5 @@ namespace Proyecto_Escuela.Controllers
                 conexion.CerrarConexion();
             }
         }
-        
     }
-    
 }

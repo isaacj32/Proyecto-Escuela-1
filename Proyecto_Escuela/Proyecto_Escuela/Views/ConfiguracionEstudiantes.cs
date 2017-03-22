@@ -56,7 +56,7 @@ namespace Proyecto_Escuela.Views
                     documento.Clear();
                     grupo.Clear();
                     grado.SelectedIndex = 0;                   
-                    Listar(limpio);
+                    Listar();
                 }
             }
             else
@@ -68,7 +68,7 @@ namespace Proyecto_Escuela.Views
                     documento.Clear();
                     grupo.Clear();
                     grado.SelectedIndex = 0;
-                    Listar(limpio);
+                    Listar();
                     documento.ReadOnly = false;
 
                 }
@@ -80,11 +80,11 @@ namespace Proyecto_Escuela.Views
         private void ConfiguracionEstudiantes_Load(object sender, EventArgs e)
         {
             
-            Listar(estudiante);
+            Listar();
                     
         }
 
-        private void Listar(Estudiante estudiante)
+        private void Listar()
         {
             estudianteController.Listar(tabla);
         }
@@ -134,7 +134,7 @@ namespace Proyecto_Escuela.Views
                         grupo.Clear();
                         grado.SelectedIndex = 0;
 
-                        Listar(limpio);
+                        Listar();
                     }
                 }
                 else
@@ -150,7 +150,7 @@ namespace Proyecto_Escuela.Views
             apellido.Clear();
             documento.Clear();
             grupo.Clear();
-            Listar(limpio);
+            Listar();
             grado.SelectedIndex = 0;
             documento.ReadOnly = false;
         }

@@ -8,8 +8,8 @@ namespace Proyecto_Escuela.Models
 {
     public class Jugador: Estudiante 
     {
-
-        Desempeño desempeño;        
+        Desempeño desempeño;
+                
         public Jugador()
         {
             desempeño = new Desempeño();

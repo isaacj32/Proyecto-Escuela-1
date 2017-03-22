@@ -21,53 +21,79 @@ namespace Proyecto_Escuela.DAOS
             return retorno;
         }
 
-        public static int ElimminarJugador(MySqlConnection conexion, string titulo)
+        public static int EliminarTexto(MySqlConnection conexion, string titulo)
         {
             int retorno = 0;
             MySqlCommand comando = new MySqlCommand(string.Format("DELETE FROM Cuento WHERE titulo='{0}'", titulo), conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
-        public static IList<Estudiante> BuscarJugador(MySqlConnection conexion, Jugador jugador)
+        public static IList<Texto> BuscarTexto(MySqlConnection conexion, string titulo)
         {
-            List<Estudiante> lista = new List<Estudiante>();
+            List<Texto> lista = new List<Texto>();
 
-            MySqlCommand comando = new MySqlCommand(string.Format("SELECT titulo, texto, tiempo FROM Jugador WHERE documento LIKE ('%{0}%')", jugador.GetDocumento()), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT titulo, texto, tiempo FROM Cuento WHERE titulo LIKE ('%{0}%')", titulo), conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
             while (reader.Read())
             {
-                Jugador estudiante = new Jugador();
-                estudiante.SetDocumento(jugador.GetDocumento().ToString());
-                estudiante.SetDesempeño(reader.GetInt32(1), reader.GetInt32(2));
-                lista.Add(estudiante);
+                Texto cuento = new Texto();
+                cuento.setTitulo(reader.GetString(0));
+                cuento.setTexto(reader.GetString(1));
+                cuento.setTiempo(reader.GetInt32(2));
+                lista.Add(cuento);
             }
 
 
             return lista;
         }
 
-        public static int ModificarEstudiante(MySqlConnection conexion, Jugador jugador)
+        public static int ModificarTexto(MySqlConnection conexion, Texto texto)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("UPDATE Estudiante set aciertos='{1}', errores='{2}' WHERE documento='{0}'", jugador.GetDocumento(), jugador.GetDesempeño().GetAciertos(), jugador.GetDesempeño().GetErrores()), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("UPDATE Cuento set texto='{1}', tiempo='{2}' WHERE titulo='{0}'", texto.getTitulo(), texto.getTexto(), texto.getTiempo()), conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
 
-        public static Jugador ObtenerJugador(MySqlConnection conexion, Jugador jugador)
+        public static IList<Texto> ListarTextos(MySqlConnection conexion)
         {
-            Jugador estudiante = new Jugador();
-            MySqlCommand comando = new MySqlCommand(string.Format("SELECT documento, aciertos, errores FROM Jugador WHERE documento LIKE ('%{0}%')", jugador.GetDocumento()), conexion);
+            List<Texto> lista = new List<Texto>();
+            MySqlCommand comando = new MySqlCommand("SELECT titulo, texto, tiempo FROM Cuento", conexion);
             MySqlDataReader reader = comando.ExecuteReader();
+
+
 
             while (reader.Read())
             {
-                estudiante.SetDocumento(jugador.GetDocumento().ToString());
-                estudiante.SetDesempeño(reader.GetInt32(1), reader.GetInt32(2));
-
+                Texto cuento = new Texto();
+                cuento.setTitulo(reader.GetString(0));
+                cuento.setTexto(reader.GetString(1));
+                cuento.setTiempo(reader.GetInt32(2));
+                lista.Add(cuento);
             }
-            return estudiante;
+
+
+            return lista;
         }
+
+
+        public static Texto ObtenerTexto(MySqlConnection conexion, string titulo)
+        {
+            Texto cuento = new Texto();
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT titulo, texto, tiempo FROM Cuento WHERE titulo='{0}'", titulo), conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {                
+                cuento.setTitulo(reader.GetString(0));
+                cuento.setTexto(reader.GetString(1));
+                cuento.setTiempo(reader.GetInt32(2));
+            }
+            return cuento;            
+        }
+        
+
+
     }
 }
