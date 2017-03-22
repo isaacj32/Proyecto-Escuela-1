@@ -80,7 +80,7 @@ namespace Proyecto_Escuela.Views
         private void ConfiguracionEstudiantes_Load(object sender, EventArgs e)
         {
             
-            Listar();
+            Listar(estudiante);
                     
         }
 
@@ -118,8 +118,6 @@ namespace Proyecto_Escuela.Views
                 apellido.Text = estudiante.GetApellido();                
                 grupo.Text = estudiante.GetGrupo().ToString();
                 asignarGrado(estudiante.GetGrado());
-
-
             }
             else
             {
