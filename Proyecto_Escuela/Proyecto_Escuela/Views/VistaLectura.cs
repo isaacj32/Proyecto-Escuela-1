@@ -19,56 +19,16 @@ namespace Proyecto_Escuela
         private string titulo;
         private MenuActividadesController menuActividades;
         //Constructor
-        public VistaLectura(string titulo)
+        public VistaLectura(Texto texto)
         {
             InitializeComponent();
-            this.titulo = titulo;
+            this.titulo = texto.getTitulo();
+            this.tiempo = texto.getTiempo();
+            campoTexto.Text = texto.getTexto();
+            labelTiempo.Text = "Tiempo: " + texto.getTiempo().ToString();            
+            timer1.Start();
             tituloLabel.Text = titulo;
-
         }
-
-        #region Getter y Setters
-        //Getters y Seters para la modificación de los mismos
-        public Label getLabel3()
-        {
-            return tituloLabel;
-        }
-
-        public void setLabel3(string texto)
-        {
-            tituloLabel.Text = texto;
-        }
-
-        public Label getLabel4()
-        {
-            return label4;
-        }
-
-        public void setLabel4(string tiempo)
-        {
-            label4.Text = tiempo;
-        }
-
-        public RichTextBox getTextBox()
-        {
-            return richTextBox1;
-        }
-
-        public void setTextBox(string texto)
-        {
-            richTextBox1.Text = texto;
-        }
-
-        public Timer getTimer()
-        {
-            return timer1;
-        } 
-
-        public void setTiempo(int tiempo)
-        {
-            this.tiempo = tiempo;
-        }
-        #endregion
 
         #region Método de Timer
         //Método que controla el tiempo de lectura del texto
@@ -77,7 +37,7 @@ namespace Proyecto_Escuela
             if (tiempo > 0)
             {
                 tiempo = tiempo - 1;
-                label4.Text = "Tiempo: " + tiempo;
+                labelTiempo.Text = "Tiempo: " + tiempo;
             }
             else
             {

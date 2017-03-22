@@ -24,7 +24,7 @@ namespace Proyecto_Escuela.Views
             describeImagen = controller;
             describeImagenModel = model;
             textoLabel.Text = menu.GetTitulo();
-            imagen.BackgroundImage = describeImagenModel.getImage();
+            imagen.BackgroundImage = describeImagenModel.getImagen();
             menuActividades = menu;
         }
 

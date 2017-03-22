@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
             this.tituloLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.labelTiempo = new System.Windows.Forms.Label();
+            this.campoTexto = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -43,15 +43,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 26);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Andrés Felipe Aparicio Mestre";
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Location = new System.Drawing.Point(12, 9);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(276, 26);
+            this.labelNombre.TabIndex = 2;
+            this.labelNombre.Text = "Andrés Felipe Aparicio Mestre";
             // 
             // tituloLabel
             // 
@@ -67,28 +67,28 @@
             this.tituloLabel.Text = "Titulo";
             this.tituloLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // labelTiempo
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelTiempo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(741, 84);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 26);
-            this.label4.TabIndex = 61;
-            this.label4.Text = "Tiempo:";
+            this.labelTiempo.AutoSize = true;
+            this.labelTiempo.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTiempo.Location = new System.Drawing.Point(741, 84);
+            this.labelTiempo.Name = "labelTiempo";
+            this.labelTiempo.Size = new System.Drawing.Size(80, 26);
+            this.labelTiempo.TabIndex = 61;
+            this.labelTiempo.Text = "Tiempo:";
             // 
-            // richTextBox1
+            // campoTexto
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(317, 148);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(427, 277);
-            this.richTextBox1.TabIndex = 65;
-            this.richTextBox1.Text = "";
+            this.campoTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoTexto.Location = new System.Drawing.Point(317, 148);
+            this.campoTexto.Name = "campoTexto";
+            this.campoTexto.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.campoTexto.Size = new System.Drawing.Size(427, 277);
+            this.campoTexto.TabIndex = 65;
+            this.campoTexto.Text = "";
             // 
             // timer1
             // 
@@ -130,7 +130,7 @@
             // 
             // jugar
             // 
-            this.jugar.Font = new System.Drawing.Font("PreCursive", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jugar.Location = new System.Drawing.Point(423, 455);
             this.jugar.Name = "jugar";
             this.jugar.Size = new System.Drawing.Size(162, 52);
@@ -146,13 +146,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
             this.ClientSize = new System.Drawing.Size(1008, 537);
             this.Controls.Add(this.jugar);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.campoTexto);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelTiempo);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tituloLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelNombre);
             this.Name = "VistaLectura";
             this.Text = "Texto";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -165,12 +165,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelTiempo;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox campoTexto;
         public System.Windows.Forms.Label tituloLabel;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button jugar;

@@ -15,12 +15,7 @@ namespace Proyecto_Escuela.Controllers
 
         public LecturaController(Texto texto)
         {
-            vistaTexto = new VistaLectura(texto.getTitulo());
-            vistaTexto.setLabel3(texto.getTitulo()); 
-            vistaTexto.setTextBox(texto.getTexto());
-            vistaTexto.setLabel4("Tiempo: " + texto.getTiempo().ToString());
-            vistaTexto.setTiempo(texto.getTiempo());
-            vistaTexto.getTimer().Start();
+            vistaTexto = new VistaLectura(texto);           
             vistaTexto.Show(); 
         }
     }

@@ -23,7 +23,7 @@ namespace Proyecto_Escuela.Controllers
         }
         public bool compararRespuesta()
         {
-            string texto1 = describeImagenModel.getDescription();
+            string texto1 = describeImagenModel.getDescripcion();
             string texto2 = describeImagenView.GetRespuesta();
             return compararTextos(texto1, texto2);
         }
