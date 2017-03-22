@@ -1,4 +1,7 @@
-﻿using Proyecto_Escuela.Models;
+﻿
+
+
+using Proyecto_Escuela.Models;
 using Proyecto_Escuela.Views;
 using System;
 using System.Collections.Generic;
@@ -17,9 +20,9 @@ namespace Proyecto_Escuela.Controllers
         public ListaTextosController(Texto texto)
         {
             this.texto = texto;
-            lt = new ListaTextos(texto);
-            lt.Show();
+            lt = new ListaTextos(texto);            
             lt.getLista().CellClick += new DataGridViewCellEventHandler(ClickEnCelda);
+            lt.Show();
         }
 
         //Evento que lleva a la ventana de actividades relacionadas a un texto

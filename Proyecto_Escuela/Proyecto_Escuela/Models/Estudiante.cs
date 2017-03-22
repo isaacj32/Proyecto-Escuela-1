@@ -1,72 +1,90 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Proyecto_Escuela.Models
 {
-    class Estudiante
+    public class Estudiante
     {
-        //Atributos
-        private string nombre;
-        private string id;
-        private string grupo;
-        private string grado;
-        private Image foto;
+        protected int documento { get; set; }
+        protected string nombre { get; set; }
+        protected string apellidos { get; set; }
+        protected int grupo { get; set; }
+        protected string grado { get; set; }
+        protected string foto { get; set; }
 
-        #region Getters y Setters
-        // Getters y Setters para los atributos
-        public string getNombre()
+
+        public Estudiante()
+        {
+        }
+
+        public Estudiante(string nombre, string apellido, int grupo, int documento, string grado, string foto)
+        {
+            this.nombre = nombre;
+            this.apellidos = apellido;
+            this.grupo = grupo;
+            this.documento = documento;
+            this.grado = grado;
+            this.foto = foto;
+        }
+
+        public string GetNombre()
         {
             return nombre;
         }
-
-        public void setNombre(string nombre)
+        public string GetApellido()
         {
-            this.nombre = nombre;
+            return apellidos;
         }
-
-        public string getId()
-        {
-            return id;
-        }
-
-        public void setId(string id)
-        {
-            this.id = id;
-        }
-
-        public string getGrupo()
+        public int GetGrupo()
         {
             return grupo;
         }
-
-        public void setGrupo(string grupo)
+        public int GetDocumento()
         {
-            this.grupo = grupo;
+            return documento;
         }
-
-        public string getGrado()
+        public string GetGrado()
         {
             return grado;
         }
-
-        public void setGrado(string grado)
-        {
-            this.grado = grado;
-        }
-
-        public Image getFoto()
+        public string GetFoto()
         {
             return foto;
         }
-
-        public void setFoto(Image foto)
+        public void SetNombre(string nombre)
+        {
+            this.nombre = nombre;
+        }
+        public void SetApellido(string apellido)
+        {
+            this.apellidos = apellido;
+        }
+        public void SetGrupo(string grupo)
+        {
+            if (!string.IsNullOrEmpty(grupo))
+            {
+                this.grupo = int.Parse(grupo);
+            }
+        }
+        public void SetDocumento(string documento)
+        {
+            if (!string.IsNullOrEmpty(documento))
+            {
+                this.documento = int.Parse(documento);
+            }
+           
+        }
+        public void SetGrado(string grado)
+        {
+            this.grado = grado;
+        }
+        public void SetFoto(string foto)
         {
             this.foto = foto;
-        } 
-        #endregion
+        }
+
     }
 }

@@ -18,12 +18,10 @@ namespace Proyecto_Escuela.Models
             + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
             + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
             + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-        private string titulo = "Título quemado para efectos de ensayo";
-        private Image imagen = Image.FromFile(@"C:\Users\Equipo\Source\Repos\Proyecto-Escuela\Proyecto_Escuela\Proyecto_Escuela\Resources\buho.png");
+        private string titulo = "a";
+        private Image imagen =Proyecto_Escuela.Properties.Resources.buho;
         private int tiempo = 5;
 
-
-        #region Getters y Setters del modelo
         //Getters y Setters para los atributos
         public void setTexto(string texto)
         {
@@ -63,7 +61,6 @@ namespace Proyecto_Escuela.Models
         public void setTiempo(int tiempo)
         {
             this.tiempo = tiempo;
-        } 
-        #endregion
+        }
     }
 }

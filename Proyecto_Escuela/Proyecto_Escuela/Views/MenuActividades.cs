@@ -14,41 +14,62 @@ namespace Proyecto_Escuela.Views
 {
     public partial class MenuActividades : Form
     {
-        string titulo;
+        DescribeImagenController describeImagenController;
+        DescribeImagenModel describeImagenModel = new DescribeImagenModel();
+
         public MenuActividades(string titulo)
         {
-            this.titulo = titulo;
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
+            tituloLabel.Text = titulo;
         }
 
-        #region Getters de componentes
         //Getter y Setter de los componentes para su utilización
         public Label getLabel1()
         {
-            return label1;
+            return tituloLabel;
         }
 
         public void setLabel1(string titulo)
         {
-            label1.Text = titulo;
-        } 
-        #endregion
+            tituloLabel.Text = titulo; 
+        }
 
-        private void botonSalir_Click(object sender, EventArgs e)
+        private void MenuActividades_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
-        private void botonSecuencia_Click(object sender, EventArgs e)
+        public void JuegoTerminado(int i)
         {
-            this.Dispose();
+            switch (i)
+            {
+                case 1:
+                    describe.ForeColor = Color.Black;
+                    describe.Enabled = false;
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+            }
         }
 
-        private void botonDescripcion_Click(object sender, EventArgs e)
+        private void describe_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            DescribeImagenController dic = new DescribeImagenController(titulo);
+            describeImagenModel.setDescription("varita magica");
+            describeImagenModel.setImage(Proyecto_Escuela.Properties.Resources.barita);
+            describeImagenController = new DescribeImagenController(describeImagenModel,describeImagenModel, this);
+            this.Visible = false;
+        }
+
+        public string GetTitulo()
+        {
+            return tituloLabel.Text;
         }
     }
 }

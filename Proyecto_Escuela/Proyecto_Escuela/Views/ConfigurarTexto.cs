@@ -10,22 +10,11 @@ using System.Windows.Forms;
 
 namespace Proyecto_Escuela.Views
 {
-    public partial class SeleccionNiño : Form
+    public partial class ConfigurarTexto : Form
     {
-        public SeleccionNiño()
+        public ConfigurarTexto()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
-        }
-
-        public Button getButton()
-        {
-            return niño_1;
-        }
-
-        private void niño_1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

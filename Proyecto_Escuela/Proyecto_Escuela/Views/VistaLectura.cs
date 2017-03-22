@@ -16,24 +16,27 @@ namespace Proyecto_Escuela
     {
         //Atrubuto tiempo, necesario para contar cuánto se demora el estudiante en leer el texto
         private int tiempo;
-
+        private string titulo;
+        private MenuActividadesController menuActividades;
         //Constructor
-        public VistaLectura()
+        public VistaLectura(string titulo)
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
+            this.titulo = titulo;
+            tituloLabel.Text = titulo;
+
         }
 
         #region Getter y Setters
         //Getters y Seters para la modificación de los mismos
         public Label getLabel3()
         {
-            return label3;
+            return tituloLabel;
         }
 
         public void setLabel3(string texto)
         {
-            label3.Text = texto;
+            tituloLabel.Text = texto;
         }
 
         public Label getLabel4()
@@ -65,13 +68,9 @@ namespace Proyecto_Escuela
         {
             this.tiempo = tiempo;
         }
-
-        public Button getButonActividades()
-        {
-            return button2;
-        }
         #endregion
-        
+
+        #region Método de Timer
         //Método que controla el tiempo de lectura del texto
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -96,13 +95,12 @@ namespace Proyecto_Escuela
                 }
             }
         }
-        
-        //Evento para volver al menú de textos a escoger
-        private void button1_Click(object sender, EventArgs e)
+        #endregion
+
+        private void jugar_Click(object sender, EventArgs e)
         {
+            menuActividades = new MenuActividadesController(titulo);
             this.Dispose();
-            Texto t = new Texto();
-            ListaTextosController ltc = new ListaTextosController(t);
         }
     }
 }

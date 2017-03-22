@@ -42,7 +42,7 @@ namespace Proyecto_Escuela.Views
 
             MemoryStream ms = new MemoryStream();
             Image imagen;
-            imagen = Image.FromFile(@"C:\Users\Equipo\Source\Repos\Proyecto-Escuela\Proyecto_Escuela\Proyecto_Escuela\Resources\buho.png");
+            imagen = Proyecto_Escuela.Properties.Resources.buho;
             dataGridView1.Rows.Add(texto.getTitulo(), imagen);
         }
 

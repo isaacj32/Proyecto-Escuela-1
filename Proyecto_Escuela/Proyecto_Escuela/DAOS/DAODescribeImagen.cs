@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proyecto_Escuela.Controllers
+namespace Proyecto_Escuela.DAOS
 {
-    class ListaNiñosController
+    class DAODescribeImagen
     {
-
     }
 }
