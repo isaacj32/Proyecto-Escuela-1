@@ -35,8 +35,8 @@ namespace Proyecto_Escuela.Views
             int xSpot;
             int ySpot;
             int pp;
-            string pathImg = "C:\\Users\\Alejo Castaño Rojas\\Desktop\\DEVELOPMENT\\C#\\JuegosProyectoEscuela\\JuegosProyectoEscuela\\Resources";
-            string[] imagenes = Directory.GetFiles(pathImg,"*.jpg");
+            string pathImg = "C:\\Users\\Apa\\Source\\Repos\\Proyecto-Escuela\\Proyecto_Escuela\\Proyecto_Escuela\\Resources";
+            string[] imagenes = Directory.GetFiles(pathImg,"*.png");
             Random rnd = new Random();
             bool[] imgUsada = new bool[numImagenes];
             // Initialize the grid
