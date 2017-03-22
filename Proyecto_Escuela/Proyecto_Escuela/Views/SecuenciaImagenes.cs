@@ -22,8 +22,8 @@ namespace Proyecto_Escuela.Views
         public const int bordeEnGrid = 60;
         #endregion
 
-        private smTile[] grid;
-        private smTile[] encaje;
+        //private smTile[] grid;
+        //private smTile[] encaje;
 
         #region Empty constructor
         /// <summary>
