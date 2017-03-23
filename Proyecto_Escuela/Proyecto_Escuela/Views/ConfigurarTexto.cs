@@ -31,7 +31,7 @@ namespace Proyecto_Escuela.Views
 
         private void Listar()
         {
-            textoController.Listar(tabla);
+            textoController.Listar(tabla, 0);
         }
 
         private void guardar_Click(object sender, EventArgs e)

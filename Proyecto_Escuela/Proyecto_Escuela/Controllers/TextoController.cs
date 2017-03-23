@@ -121,17 +121,28 @@ namespace Proyecto_Escuela.Controllers
             return 0;
         }
 
-        public void Listar(DataGridView tabla)
+        public void Listar(DataGridView tabla, int index)
         {
             try
             {
+
                 if (conexion.AbrirConexion() == true)
                 {
+                        tabla.Rows.Clear();
                     IList<Texto> lista = DAOS.DAOTexto.ListarTextos(conexion.GetConexion());
-                    tabla.Rows.Clear();
-                    for (int i = 0; i < lista.Count; i++)
+                    if (index == 0)
                     {
-                        tabla.Rows.Add(lista[i].getTitulo(), lista[i].getTiempo());
+                        for (int i = 0; i < lista.Count; i++)
+                        {
+                            tabla.Rows.Add(lista[i].getTitulo(), lista[i].getTiempo());
+                        }
+                    }
+                    else if(index == 1)
+                    {
+                        for (int i = 0; i < lista.Count; i++)
+                        {
+                            tabla.Rows.Add(lista[i].getTitulo());
+                        }
                     }
                     conexion.CerrarConexion();
 

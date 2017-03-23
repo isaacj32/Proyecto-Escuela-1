@@ -9,16 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto_Escuela.Controllers;
 
 namespace Proyecto_Escuela.Views
 {
     public partial class ListaTextos : Form
     {
-        Texto texto;
+        TextoController textoController = new TextoController();
+        Texto texto = new Texto();
         
-        public ListaTextos(Texto texto)
+        public ListaTextos()
         {
-            this.texto = texto;
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
         }
@@ -26,30 +27,31 @@ namespace Proyecto_Escuela.Views
         //Getter para usar el DataGrid en el controller
         public DataGridView getLista()
         {
-            return dataGridView1;
+            return tabla;
         }
 
         //Características del DataGrid cuando carga la ventana
         private void ListaTextos_Load(object sender, EventArgs e)
         {
-            portada.ImageLayout = DataGridViewImageCellLayout.Zoom;
-
-            DataGridViewTextBoxColumn dgt = new DataGridViewTextBoxColumn();
-            dgt.HeaderText = "Título";
-
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.RowTemplate.Height = 120;
-
-            MemoryStream ms = new MemoryStream();
-            Image imagen;
-            imagen = Proyecto_Escuela.Properties.Resources.buho;
-            dataGridView1.Rows.Add(texto.getTitulo(), imagen);
+            Listar();
+        }
+        private void Listar()
+        {
+            textoController.Listar(tabla, 1);
         }
 
         //Evento para salir de la aplicación
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void tabla_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            texto = textoController.Seleccionar(tabla);
+            new LecturaController(texto);
+            this.Dispose();
+
         }
     }
 }

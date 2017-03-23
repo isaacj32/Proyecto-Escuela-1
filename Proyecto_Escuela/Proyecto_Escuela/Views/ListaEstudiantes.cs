@@ -22,10 +22,7 @@ namespace Proyecto_Escuela.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Texto texto = new Texto();
-            texto.setImagen(Properties.Resources.buho);
-            texto.setTitulo("Prueba");
-            ListaTextosController listaTexto = new ListaTextosController(texto);
+             ListaTextosController listaTexto = new ListaTextosController();
             this.Dispose();
         }
     }

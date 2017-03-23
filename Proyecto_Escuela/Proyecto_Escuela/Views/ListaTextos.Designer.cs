@@ -28,33 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabla = new System.Windows.Forms.DataGridView();
             this.titulo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.portada = new System.Windows.Forms.DataGridViewImageColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.volver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // tabla
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tabla.AllowUserToAddRows = false;
+            this.tabla.AllowUserToDeleteRows = false;
+            this.tabla.AllowUserToResizeColumns = false;
+            this.tabla.AllowUserToResizeRows = false;
+            this.tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tabla.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titulo,
             this.portada});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 57);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(680, 468);
-            this.dataGridView1.TabIndex = 0;
+            this.tabla.Location = new System.Drawing.Point(12, 57);
+            this.tabla.MultiSelect = false;
+            this.tabla.Name = "tabla";
+            this.tabla.ReadOnly = true;
+            this.tabla.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.tabla.RowTemplate.Height = 120;
+            this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tabla.Size = new System.Drawing.Size(984, 421);
+            this.tabla.TabIndex = 0;
+            this.tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellClick);
             // 
             // titulo
             // 
@@ -70,15 +73,15 @@
             this.portada.ReadOnly = true;
             this.portada.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // button1
+            // volver
             // 
-            this.button1.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(698, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(298, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.volver.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.volver.Location = new System.Drawing.Point(12, 484);
+            this.volver.Name = "volver";
+            this.volver.Size = new System.Drawing.Size(298, 41);
+            this.volver.TabIndex = 1;
+            this.volver.Text = "Volver";
+            this.volver.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -96,12 +99,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.volver);
+            this.Controls.Add(this.tabla);
             this.Name = "ListaTextos";
             this.Text = "ListaTextos";
             this.Load += new System.EventHandler(this.ListaTextos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,8 +112,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView tabla;
+        private System.Windows.Forms.Button volver;
         private System.Windows.Forms.DataGridViewButtonColumn titulo;
         private System.Windows.Forms.DataGridViewImageColumn portada;
         private System.Windows.Forms.Label label1;
