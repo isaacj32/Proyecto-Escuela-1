@@ -53,5 +53,11 @@ namespace Proyecto_Escuela.Views
             this.Dispose();
 
         }
+
+        private void volver_Click(object sender, EventArgs e)
+        {
+            ListaEstudianteController estudiantes = new ListaEstudianteController();
+            this.Dispose();
+        }
     }
 }

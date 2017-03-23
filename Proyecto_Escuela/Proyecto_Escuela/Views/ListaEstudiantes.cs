@@ -34,6 +34,12 @@ namespace Proyecto_Escuela.Views
         private void tablaPrimero_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ListaTextosController ListaTextos = new ListaTextosController();
+            this.Dispose();
+        }
+
+        private void ListaEstudiantes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

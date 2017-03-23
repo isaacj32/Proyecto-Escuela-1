@@ -173,6 +173,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "ListaEstudiantes";
             this.Text = "ListaEstudiante";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ListaEstudiantes_FormClosed);
             this.Load += new System.EventHandler(this.ListaEstudiantes_Load);
             this.tabControl1.ResumeLayout(false);
             this.primero.ResumeLayout(false);

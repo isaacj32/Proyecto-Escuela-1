@@ -36,10 +36,10 @@
             // tituloLabel
             // 
             this.tituloLabel.AutoSize = true;
-            this.tituloLabel.Font = new System.Drawing.Font("PreCursive", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloLabel.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloLabel.Location = new System.Drawing.Point(315, 60);
             this.tituloLabel.Name = "tituloLabel";
-            this.tituloLabel.Size = new System.Drawing.Size(148, 64);
+            this.tituloLabel.Size = new System.Drawing.Size(184, 78);
             this.tituloLabel.TabIndex = 2;
             this.tituloLabel.Text = "titulo";
             // 
@@ -48,7 +48,7 @@
             this.secuencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.secuencia.BackgroundImage = global::Proyecto_Escuela.Properties.Resources.dragon;
             this.secuencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.secuencia.Font = new System.Drawing.Font("PreCursive", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secuencia.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secuencia.ForeColor = System.Drawing.Color.Black;
             this.secuencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.secuencia.Location = new System.Drawing.Point(12, 355);
@@ -64,7 +64,7 @@
             this.describe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.describe.BackgroundImage = global::Proyecto_Escuela.Properties.Resources.draco;
             this.describe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.describe.Font = new System.Drawing.Font("PreCursive", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.describe.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.describe.ForeColor = System.Drawing.Color.Black;
             this.describe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.describe.Location = new System.Drawing.Point(12, 179);

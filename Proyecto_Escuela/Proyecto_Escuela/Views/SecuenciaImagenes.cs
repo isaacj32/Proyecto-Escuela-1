@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Proyecto_Escuela.Models;
+using Proyecto_Escuela.Controllers;
+
 
 namespace Proyecto_Escuela.Views
 {
@@ -24,18 +26,19 @@ namespace Proyecto_Escuela.Views
 
         private smTile[] grid;
         private smTile[] encaje;
-
+        private string titulo;
         #region Empty constructor
         /// <summary>
         /// Empty constructor
         /// </summary>
-        public SecuenciaImagenes(int numImagenes)
+        public SecuenciaImagenes(int numImagenes, string titulo)
         {
+            this.titulo = titulo;
             InitializeComponent();
             int xSpot;
             int ySpot;
             int pp;
-            string pathImg = @"\Resources";
+            string pathImg = "C:\\Users\\Apa\\Source\\Repos\\Proyecto-Escuela\\Proyecto_Escuela\\Proyecto_Escuela\\Resources";
             string[] imagenes = Directory.GetFiles(Path.GetFullPath(pathImg),"*.png");
             Random rnd = new Random();
             bool[] imgUsada = new bool[numImagenes];
@@ -145,6 +148,12 @@ namespace Proyecto_Escuela.Views
             {
                 MessageBox.Show("Que mal momo men :c");
             }
+        }
+
+        private void volver_Click(object sender, EventArgs e)
+        {
+            MenuActividadesController menuActividades = new MenuActividadesController(titulo);
+            this.Dispose();
         }
     }
 }

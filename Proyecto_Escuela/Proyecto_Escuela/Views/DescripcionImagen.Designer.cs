@@ -52,17 +52,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 26);
+            this.label1.Size = new System.Drawing.Size(404, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Andrés Felipe Aparicio Mestre";
             // 
             // probar
             // 
             this.probar.BackColor = System.Drawing.Color.White;
-            this.probar.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.probar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.probar.Location = new System.Drawing.Point(830, 432);
             this.probar.Name = "probar";
             this.probar.Size = new System.Drawing.Size(166, 93);
@@ -74,14 +74,14 @@
             // terminar
             // 
             this.terminar.BackColor = System.Drawing.Color.White;
-            this.terminar.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.terminar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.terminar.Location = new System.Drawing.Point(12, 432);
             this.terminar.Name = "terminar";
             this.terminar.Size = new System.Drawing.Size(166, 93);
             this.terminar.TabIndex = 38;
             this.terminar.Text = "Terminar";
             this.terminar.UseVisualStyleBackColor = false;
-            this.terminar.Click += new System.EventHandler(this.button2_Click);
+            this.terminar.Click += new System.EventHandler(this.terminar_Click);
             // 
             // textoLabel
             // 
@@ -89,19 +89,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textoLabel.AutoSize = true;
-            this.textoLabel.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textoLabel.Location = new System.Drawing.Point(469, 73);
             this.textoLabel.Name = "textoLabel";
-            this.textoLabel.Size = new System.Drawing.Size(62, 26);
+            this.textoLabel.Size = new System.Drawing.Size(82, 33);
             this.textoLabel.TabIndex = 40;
             this.textoLabel.Text = "Titulo";
             // 
             // respuesta
             // 
-            this.respuesta.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.respuesta.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.respuesta.Location = new System.Drawing.Point(310, 444);
             this.respuesta.Name = "respuesta";
-            this.respuesta.Size = new System.Drawing.Size(388, 28);
+            this.respuesta.Size = new System.Drawing.Size(388, 33);
             this.respuesta.TabIndex = 39;
             // 
             // imagen
@@ -120,7 +120,7 @@
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(216)))), ((int)(((byte)(170)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.richTextBox1.Font = new System.Drawing.Font("PreCursive", 26.25F);
+            this.richTextBox1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(17, 113);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -132,7 +132,7 @@
             // reintentar
             // 
             this.reintentar.BackColor = System.Drawing.Color.White;
-            this.reintentar.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reintentar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reintentar.Location = new System.Drawing.Point(704, 318);
             this.reintentar.Name = "reintentar";
             this.reintentar.Size = new System.Drawing.Size(292, 61);
@@ -144,7 +144,7 @@
             // anterior
             // 
             this.anterior.BackColor = System.Drawing.Color.White;
-            this.anterior.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anterior.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.anterior.Location = new System.Drawing.Point(704, 113);
             this.anterior.Name = "anterior";
             this.anterior.Size = new System.Drawing.Size(122, 61);
@@ -156,7 +156,7 @@
             // siguiente
             // 
             this.siguiente.BackColor = System.Drawing.Color.White;
-            this.siguiente.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siguiente.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siguiente.Location = new System.Drawing.Point(874, 113);
             this.siguiente.Name = "siguiente";
             this.siguiente.Size = new System.Drawing.Size(122, 61);
@@ -171,10 +171,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("PreCursive", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(36, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 19);
+            this.label2.Size = new System.Drawing.Size(89, 22);
             this.label2.TabIndex = 46;
             this.label2.Text = "Aciertos:";
             // 
@@ -184,28 +184,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("PreCursive", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(36, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 19);
+            this.label3.Size = new System.Drawing.Size(94, 22);
             this.label3.TabIndex = 47;
             this.label3.Text = "Intentos: ";
             // 
             // intentos
             // 
-            this.intentos.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.intentos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.intentos.Location = new System.Drawing.Point(139, 11);
             this.intentos.Name = "intentos";
-            this.intentos.Size = new System.Drawing.Size(96, 28);
+            this.intentos.Size = new System.Drawing.Size(96, 31);
             this.intentos.TabIndex = 48;
             this.intentos.Text = "0";
             // 
             // aciertos
             // 
-            this.aciertos.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aciertos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aciertos.Location = new System.Drawing.Point(139, 47);
             this.aciertos.Name = "aciertos";
-            this.aciertos.Size = new System.Drawing.Size(96, 28);
+            this.aciertos.Size = new System.Drawing.Size(96, 31);
             this.aciertos.TabIndex = 49;
             this.aciertos.Text = "0";
             // 
@@ -225,10 +225,10 @@
             // 
             // errores
             // 
-            this.errores.Font = new System.Drawing.Font("PreCursive", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errores.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errores.Location = new System.Drawing.Point(139, 81);
             this.errores.Name = "errores";
-            this.errores.Size = new System.Drawing.Size(96, 28);
+            this.errores.Size = new System.Drawing.Size(96, 31);
             this.errores.TabIndex = 51;
             this.errores.Text = "0";
             // 
@@ -238,10 +238,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("PreCursive", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(36, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 19);
+            this.label4.Size = new System.Drawing.Size(74, 22);
             this.label4.TabIndex = 50;
             this.label4.Text = "Errores:";
             // 

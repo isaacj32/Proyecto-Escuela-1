@@ -32,14 +32,6 @@ namespace Proyecto_Escuela.Views
         {
             return respuesta.Text;
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            menuActividades.Visible = true;
-            this.Dispose();
-            menuActividades.JuegoTerminado(1);
-        }
-
         private void DescripcionImagen_Load(object sender, EventArgs e)
         {
             imagenAux = describeImagenModel.GetImagen(0);
@@ -120,6 +112,17 @@ namespace Proyecto_Escuela.Views
                 respuesta.Enabled = false;
                 respuesta.Text = imagenAux.GetDescripcion();
                 probar.Enabled = false;
+            }
+        }
+
+        private void terminar_Click(object sender, EventArgs e)
+        {
+            menuActividades.Visible = true;
+            this.Dispose();
+            if (int.Parse(aciertos.Text) == describeImagenModel.GetImagenes().Count)
+            {
+                menuActividades.JuegoTerminado(1);
+
             }
         }
     }

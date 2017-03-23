@@ -46,7 +46,7 @@ namespace Proyecto_Escuela.Views
 
         private void atras_Click(object sender, EventArgs e)
         {
-            inicio.Show();
+            inicio.Enabled=true;
             this.Dispose();
         }
     }

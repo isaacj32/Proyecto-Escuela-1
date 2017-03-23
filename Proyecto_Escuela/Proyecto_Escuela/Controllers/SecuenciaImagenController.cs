@@ -13,9 +13,9 @@ namespace Proyecto_Escuela.Controllers
         private SecuenciaImagenes secuenciaImagenes;
         private SecuenciaImagenModel secuenciaImagenModel;
 
-        public SecuenciaImagenController(int n)
+        public SecuenciaImagenController(int n, string titulo)
         {
-            secuenciaImagenes = new Views.SecuenciaImagenes(n);
+            secuenciaImagenes = new Views.SecuenciaImagenes(n, titulo);
             secuenciaImagenes.Show();
         }
 

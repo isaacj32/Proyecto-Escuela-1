@@ -45,6 +45,15 @@ namespace Proyecto_Escuela.Controllers
             imagen.SetDescripcion("varita magica");
             imagen.SetImagen(Proyecto_Escuela.Properties.Resources.barita);
             describeImagenModel.AgregarImagen(imagen);
+            imagen = new Imagen();
+            imagen.SetDescripcion("buho");
+            imagen.SetImagen(Proyecto_Escuela.Properties.Resources.buho);
+            describeImagenModel.AgregarImagen(imagen);
+            imagen = new Imagen();
+            imagen.SetDescripcion("dragon");
+            imagen.SetImagen(Proyecto_Escuela.Properties.Resources.dragon);
+            describeImagenModel.AgregarImagen(imagen);
+
         }
     }    
 }
