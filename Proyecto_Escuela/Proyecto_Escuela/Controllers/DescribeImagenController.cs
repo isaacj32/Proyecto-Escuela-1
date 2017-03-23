@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Proyecto_Escuela.Views;
+using System.Drawing;
 
 namespace Proyecto_Escuela.Controllers
 {
@@ -16,14 +17,15 @@ namespace Proyecto_Escuela.Controllers
 
         public DescribeImagenController(DescribeImagenModel frame,DescribeImagenModel model, MenuActividades menu)
         {
+            describeImagenModel = frame;
+            ListarImagenes();
             describeImagenView = new DescripcionImagen(this, model, menu);
             describeImagenView.Show();
-            describeImagenModel = frame;           
 
         }
-        public bool compararRespuesta()
+        public bool compararRespuesta(int i)
         {
-            string texto1 = describeImagenModel.getDescripcion();
+            string texto1 = describeImagenModel.GetImagen(i).GetDescripcion();
             string texto2 = describeImagenView.GetRespuesta();
             return compararTextos(texto1, texto2);
         }
@@ -35,6 +37,14 @@ namespace Proyecto_Escuela.Controllers
                 return true;
             }
             return false;
+        }
+
+        private void ListarImagenes()
+        {
+            Imagen imagen = new Imagen();
+            imagen.SetDescripcion("varita magica");
+            imagen.SetImagen(Proyecto_Escuela.Properties.Resources.barita);
+            describeImagenModel.AgregarImagen(imagen);
         }
     }    
 }

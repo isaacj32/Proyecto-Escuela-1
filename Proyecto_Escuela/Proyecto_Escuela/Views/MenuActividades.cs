@@ -14,7 +14,6 @@ namespace Proyecto_Escuela.Views
 {
     public partial class MenuActividades : Form
     {
-        DescribeImagenController describeImagenController;
         DescribeImagenModel describeImagenModel = new DescribeImagenModel();
 
         public MenuActividades(string titulo)
@@ -60,16 +59,20 @@ namespace Proyecto_Escuela.Views
         }
 
         private void describe_Click(object sender, EventArgs e)
-        {
-            describeImagenModel.setDescription("varita magica");
-            describeImagenModel.setImage(Proyecto_Escuela.Properties.Resources.barita);
-            describeImagenController = new DescribeImagenController(describeImagenModel,describeImagenModel, this);
+        {            
+            new DescribeImagenController(describeImagenModel,describeImagenModel, this);
             this.Visible = false;
         }
 
         public string GetTitulo()
         {
             return tituloLabel.Text;
+        }
+
+        private void secuencia_Click(object sender, EventArgs e)
+        {
+            new SecuenciaImagenController(6);
+            this.Visible = false;
         }
     }
 }

@@ -9,32 +9,32 @@ namespace Proyecto_Escuela.Models
 {
     public class DescribeImagenModel
     {
-        private Image imagen;
-        private string descripcion= "holi";
+        private List<Imagen> imagenes = new List<Imagen>();
 
         public DescribeImagenModel() { }
 
         #region Getters y Setters
         //Getters y Setters del modelo para el juego
-        public Image getImagen()
+        public List<Imagen> GetImagenes()
         {
-            return imagen;
+            return imagenes;
         }
-
-        public void setImage(Image imagen)
+        public Imagen GetImagen(int i)
         {
-            this.imagen = imagen;
-        }
-
-        public string getDescripcion()
-        {
-            return descripcion;
-        }
-
-        public void setDescription(string descripcion)
-        {
-            this.descripcion = descripcion;
+            return imagenes[i];
         } 
+        public void SetImagenes(List<Imagen> imagenes)
+        {
+            this.imagenes = imagenes;
+        }
+        public void SetImagen(Imagen imagen, int i)
+        {
+            this.imagenes[i] = imagen;
+        }
+        public void AgregarImagen(Imagen imagen)
+        {
+            this.imagenes.Add(imagen);
+        }
         #endregion
     }
 }

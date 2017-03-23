@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,39 +13,18 @@ namespace Proyecto_Escuela.Views
 {
     public partial class DescripcionImagen : Form
     {
-        DescribeImagenController describeImagen;
+        DescribeImagenController describeImagenController;
         DescribeImagenModel describeImagenModel;
         MenuActividades menuActividades;
+        int indice=0;
 
         public DescripcionImagen(DescribeImagenController controller, DescribeImagenModel model, MenuActividades menu)
         {
             InitializeComponent();
-            describeImagen = controller;
+            describeImagenController = controller;
             describeImagenModel = model;
             textoLabel.Text = menu.GetTitulo();
-            imagen.BackgroundImage = describeImagenModel.getImagen();
             menuActividades = menu;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (respuesta.Enabled == true) { 
-            bool acierto = describeImagen.compararRespuesta();
-            if (acierto == true)
-            {
-                imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.felicitaciones;
-                respuesta.Enabled = false;
-                }
-            else
-            {
-                imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.equivocacion;
-            }
-               
-            }
-            else
-            {
-
-            }
         }
 
         public string GetRespuesta()
@@ -59,6 +37,35 @@ namespace Proyecto_Escuela.Views
             menuActividades.Visible = true;
             this.Dispose();
             menuActividades.JuegoTerminado(1);
+        }
+
+        private void DescripcionImagen_Load(object sender, EventArgs e)
+        {
+            imagen.BackgroundImage = describeImagenModel.GetImagen(0).BackgroundImage;
+        }
+
+        private void probar_Click(object sender, EventArgs e)
+        {
+            if (respuesta.Enabled == true)
+            {
+                bool acierto = describeImagenController.compararRespuesta(indice);
+                if (acierto == true)
+                {
+                    imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.felicitaciones;
+                    respuesta.Enabled = false;
+                }
+                else
+                {
+                    imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.equivocacion;
+
+                }
+
+            }
+        }
+
+        private void reintentar_Click(object sender, EventArgs e)
+        {
+            imagen.BackgroundImage = describeImagenModel.GetImagen(indice).Image;
         }
     }
 }

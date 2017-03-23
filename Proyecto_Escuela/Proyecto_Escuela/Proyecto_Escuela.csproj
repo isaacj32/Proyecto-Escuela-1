@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Controllers\DescribeImagenController.cs" />
     <Compile Include="Controllers\EstudianteController.cs" />
+    <Compile Include="Controllers\ImagenController.cs" />
     <Compile Include="Controllers\JugadorController.cs" />
     <Compile Include="Controllers\ListaEstudianteController.cs" />
     <Compile Include="Controllers\ListaTextosController.cs" />
@@ -71,11 +72,14 @@
     <Compile Include="Models\DescribeImagenModel.cs" />
     <Compile Include="Models\Desempeño.cs" />
     <Compile Include="Models\Estudiante.cs" />
-    <Compile Include="Models\ImagenSecuencia.cs">
+    <Compile Include="Models\Imagen.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Models\Jugador.cs" />
     <Compile Include="Models\SecuenciaImagenModel.cs" />
+    <Compile Include="Models\smTile.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Models\Texto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
