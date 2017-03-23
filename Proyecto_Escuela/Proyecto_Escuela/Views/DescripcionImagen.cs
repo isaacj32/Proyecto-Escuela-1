@@ -16,6 +16,7 @@ namespace Proyecto_Escuela.Views
         DescribeImagenController describeImagenController;
         DescribeImagenModel describeImagenModel;
         MenuActividades menuActividades;
+        Imagen imagenAux;
         int indice=0;
 
         public DescripcionImagen(DescribeImagenController controller, DescribeImagenModel model, MenuActividades menu)
@@ -41,31 +42,85 @@ namespace Proyecto_Escuela.Views
 
         private void DescripcionImagen_Load(object sender, EventArgs e)
         {
-            imagen.BackgroundImage = describeImagenModel.GetImagen(0).BackgroundImage;
+            imagenAux = describeImagenModel.GetImagen(0);
+            imagen.BackgroundImage = imagenAux.GetImagen();
+            if (indice == describeImagenModel.GetImagenes().Count-1)
+            {
+                siguiente.Enabled = false;
+            }
+            anterior.Enabled = false;
+            reintentar.Enabled = false;
         }
 
         private void probar_Click(object sender, EventArgs e)
         {
-            if (respuesta.Enabled == true)
+            intentos.Text = (int.Parse(intentos.Text) + 1).ToString();
+            bool acierto = describeImagenController.compararRespuesta(indice, respuesta.Text);
+            if (acierto == true)
             {
-                bool acierto = describeImagenController.compararRespuesta(indice);
-                if (acierto == true)
-                {
-                    imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.felicitaciones;
-                    respuesta.Enabled = false;
-                }
-                else
-                {
-                    imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.equivocacion;
-
-                }
-
+                imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.felicitaciones;
+                imagenAux.SetDescripcion(respuesta.Text);
+                imagenAux.SetPosicion(1);
+                respuesta.Enabled = false;
+                reintentar.Enabled = false;
+                aciertos.Text = (int.Parse(aciertos.Text) + 1).ToString();
             }
+            else
+            {
+                imagen.BackgroundImage = Proyecto_Escuela.Properties.Resources.equivocacion;
+                reintentar.Enabled = true;
+                errores.Text = (int.Parse(errores.Text) + 1).ToString();
+            }
+            probar.Enabled = false;
         }
 
         private void reintentar_Click(object sender, EventArgs e)
         {
-            imagen.BackgroundImage = describeImagenModel.GetImagen(indice).Image;
+            respuesta.Clear();
+            probar.Enabled = true;
+            imagen.BackgroundImage = imagenAux.GetImagen();
+        }
+
+        private void siguiente_Click(object sender, EventArgs e)
+        {
+            indice++;
+            if (indice == describeImagenModel.GetImagenes().Count - 1)
+            {
+                siguiente.Enabled = false;
+            }
+            respuesta.Enabled = true;
+            probar.Enabled = true;
+            reintentar.Enabled = false;
+            anterior.Enabled = true;
+            imagenAux = describeImagenModel.GetImagen(indice);
+            imagen.BackgroundImage = imagenAux.GetImagen();
+            if (imagenAux.GetPosicion() == 1)
+            {
+                respuesta.Enabled = false;
+                respuesta.Text = imagenAux.GetDescripcion();
+                probar.Enabled = false;
+            }
+        }
+
+        private void anterior_Click(object sender, EventArgs e)
+        {
+            indice--;
+            if (indice == 0)
+            {
+                anterior.Enabled = false;
+            }
+            respuesta.Enabled = true;
+            probar.Enabled = true;
+            reintentar.Enabled = false;
+            siguiente.Enabled = true;
+            imagenAux = describeImagenModel.GetImagen(indice);
+            imagen.BackgroundImage = imagenAux.GetImagen();
+            if (imagenAux.GetPosicion() == 1)
+            {
+                respuesta.Enabled = false;
+                respuesta.Text = imagenAux.GetDescripcion();
+                probar.Enabled = false;
+            }
         }
     }
 }

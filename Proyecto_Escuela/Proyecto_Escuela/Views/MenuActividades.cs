@@ -42,10 +42,12 @@ namespace Proyecto_Escuela.Views
             switch (i)
             {
                 case 1:
-                    describe.ForeColor = Color.Black;
                     describe.Enabled = false;
+                    describe.ForeColor = Color.Black;
                     break;
-                case 2:
+                case 2:                    
+                    secuencia.Enabled = false;
+                    secuencia.ForeColor = Color.Black;
                     break;
                 case 3:
                     break;

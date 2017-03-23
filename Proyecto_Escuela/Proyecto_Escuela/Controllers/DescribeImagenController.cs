@@ -23,10 +23,10 @@ namespace Proyecto_Escuela.Controllers
             describeImagenView.Show();
 
         }
-        public bool compararRespuesta(int i)
+        public bool compararRespuesta(int i, string respuesta)
         {
             string texto1 = describeImagenModel.GetImagen(i).GetDescripcion();
-            string texto2 = describeImagenView.GetRespuesta();
+            string texto2 = respuesta;
             return compararTextos(texto1, texto2);
         }
 

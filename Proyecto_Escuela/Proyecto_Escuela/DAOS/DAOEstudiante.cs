@@ -12,7 +12,6 @@ namespace Proyecto_Escuela.DAOS
     {
         public DAOEstudiante()
         {
-
         }
         public static int AgregarEstudiante(MySqlConnection conexion, Estudiante estudiante)
         {

@@ -15,15 +15,25 @@ namespace Proyecto_Escuela.Views
 {
     public partial class ListaEstudiantes : Form
     {
-        public ListaEstudiantes()
+        ListaEstudianteController listaEstudianteController;
+        public ListaEstudiantes(ListaEstudianteController listaEstudianteController)
         {
+            this.listaEstudianteController = listaEstudianteController;
             InitializeComponent();
+
+        }      
+        private void ListaEstudiantes_Load(object sender, EventArgs e)
+        {
+            Listar();
+        }
+        private void Listar()
+        {
+            listaEstudianteController.Listar(tablaPrimero);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void tablaPrimero_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-             ListaTextosController listaTexto = new ListaTextosController();
-            this.Dispose();
+            ListaTextosController ListaTextos = new ListaTextosController();
         }
     }
 }
