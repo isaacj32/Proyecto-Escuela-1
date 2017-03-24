@@ -19,11 +19,12 @@ namespace Proyecto_Escuela
         private string titulo;
         private MenuActividadesController menuActividades;
         //Constructor
-        public VistaLectura(Texto texto)
+        public VistaLectura(Texto texto, Jugador nino)
         {
             InitializeComponent();
             this.titulo = texto.getTitulo();
             this.tiempo = texto.getTiempo();
+            this.labelNombre.Text = nino.GetNombre() + " " + nino.GetApellido();
             campoTexto.Text = texto.getTexto();
             labelTiempo.Text = "Tiempo: " + texto.getTiempo().ToString();            
             timer1.Start();

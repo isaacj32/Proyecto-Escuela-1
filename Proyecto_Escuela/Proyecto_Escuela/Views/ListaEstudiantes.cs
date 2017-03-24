@@ -16,6 +16,7 @@ namespace Proyecto_Escuela.Views
     public partial class ListaEstudiantes : Form
     {
         ListaEstudianteController listaEstudianteController;
+        List<List<Estudiante>> filasEstudiantes;
         public ListaEstudiantes(ListaEstudianteController listaEstudianteController)
         {
             this.listaEstudianteController = listaEstudianteController;
@@ -28,12 +29,14 @@ namespace Proyecto_Escuela.Views
         }
         private void Listar()
         {
-            listaEstudianteController.Listar(tablaPrimero);
+            filasEstudiantes = listaEstudianteController.Listar(tablaPrimero);
         }
 
         private void tablaPrimero_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ListaTextosController ListaTextos = new ListaTextosController();
+            Jugador play = new Jugador();
+            play = listaEstudianteController.retornarEstudiante(tablaPrimero, filasEstudiantes);
+            ListaTextosController ListaTextos = new ListaTextosController(play);
             this.Dispose();
         }
 

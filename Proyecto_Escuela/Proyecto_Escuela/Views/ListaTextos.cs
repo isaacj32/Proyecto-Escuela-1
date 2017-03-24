@@ -17,11 +17,13 @@ namespace Proyecto_Escuela.Views
     {
         TextoController textoController = new TextoController();
         Texto texto = new Texto();
+        Jugador jugador;
         
-        public ListaTextos()
+        public ListaTextos(Jugador jugador)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            this.jugador = jugador;
         }
 
         //Getter para usar el DataGrid en el controller
@@ -49,7 +51,7 @@ namespace Proyecto_Escuela.Views
         private void tabla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             texto = textoController.Seleccionar(tabla);
-            new LecturaController(texto);
+            new LecturaController(texto,jugador);
             this.Dispose();
 
         }

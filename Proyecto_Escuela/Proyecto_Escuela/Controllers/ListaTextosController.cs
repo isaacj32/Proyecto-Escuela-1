@@ -16,9 +16,9 @@ namespace Proyecto_Escuela.Controllers
     {
         ListaTextos listaTexto;
 
-        public ListaTextosController()
+        public ListaTextosController(Jugador nino)
         {
-            ListaTextos listaTexto = new ListaTextos();
+            ListaTextos listaTexto = new ListaTextos(nino);
             listaTexto.Show();
         }
 
