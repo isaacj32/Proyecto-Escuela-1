@@ -11,7 +11,6 @@ using System.IO;
 using Proyecto_Escuela.Models;
 using Proyecto_Escuela.Controllers;
 
-
 namespace Proyecto_Escuela.Views
 {
     public partial class SecuenciaImagenes : Form
@@ -26,20 +25,25 @@ namespace Proyecto_Escuela.Views
 
         private smTile[] grid;
         private smTile[] encaje;
-        private string titulo;
+        private SecuenciaController tc;
+        private string[] ordenCorrecto;
+        private bool ansiado = false;
+        private int intentos = 1;
+
         #region Empty constructor
         /// <summary>
         /// Empty constructor
         /// </summary>
-        public SecuenciaImagenes(int numImagenes, string titulo)
+        public SecuenciaImagenes(int numImagenes, string rutaDeImagenes, string[] ordenCorrectoImagenes)
         {
-            this.titulo = titulo;
             InitializeComponent();
+            this.BackColor = Color.Chocolate;
             int xSpot;
             int ySpot;
             int pp;
-            string pathImg = "C:\\Users\\Apa\\Source\\Repos\\Proyecto-Escuela\\Proyecto_Escuela\\Proyecto_Escuela\\Resources";
-            string[] imagenes = Directory.GetFiles(Path.GetFullPath(pathImg),"*.png");
+            string pathImg = rutaDeImagenes;
+            string[] imagenes = Directory.GetFiles(pathImg, "*.png");
+            ordenCorrecto = ordenCorrectoImagenes;
             Random rnd = new Random();
             bool[] imgUsada = new bool[numImagenes];
             // Initialize the grid
@@ -49,20 +53,20 @@ namespace Proyecto_Escuela.Views
             for (int row = 0; row < numImagenes; row++)
             {
                 try
-                    {
-                        pp = rnd.Next() % numImagenes;
+                {
+                    pp = rnd.Next() % numImagenes;
                     while (imgUsada[pp])
                     {
                         pp = rnd.Next() % numImagenes;
                     }
+
                     // Create the tile
-                    //Bitmap imagenPrueba = new Bitmap(imagenes[pp]);
-                    grid[row] = new smTile(imagenes[pp],row);
-                    grid[row].PutItem(grid[row].FilledImage, grid[row].Order);
+                    grid[row] = new smTile(imagenes[pp]);
+                    grid[row].PutItem(grid[row].FilledImage);
                     imgUsada[pp] = true;
 
                     // Set the location for the tile
-                    if(row < 4)
+                    if (row < 4)
                     {
                         xSpot = (row * anchoImagen) + bordeEnGrid;
                         ySpot = bordeEnGrid;
@@ -75,19 +79,20 @@ namespace Proyecto_Escuela.Views
                         grid[row].Location = new Point(xSpot, ySpot);
                     }
 
-                        // Add the tile to the form
-                        this.Controls.Add(grid[row]);
+                    // Add the tile to the form
+                    this.Controls.Add(grid[row]);
 
-                    
+
                 }
-                    catch
-                    {
-                        // Just catch an exception, no error handling yet
-                        System.Console.WriteLine("Exception caught for tile[{0}]", row);
-                    }
+                catch
+                {
+                    // Just catch an exception, no error handling yet
+                    Console.WriteLine("Exception caught for tile[{0}]", row);
+                }
             }
 
             encaje = new smTile[numImagenes];
+
             for (int i = 0; i < numImagenes; i++)
             {
                 try
@@ -110,13 +115,9 @@ namespace Proyecto_Escuela.Views
                 }
                 catch
                 {
-                    Console.WriteLine("Error papuh");
+                    Console.WriteLine("Error papuh en: {0}", i);
                 }
             }
-
-            //grid[0, 0].HasItem = true;
-            //grid[0, 0].BackgroundImage = grid[0, 0].FilledImage;
-
         }
         #endregion
 
@@ -127,33 +128,24 @@ namespace Proyecto_Escuela.Views
 
         private void btnComprobacion_Click(object sender, EventArgs e)
         {
-            bool res = false;
-            for(int i = 0; i < encaje.Length-1; i++)
+
+            tc = new SecuenciaController();
+            ansiado = tc.Comprobar(encaje, ordenCorrecto);
+            if (ansiado)
             {
-                if (encaje[i].Order < encaje[++i].Order)
-                {
-                    res = true;
-                }
-                else
-                {
-                    res = false;
-                    break;
-                }
-            }
-            if (res)
-            {
-                MessageBox.Show("Felicidades, ganaste un pack de CP");
+                MessageBox.Show("Felicidades papuh :D");
+
             }
             else
             {
-                MessageBox.Show("Que mal momo men :c");
+                intentos++;
+                MessageBox.Show("Sigue intentando, vas para el intento #" + intentos);
             }
         }
 
-        private void volver_Click(object sender, EventArgs e)
+        private void btnInfo_Click(object sender, EventArgs e)
         {
-            MenuActividadesController menuActividades = new MenuActividadesController(titulo);
-            this.Dispose();
+            MessageBox.Show("Buen día querido jugador/a, para jugar debes arrastrar las imágenes\ny colocarlas en el orden correcto, buena suerte.");
         }
     }
 }
