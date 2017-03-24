@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Escuela.Models
 {
-    class Secuencia_3Controller
+    class SecuenciaImagenModel
     {
     }
 
