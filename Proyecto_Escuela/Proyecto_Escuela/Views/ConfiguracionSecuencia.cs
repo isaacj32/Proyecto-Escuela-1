@@ -23,6 +23,18 @@ namespace Proyecto_Escuela.Views
             {
                 listTitulo.Items.Add(titulosDisponibles[i].GetTexto());
             }
+            gridSecuencia.Enabled = false;
         }
+
+        private void btnCarpeta_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog escanerDeCarpeta = new FolderBrowserDialog();
+            DialogResult res = escanerDeCarpeta.ShowDialog();
+            if(res == DialogResult.OK)
+            {
+                txtRutaCarpeta.Text = escanerDeCarpeta.SelectedPath;
+            }
+        }
+        
     }
 }
