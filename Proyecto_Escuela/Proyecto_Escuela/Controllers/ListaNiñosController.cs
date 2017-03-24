@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Escuela.Controllers
 {
-    class ListaNiñosController
+    class Secuencia1_Controller1
     {
 
     }
