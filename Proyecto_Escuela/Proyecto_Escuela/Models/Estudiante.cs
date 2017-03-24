@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Proyecto_Escuela.Models
 {
@@ -13,14 +14,14 @@ namespace Proyecto_Escuela.Models
         protected string apellidos { get; set; }
         protected int grupo { get; set; }
         protected string grado { get; set; }
-        protected string foto { get; set; }
+        protected Image foto { get; set; }
 
 
         public Estudiante()
         {
         }
 
-        public Estudiante(string nombre, string apellido, int grupo, int documento, string grado, string foto)
+        public Estudiante(string nombre, string apellido, int grupo, int documento, string grado, Image foto)
         {
             this.nombre = nombre;
             this.apellidos = apellido;
@@ -50,7 +51,7 @@ namespace Proyecto_Escuela.Models
         {
             return grado;
         }
-        public string GetFoto()
+        public Image GetFoto()
         {
             return foto;
         }
@@ -81,7 +82,7 @@ namespace Proyecto_Escuela.Models
         {
             this.grado = grado;
         }
-        public void SetFoto(string foto)
+        public void SetFoto(Image foto)
         {
             this.foto = foto;
         }

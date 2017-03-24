@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Proyecto_Escuela.DAOS
 {
-    class ConexionDB
+    public class ConexionDB
     {
         MySqlConnection conexion;
 

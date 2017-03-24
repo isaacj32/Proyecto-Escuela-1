@@ -76,6 +76,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Models\Jugador.cs" />
+    <Compile Include="Models\Relacion.cs" />
+    <Compile Include="Models\RelacionModel.cs" />
     <Compile Include="Models\SecuenciaImagenModel.cs" />
     <Compile Include="Models\smTile.cs">
       <SubType>Component</SubType>

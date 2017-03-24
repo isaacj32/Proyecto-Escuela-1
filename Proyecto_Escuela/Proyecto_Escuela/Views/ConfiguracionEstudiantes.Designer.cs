@@ -265,12 +265,15 @@
             // 
             // foto
             // 
+            this.foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.foto.Location = new System.Drawing.Point(894, 9);
+            this.foto.Location = new System.Drawing.Point(873, 9);
             this.foto.Name = "foto";
-            this.foto.Size = new System.Drawing.Size(102, 105);
+            this.foto.Size = new System.Drawing.Size(123, 105);
+            this.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.foto.TabIndex = 16;
             this.foto.TabStop = false;
+            this.foto.Click += new System.EventHandler(this.foto_Click);
             // 
             // ConfiguracionEstudiantes
             // 

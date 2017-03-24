@@ -10,6 +10,10 @@ namespace Proyecto_Escuela.Controllers
 {
     public class ImagenController
     {
+        public ImagenController()
+        {
+        }
+
         public static byte[] ConvertirImagenToBytes(Image img)
         {
             string sTemp = Path.GetTempFileName();
@@ -24,7 +28,7 @@ namespace Proyecto_Escuela.Controllers
             return bytes;
         }
 
-        public static Image Convertir_Bytes_Imagen(byte[] bytes)
+        public static Image ConvertirBytesToImagen(byte[] bytes)
         {
             if (bytes == null) return null;
 

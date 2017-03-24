@@ -79,11 +79,13 @@
             // foto
             // 
             this.foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.foto.Location = new System.Drawing.Point(894, 12);
+            this.foto.Location = new System.Drawing.Point(782, 12);
             this.foto.Name = "foto";
-            this.foto.Size = new System.Drawing.Size(102, 105);
+            this.foto.Size = new System.Drawing.Size(214, 105);
+            this.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.foto.TabIndex = 33;
             this.foto.TabStop = false;
+            this.foto.Click += new System.EventHandler(this.foto_Click);
             // 
             // tabla
             // 

@@ -44,8 +44,10 @@ namespace Proyecto_Escuela.Views
                 if (textoController.Agregar(texto) != 0)
                 {
                     titulo.Clear();
+                    cuento.Clear();
                     tiempo.Clear();
                     cuento.Clear();
+                    foto.Image = null;
                     Listar();
 
                 }
@@ -57,6 +59,8 @@ namespace Proyecto_Escuela.Views
                     titulo.Clear();
                     tiempo.Clear();
                     cuento.Clear();
+                    cuento.Clear();
+                    foto.Image = null;
                     Listar();
                     modificacion = false;
                 }
@@ -131,6 +135,23 @@ namespace Proyecto_Escuela.Views
                 {
                     MessageBox.Show("Eliminacion cancelada");
                 }
+            }
+        }
+
+        private void foto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog getImagen = new OpenFileDialog();
+            PictureBox fotoEstudiante = new PictureBox();
+            fotoEstudiante.Visible = false;
+            fotoEstudiante.Enabled = false;
+            getImagen.Filter = "Archivos de imagen (*.jpg)(*jpeg)|*.jpg;*.jpeg|PNG(*.png)|*.png|GIF(*.gif)|*.gif";
+            if (getImagen.ShowDialog() == DialogResult.OK)
+            {
+                foto.Image = Image.FromFile(getImagen.FileName);
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ninguna Imagen", "Sin seleccion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

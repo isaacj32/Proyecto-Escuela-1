@@ -46,6 +46,7 @@ namespace Proyecto_Escuela.Views
             estudiante.SetDocumento(documento.Text);
             estudiante.SetGrupo(grupo.Text);
             estudiante.SetGrado(grado.SelectedItem.ToString());
+            estudiante.SetFoto(foto.Image);
 
             if (documento.ReadOnly == false)
             {
@@ -174,6 +175,23 @@ namespace Proyecto_Escuela.Views
         {
             new Configuracion().Show();
             this.Dispose();
+        }
+
+        private void foto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog getImagen = new OpenFileDialog();
+            PictureBox fotoEstudiante = new PictureBox();
+            fotoEstudiante.Visible = false;
+            fotoEstudiante.Enabled = false;
+            getImagen.Filter = "Archivos de imagen (*.jpg)(*jpeg)|*.jpg;*.jpeg|PNG(*.png)|*.png|GIF(*.gif)|*.gif";
+            if (getImagen.ShowDialog() == DialogResult.OK)
+            {
+                foto.Image = Image.FromFile(getImagen.FileName);               
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ninguna Imagen", "Sin seleccion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

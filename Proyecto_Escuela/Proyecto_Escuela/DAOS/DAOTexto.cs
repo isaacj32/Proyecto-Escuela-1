@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Proyecto_Escuela.Models;
+using Proyecto_Escuela.Controllers;
+using System.IO;
+
 
 namespace Proyecto_Escuela.DAOS
 {
@@ -16,7 +19,7 @@ namespace Proyecto_Escuela.DAOS
         public static int AgregarTexto(MySqlConnection conexion, Texto texto)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO Cuento (titulo, texto, tiempo) VALUES('{0}', '{1}', '{2}')", texto.getTitulo(), texto.getTexto(), texto.getTiempo()), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO Cuento (titulo, texto, tiempo, imagen) VALUES('{0}', '{1}', '{2}', '{3}')", texto.getTitulo(), texto.getTexto(), texto.getTiempo(), ImagenController.ConvertirImagenToBytes(texto.getImage())), conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
@@ -32,8 +35,14 @@ namespace Proyecto_Escuela.DAOS
         {
             List<Texto> lista = new List<Texto>();
 
-            MySqlCommand comando = new MySqlCommand(string.Format("SELECT titulo, texto, tiempo FROM Cuento WHERE titulo LIKE ('%{0}%')", titulo), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT titulo, texto, tiempo, imagen FROM Cuento WHERE titulo LIKE ('%{0}%')", titulo), conexion);
             MySqlDataReader reader = comando.ExecuteReader();
+
+            
+
+
+
+
 
             while (reader.Read())
             {
