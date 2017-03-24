@@ -33,7 +33,9 @@
             this.botonBorrar = new System.Windows.Forms.Button();
             this.botonAgregar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.titulo = new System.Windows.Forms.ComboBox();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagen = new System.Windows.Forms.DataGridViewImageColumn();
+            this.listTitulo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboGrados = new System.Windows.Forms.ComboBox();
@@ -41,9 +43,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelRuta = new System.Windows.Forms.Label();
             this.botonBuscar = new System.Windows.Forms.Button();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.botonAceptar = new System.Windows.Forms.Button();
+            this.btnCarpeta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoImagen)).BeginInit();
             this.SuspendLayout();
@@ -104,14 +105,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(763, 270);
             this.dataGridView1.TabIndex = 8;
             // 
-            // titulo
+            // descripcion
             // 
-            this.titulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo.FormattingEnabled = true;
-            this.titulo.Location = new System.Drawing.Point(122, 67);
-            this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(195, 28);
-            this.titulo.TabIndex = 17;
+            this.descripcion.HeaderText = "Ruta/Orden";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // imagen
+            // 
+            this.imagen.HeaderText = "Imagen";
+            this.imagen.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imagen.Name = "imagen";
+            this.imagen.ReadOnly = true;
+            // 
+            // listTitulo
+            // 
+            this.listTitulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listTitulo.FormattingEnabled = true;
+            this.listTitulo.Location = new System.Drawing.Point(122, 67);
+            this.listTitulo.Name = "listTitulo";
+            this.listTitulo.Size = new System.Drawing.Size(195, 28);
+            this.listTitulo.TabIndex = 17;
             // 
             // label3
             // 
@@ -168,9 +182,9 @@
             this.labelRuta.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRuta.Location = new System.Drawing.Point(118, 175);
             this.labelRuta.Name = "labelRuta";
-            this.labelRuta.Size = new System.Drawing.Size(114, 20);
+            this.labelRuta.Size = new System.Drawing.Size(151, 20);
             this.labelRuta.TabIndex = 21;
-            this.labelRuta.Text = "Ruta del texto:";
+            this.labelRuta.Text = "Ruta de la carpeta:";
             // 
             // botonBuscar
             // 
@@ -180,19 +194,6 @@
             this.botonBuscar.TabIndex = 22;
             this.botonBuscar.Text = "Buscar Imagen";
             this.botonBuscar.UseVisualStyleBackColor = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Ruta/Orden";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // imagen
-            // 
-            this.imagen.HeaderText = "Imagen";
-            this.imagen.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.imagen.Name = "imagen";
-            this.imagen.ReadOnly = true;
             // 
             // botonAceptar
             // 
@@ -204,18 +205,28 @@
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
             // 
+            // btnCarpeta
+            // 
+            this.btnCarpeta.Location = new System.Drawing.Point(322, 198);
+            this.btnCarpeta.Name = "btnCarpeta";
+            this.btnCarpeta.Size = new System.Drawing.Size(28, 23);
+            this.btnCarpeta.TabIndex = 24;
+            this.btnCarpeta.Text = "...";
+            this.btnCarpeta.UseVisualStyleBackColor = true;
+            // 
             // ConfiguracionSecuencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
+            this.Controls.Add(this.btnCarpeta);
             this.Controls.Add(this.botonAceptar);
             this.Controls.Add(this.botonBuscar);
             this.Controls.Add(this.labelRuta);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.campoImagen);
             this.Controls.Add(this.comboGrados);
-            this.Controls.Add(this.titulo);
+            this.Controls.Add(this.listTitulo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
@@ -239,7 +250,7 @@
         private System.Windows.Forms.Button botonBorrar;
         private System.Windows.Forms.Button botonAgregar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox titulo;
+        private System.Windows.Forms.ComboBox listTitulo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboGrados;
@@ -250,5 +261,6 @@
         private System.Windows.Forms.DataGridViewImageColumn imagen;
         private System.Windows.Forms.Button botonBuscar;
         private System.Windows.Forms.Button botonAceptar;
+        private System.Windows.Forms.Button btnCarpeta;
     }
 }
