@@ -34,7 +34,7 @@ namespace Proyecto_Escuela.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3308")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
         public string DBPort {
             get {
                 return ((string)(this["DBPort"]));
@@ -61,7 +61,7 @@ namespace Proyecto_Escuela.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1234")]
         public string DBPassword {
             get {
                 return ((string)(this["DBPassword"]));
