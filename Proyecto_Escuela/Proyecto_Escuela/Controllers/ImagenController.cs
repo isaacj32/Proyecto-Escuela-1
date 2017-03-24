@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Threading.Tasks;
 
 namespace Proyecto_Escuela.Controllers
@@ -14,35 +15,30 @@ namespace Proyecto_Escuela.Controllers
         {
         }
 
-        public static byte[] ConvertirImagenToBytes(Image img)
+        public static byte[] ConvertirImagenToBytes(Image imagen)
         {
-            string sTemp = Path.GetTempFileName();
-            FileStream fs = new FileStream(sTemp, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-            img.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
-            fs.Position = 0;
+            MemoryStream ms = new MemoryStream();
+            imagen.Save(ms, ImageFormat.Png);
+            byte[] bytes = ms.ToArray();
+            Console.WriteLine(bytes[0].ToString());
+            Console.WriteLine(bytes[1].ToString());
+            Console.WriteLine(bytes[2].ToString());
 
-            int imgLength = Convert.ToInt32(fs.Length);
-            byte[] bytes = new byte[imgLength];
-            fs.Read(bytes, 0, imgLength);
-            fs.Close();
             return bytes;
+
         }
 
-        public static Image ConvertirBytesToImagen(byte[] bytes)
+        public static Bitmap ConvertirBytesToImagen(byte[] img)
         {
-            if (bytes == null) return null;
+            MemoryStream stream;
+            byte[] buffer = img;
+            Bitmap imagen;
+            stream = new MemoryStream(buffer);
+            imagen = new Bitmap(stream);
+            stream.Close();
+            return imagen;
 
-            MemoryStream ms = new MemoryStream(bytes);
-            Bitmap bm = null;
-            try
-            {
-                bm = new Bitmap(ms);
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-            }
-            return bm;
+        
         }
     }
 }
