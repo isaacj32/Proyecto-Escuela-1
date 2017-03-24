@@ -54,7 +54,7 @@
             this.tabControl1.Controls.Add(this.segundo);
             this.tabControl1.Controls.Add(this.tercero);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("PreCursive", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -64,10 +64,10 @@
             // primero
             // 
             this.primero.Controls.Add(this.tablaPrimero);
-            this.primero.Location = new System.Drawing.Point(4, 37);
+            this.primero.Location = new System.Drawing.Point(4, 39);
             this.primero.Name = "primero";
             this.primero.Padding = new System.Windows.Forms.Padding(3);
-            this.primero.Size = new System.Drawing.Size(1000, 496);
+            this.primero.Size = new System.Drawing.Size(1000, 494);
             this.primero.TabIndex = 0;
             this.primero.Text = "Primero";
             this.primero.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             this.Column4});
             this.tablaPrimero.Location = new System.Drawing.Point(3, 3);
             this.tablaPrimero.Name = "tablaPrimero";
-            this.tablaPrimero.Size = new System.Drawing.Size(994, 490);
+            this.tablaPrimero.Size = new System.Drawing.Size(994, 491);
             this.tablaPrimero.TabIndex = 1;
             this.tablaPrimero.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaPrimero_CellDoubleClick);
             // 
@@ -126,10 +126,10 @@
             // segundo
             // 
             this.segundo.Controls.Add(this.tablaSegundo);
-            this.segundo.Location = new System.Drawing.Point(4, 37);
+            this.segundo.Location = new System.Drawing.Point(4, 40);
             this.segundo.Name = "segundo";
             this.segundo.Padding = new System.Windows.Forms.Padding(3);
-            this.segundo.Size = new System.Drawing.Size(1000, 496);
+            this.segundo.Size = new System.Drawing.Size(1000, 493);
             this.segundo.TabIndex = 1;
             this.segundo.Text = "Segundo";
             this.segundo.UseVisualStyleBackColor = true;
@@ -141,16 +141,16 @@
             this.tablaSegundo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaSegundo.Location = new System.Drawing.Point(3, 3);
             this.tablaSegundo.Name = "tablaSegundo";
-            this.tablaSegundo.Size = new System.Drawing.Size(994, 490);
+            this.tablaSegundo.Size = new System.Drawing.Size(994, 487);
             this.tablaSegundo.TabIndex = 1;
             // 
             // tercero
             // 
             this.tercero.Controls.Add(this.tablaTercero);
-            this.tercero.Location = new System.Drawing.Point(4, 37);
+            this.tercero.Location = new System.Drawing.Point(4, 40);
             this.tercero.Name = "tercero";
             this.tercero.Padding = new System.Windows.Forms.Padding(3);
-            this.tercero.Size = new System.Drawing.Size(1000, 496);
+            this.tercero.Size = new System.Drawing.Size(1000, 493);
             this.tercero.TabIndex = 2;
             this.tercero.Text = "Tercero";
             this.tercero.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@
             this.tablaTercero.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaTercero.Location = new System.Drawing.Point(3, 3);
             this.tablaTercero.Name = "tablaTercero";
-            this.tablaTercero.Size = new System.Drawing.Size(994, 490);
+            this.tablaTercero.Size = new System.Drawing.Size(994, 487);
             this.tablaTercero.TabIndex = 0;
             // 
             // ListaEstudiantes

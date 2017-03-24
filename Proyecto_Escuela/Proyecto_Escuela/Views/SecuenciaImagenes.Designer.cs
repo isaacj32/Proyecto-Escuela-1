@@ -30,6 +30,7 @@
         {
             this.btnComprobacion = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnComprobacion
@@ -54,12 +55,22 @@
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(13, 13);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(0, 21);
+            this.lblNombre.TabIndex = 2;
+            // 
             // SecuenciaImagenes
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 670);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnComprobacion);
             this.Name = "SecuenciaImagenes";
@@ -67,6 +78,7 @@
             this.Text = "SecuenciaImagenes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SecuenciaImagenes_FormClosed);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.Button btnComprobacion;
         private System.Windows.Forms.Button btnInfo;
+        private System.Windows.Forms.Label lblNombre;
     }
 }
