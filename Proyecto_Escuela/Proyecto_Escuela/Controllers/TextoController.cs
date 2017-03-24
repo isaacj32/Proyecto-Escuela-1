@@ -25,5 +25,7 @@ namespace Proyecto_Escuela.Controllers
             //vistaTexto.Show();
             secuencia.Show();
         }
+
+
     }
 }

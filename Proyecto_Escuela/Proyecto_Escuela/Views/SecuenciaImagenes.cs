@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Proyecto_Escuela.Models;
+using Proyecto_Escuela.Controllers;
 
 namespace Proyecto_Escuela.Views
 {
@@ -24,6 +25,9 @@ namespace Proyecto_Escuela.Views
 
         private smTile[] grid;
         private smTile[] encaje;
+        private SecuenciaController tc;
+        private string[] ordenCorrecto;
+        private bool ansiado = false;
 
         #region Empty constructor
         /// <summary>
@@ -37,6 +41,7 @@ namespace Proyecto_Escuela.Views
             int pp;
             string pathImg = "C:\\Users\\Alejo Castaño Rojas\\Desktop\\DEVELOPMENT\\C#\\JuegosProyectoEscuela\\JuegosProyectoEscuela\\Resources";
             string[] imagenes = Directory.GetFiles(pathImg,"*.jpg");
+            ordenCorrecto = imagenes;
             Random rnd = new Random();
             bool[] imgUsada = new bool[numImagenes];
             // Initialize the grid
@@ -47,19 +52,19 @@ namespace Proyecto_Escuela.Views
             {
                 try
                     {
-                        pp = rnd.Next() % numImagenes;
+                    pp = rnd.Next() % numImagenes;
                     while (imgUsada[pp])
                     {
                         pp = rnd.Next() % numImagenes;
                     }
+
                     // Create the tile
-                    //Bitmap imagenPrueba = new Bitmap(imagenes[pp]);
-                    grid[row] = new smTile(imagenes[pp],row);
-                    grid[row].PutItem(grid[row].FilledImage, grid[row].Order);
+                    grid[row] = new smTile(imagenes[pp]);
+                    grid[row].PutItem(grid[row].FilledImage);
                     imgUsada[pp] = true;
 
                     // Set the location for the tile
-                    if(row < 4)
+                    if (row < 4)
                     {
                         xSpot = (row * anchoImagen) + bordeEnGrid;
                         ySpot = bordeEnGrid;
@@ -80,7 +85,7 @@ namespace Proyecto_Escuela.Views
                     catch
                     {
                         // Just catch an exception, no error handling yet
-                        System.Console.WriteLine("Exception caught for tile[{0}]", row);
+                        Console.WriteLine("Exception caught for tile[{0}]", row);
                     }
             }
 
@@ -108,7 +113,7 @@ namespace Proyecto_Escuela.Views
                 }
                 catch
                 {
-                    Console.WriteLine("Error papuh");
+                    Console.WriteLine("Error papuh en: {0}",i);
                 }
             }
 
@@ -125,26 +130,16 @@ namespace Proyecto_Escuela.Views
 
         private void btnComprobacion_Click(object sender, EventArgs e)
         {
-            bool res = false;
-            for(int i = 0; i < encaje.Length-1; i++)
+            
+            tc = new SecuenciaController();
+            ansiado = tc.Comprobar(encaje, ordenCorrecto);
+            if (ansiado)
             {
-                if (encaje[i].Order < encaje[++i].Order)
-                {
-                    res = true;
-                }
-                else
-                {
-                    res = false;
-                    break;
-                }
-            }
-            if (res)
-            {
-                MessageBox.Show("Felicidades, ganaste un pack de CP");
+                MessageBox.Show("Felicidades papuh :D");
             }
             else
             {
-                MessageBox.Show("Que mal momo men :c");
+                MessageBox.Show("Sigue intentando");
             }
         }
     }

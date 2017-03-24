@@ -47,9 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DescribeImageController.cs" />
-    <Compile Include="Controllers\Secuencia1_Controller1.cs" />
-    <Compile Include="Controllers\Secuencia_2Controller.cs" />
-    <Compile Include="Controllers\Secuencia_3Controller.cs" />
+    <Compile Include="Controllers\SecuenciaController.cs" />
     <Compile Include="Controllers\TextoController.cs" />
     <Compile Include="Models\DescribeImage.cs" />
     <Compile Include="Models\smTile.cs">
