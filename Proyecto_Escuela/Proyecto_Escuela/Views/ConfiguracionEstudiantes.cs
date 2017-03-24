@@ -49,7 +49,8 @@ namespace Proyecto_Escuela.Views
                     apellido.Clear();
                     documento.Clear();
                     grupo.Clear();
-                    grado.SelectedIndex = 0;                   
+                    grado.SelectedIndex = 0;
+                    foto.Image = null;                  
                     Listar();
                 }
             }
@@ -62,6 +63,7 @@ namespace Proyecto_Escuela.Views
                     documento.Clear();
                     grupo.Clear();
                     grado.SelectedIndex = 0;
+                    foto.Image = null;
                     Listar();
                     documento.ReadOnly = false;
 
@@ -93,6 +95,7 @@ namespace Proyecto_Escuela.Views
                 apellido.Text = estudiante.GetApellido();
                 grupo.Text = estudiante.GetGrupo().ToString();
                 asignarGrado(estudiante.GetGrado());
+                foto.Image = Image.FromFile(estudiante.GetFoto());
                 documento.ReadOnly = true;
             }
             catch (MySqlException ex)
@@ -112,6 +115,7 @@ namespace Proyecto_Escuela.Views
                 apellido.Text = estudiante.GetApellido();                
                 grupo.Text = estudiante.GetGrupo().ToString();
                 asignarGrado(estudiante.GetGrado());
+                foto.Image = Image.FromFile(estudiante.GetFoto());
             }
             else
             {
@@ -144,6 +148,7 @@ namespace Proyecto_Escuela.Views
             grupo.Clear();
             Listar();
             grado.SelectedIndex = 0;
+            foto.Image = null;
             documento.ReadOnly = false;
         }
 
