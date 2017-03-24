@@ -60,7 +60,8 @@
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(420, 28);
+            this.clear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear.Location = new System.Drawing.Point(220, 33);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(65, 23);
             this.clear.TabIndex = 34;
@@ -104,7 +105,8 @@
             // 
             // modificar
             // 
-            this.modificar.Location = new System.Drawing.Point(216, 82);
+            this.modificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificar.Location = new System.Drawing.Point(624, 72);
             this.modificar.Name = "modificar";
             this.modificar.Size = new System.Drawing.Size(198, 23);
             this.modificar.TabIndex = 31;
@@ -114,7 +116,8 @@
             // 
             // eliminar
             // 
-            this.eliminar.Location = new System.Drawing.Point(12, 82);
+            this.eliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminar.Location = new System.Drawing.Point(420, 72);
             this.eliminar.Name = "eliminar";
             this.eliminar.Size = new System.Drawing.Size(198, 23);
             this.eliminar.TabIndex = 30;
@@ -124,7 +127,8 @@
             // 
             // buscar
             // 
-            this.buscar.Location = new System.Drawing.Point(12, 53);
+            this.buscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscar.Location = new System.Drawing.Point(420, 43);
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(198, 23);
             this.buscar.TabIndex = 29;
@@ -134,7 +138,8 @@
             // 
             // guardar
             // 
-            this.guardar.Location = new System.Drawing.Point(216, 53);
+            this.guardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guardar.Location = new System.Drawing.Point(624, 43);
             this.guardar.Name = "guardar";
             this.guardar.Size = new System.Drawing.Size(198, 23);
             this.guardar.TabIndex = 28;
@@ -145,37 +150,42 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(213, 12);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 13);
+            this.label2.Size = new System.Drawing.Size(181, 21);
             this.label2.TabIndex = 23;
             this.label2.Text = "Tiempo (en segundos)";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 11);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(51, 21);
             this.label1.TabIndex = 22;
             this.label1.Text = "Titulo";
             // 
             // titulo
             // 
-            this.titulo.Location = new System.Drawing.Point(9, 27);
+            this.titulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo.Location = new System.Drawing.Point(16, 33);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(198, 20);
+            this.titulo.Size = new System.Drawing.Size(198, 27);
             this.titulo.TabIndex = 21;
             // 
             // tiempo
             // 
-            this.tiempo.Location = new System.Drawing.Point(216, 28);
+            this.tiempo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tiempo.Location = new System.Drawing.Point(15, 90);
             this.tiempo.Name = "tiempo";
-            this.tiempo.Size = new System.Drawing.Size(195, 20);
+            this.tiempo.Size = new System.Drawing.Size(195, 27);
             this.tiempo.TabIndex = 20;
             // 
             // cuento
             // 
+            this.cuento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cuento.Location = new System.Drawing.Point(463, 121);
             this.cuento.Name = "cuento";
             this.cuento.Size = new System.Drawing.Size(533, 376);
