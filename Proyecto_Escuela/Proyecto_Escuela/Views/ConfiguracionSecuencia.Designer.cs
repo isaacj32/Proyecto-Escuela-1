@@ -46,7 +46,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtOrden = new System.Windows.Forms.TextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridSecuencia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +62,7 @@
             // botonModificar
             // 
             this.botonModificar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonModificar.Location = new System.Drawing.Point(614, 106);
+            this.botonModificar.Location = new System.Drawing.Point(614, 127);
             this.botonModificar.Name = "botonModificar";
             this.botonModificar.Size = new System.Drawing.Size(270, 30);
             this.botonModificar.TabIndex = 7;
@@ -96,6 +95,7 @@
             this.gridSecuencia.RowTemplate.Height = 100;
             this.gridSecuencia.Size = new System.Drawing.Size(763, 270);
             this.gridSecuencia.TabIndex = 8;
+            this.gridSecuencia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSecuencia_CellClick);
             // 
             // orden
             // 
@@ -209,7 +209,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(390, 44);
+            this.label4.Location = new System.Drawing.Point(419, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 26;
@@ -218,27 +218,16 @@
             // txtOrden
             // 
             this.txtOrden.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrden.Location = new System.Drawing.Point(394, 65);
+            this.txtOrden.Location = new System.Drawing.Point(423, 131);
             this.txtOrden.Name = "txtOrden";
             this.txtOrden.Size = new System.Drawing.Size(136, 26);
             this.txtOrden.TabIndex = 27;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(394, 190);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(214, 31);
-            this.btnAgregar.TabIndex = 28;
-            this.btnAgregar.Text = "Llevar a tabla";
-            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // ConfiguracionSecuencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtOrden);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
@@ -282,6 +271,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtOrden;
-        private System.Windows.Forms.Button btnAgregar;
     }
 }
