@@ -8,52 +8,111 @@ using MySql.Data.MySqlClient;
 
 namespace Proyecto_Escuela.DAOS
 {
-    class DAOEstudiante
+    public class DAOEstudiante
     {
+        public DAOEstudiante()
+        {
+        }
+        public static int AgregarEstudiante(MySqlConnection conexion, Estudiante estudiante)
+        {
+            int retorno = 0;
+            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO Estudiante (documento, nombre, apellidos, grado, grupo) VALUES('{0}', '{1}', '{2}', '{3}', '{4}')", estudiante.GetDocumento(), estudiante.GetNombre(), estudiante.GetApellido(), estudiante.GetGrado(), estudiante.GetGrupo()), conexion);
+            retorno = comando.ExecuteNonQuery();
+            return retorno;
+        }
 
-        public static bool AgregarEstudiante(Estudiante estudiante)
+        public static int ElimminarEstudiante(MySqlConnection conexion, int documento)
         {
-            try
-            {
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            int retorno = 0;
+            MySqlCommand comando = new MySqlCommand(string.Format("DELETE FROM Estudiante WHERE documento='{0}'", documento), conexion);
+            retorno = comando.ExecuteNonQuery();
+            return retorno;
         }
-        public static bool ElimminarEstudiante(Estudiante estudiante)
+        public static IList<Estudiante> BuscarEstudiante(MySqlConnection conexion, Estudiante pEstudiante, int i)
         {
-            try
+            List<Estudiante> lista = new List<Estudiante>();
+            MySqlCommand comando;
+            if (i == 0)
             {
-                return true;
+                comando = new MySqlCommand(string.Format("SELECT documento, nombre, apellidos, grado, grupo FROM Estudiante WHERE nombre LIKE ('%{0}%') AND apellidos LIKE ('%{1}%') AND grado LIKE ('%{2}%')", pEstudiante.GetNombre(), pEstudiante.GetApellido(), pEstudiante.GetGrado()), conexion);
             }
-            catch
+            else
             {
-                return false;
+                comando = new MySqlCommand(string.Format("SELECT documento, nombre, apellidos, grado, grupo FROM Estudiante WHERE documento LIKE ('%{0}%') AND nombre LIKE ('%{1}%') AND apellidos LIKE ('%{2}%') AND grado LIKE ('%{3}%')", pEstudiante.GetDocumento(), pEstudiante.GetNombre(), pEstudiante.GetApellido(), pEstudiante.GetGrado()), conexion);
             }
+            MySqlDataReader reader = comando.ExecuteReader();
+
+
+
+            while (reader.Read())
+            {
+                Estudiante estudiante = new Estudiante();
+                estudiante.SetDocumento(reader.GetString(0));
+                estudiante.SetNombre(reader.GetString(1));
+                estudiante.SetApellido(reader.GetString(2));
+                estudiante.SetGrado(reader.GetString(3));
+                estudiante.SetGrupo(reader.GetString(4));
+
+                lista.Add(estudiante);
+            }
+            
+
+            return lista;
         }
-        public static Estudiante BuscarEstudiante(MySqlConnection conexion, Estudiante estudiante)
+
+        public static int ModificarEstudiante(MySqlConnection conexion, Estudiante estudiante)
         {
-            try
-            {
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            int retorno = 0;
+            MySqlCommand comando = new MySqlCommand(string.Format("UPDATE Estudiante set nombre='{1}', apellidos='{2}', grado='{3}', grupo='{4}' WHERE documento='{0}'", estudiante.GetDocumento(), estudiante.GetNombre(), estudiante.GetApellido(),estudiante.GetGrado(), estudiante.GetGrupo()), conexion);
+            retorno = comando.ExecuteNonQuery();
+            return retorno;
         }
-        public static bool ModificarEstudiante(Estudiante estudiante)
+
+        public static Estudiante ObtenerEstudiante(MySqlConnection conexion, int documento)
         {
-            try
+            Estudiante estudiante = new Estudiante();
+
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM Estudiante WHERE documento='{0}'", documento), conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
             {
-                return true;
+                estudiante.SetDocumento(reader.GetString(0));
+                estudiante.SetNombre(reader.GetString(1));
+                estudiante.SetApellido(reader.GetString(2));
+                estudiante.SetGrupo(reader.GetString(4));
+                estudiante.SetGrado(reader.GetString(3));
+
             }
-            catch
-            {
-                return false;
-            }
+
+            return estudiante;
         }
+
+        public static IList<Estudiante> ListarEstudiantes(MySqlConnection conexion)
+        {
+            List<Estudiante> lista = new List<Estudiante>();
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM Estudiante", conexion);
+
+
+            MySqlDataReader reader = comando.ExecuteReader();
+
+
+
+            while (reader.Read())
+            {
+                Estudiante estudiante = new Estudiante();
+                estudiante.SetDocumento(reader.GetString(0));
+                estudiante.SetNombre(reader.GetString(1));
+                estudiante.SetApellido(reader.GetString(2));
+                estudiante.SetGrado(reader.GetString(3));
+                estudiante.SetGrupo(reader.GetString(4));
+
+                lista.Add(estudiante);
+            }
+
+
+            return lista;
+        }
+
     }
 }

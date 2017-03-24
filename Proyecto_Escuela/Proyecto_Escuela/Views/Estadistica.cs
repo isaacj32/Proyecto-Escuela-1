@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Proyecto_Escuela.Views
 {
-    public partial class SeleccionNiño : Form
+    public partial class Estadistica : Form
     {
-        public SeleccionNiño()
+        public Estadistica()
         {
             InitializeComponent();
         }
 
-        public Button getButton()
-        {
-            return niño_1;
-        }
-
-        private void niño_1_Click(object sender, EventArgs e)
+        private void Estadistica_Load(object sender, EventArgs e)
         {
 
         }

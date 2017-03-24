@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Proyecto_Escuela.Views;
+using System.Drawing;
 
 namespace Proyecto_Escuela.Controllers
 {
@@ -16,15 +17,16 @@ namespace Proyecto_Escuela.Controllers
 
         public DescribeImagenController(DescribeImagenModel frame,DescribeImagenModel model, MenuActividades menu)
         {
+            describeImagenModel = frame;
+            ListarImagenes();
             describeImagenView = new DescripcionImagen(this, model, menu);
             describeImagenView.Show();
-            describeImagenModel = frame;           
 
         }
-        public bool compararRespuesta()
+        public bool compararRespuesta(int i, string respuesta)
         {
-            string texto1 = describeImagenModel.getDescription();
-            string texto2 = describeImagenView.GetRespuesta();
+            string texto1 = describeImagenModel.GetImagen(i).GetDescripcion();
+            string texto2 = respuesta;
             return compararTextos(texto1, texto2);
         }
 
@@ -35,6 +37,23 @@ namespace Proyecto_Escuela.Controllers
                 return true;
             }
             return false;
+        }
+
+        private void ListarImagenes()
+        {
+            Imagen imagen = new Imagen();
+            imagen.SetDescripcion("varita magica");
+            imagen.SetImagen(Proyecto_Escuela.Properties.Resources.barita);
+            describeImagenModel.AgregarImagen(imagen);
+            imagen = new Imagen();
+            imagen.SetDescripcion("buho");
+            imagen.SetImagen(Proyecto_Escuela.Properties.Resources.buho);
+            describeImagenModel.AgregarImagen(imagen);
+            imagen = new Imagen();
+            imagen.SetDescripcion("dragon");
+            imagen.SetImagen(Proyecto_Escuela.Properties.Resources.dragon);
+            describeImagenModel.AgregarImagen(imagen);
+
         }
     }    
 }

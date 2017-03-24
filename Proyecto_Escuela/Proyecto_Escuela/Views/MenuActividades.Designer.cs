@@ -29,41 +29,42 @@
         private void InitializeComponent()
         {
             this.tituloLabel = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.secuencia = new System.Windows.Forms.Button();
             this.describe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tituloLabel
             // 
             this.tituloLabel.AutoSize = true;
-            this.tituloLabel.Font = new System.Drawing.Font("PreCursive", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloLabel.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloLabel.Location = new System.Drawing.Point(315, 60);
             this.tituloLabel.Name = "tituloLabel";
-            this.tituloLabel.Size = new System.Drawing.Size(148, 64);
+            this.tituloLabel.Size = new System.Drawing.Size(184, 78);
             this.tituloLabel.TabIndex = 2;
             this.tituloLabel.Text = "titulo";
             // 
-            // button2
+            // secuencia
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button2.BackgroundImage = global::Proyecto_Escuela.Properties.Resources.dragon;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Font = new System.Drawing.Font("PreCursive", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(12, 355);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(294, 170);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Secuencia de imagenes";
-            this.button2.UseVisualStyleBackColor = false;
+            this.secuencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.secuencia.BackgroundImage = global::Proyecto_Escuela.Properties.Resources.dragon;
+            this.secuencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.secuencia.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secuencia.ForeColor = System.Drawing.Color.Black;
+            this.secuencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.secuencia.Location = new System.Drawing.Point(12, 355);
+            this.secuencia.Name = "secuencia";
+            this.secuencia.Size = new System.Drawing.Size(294, 170);
+            this.secuencia.TabIndex = 3;
+            this.secuencia.Text = "Secuencia de imagenes";
+            this.secuencia.UseVisualStyleBackColor = false;
+            this.secuencia.Click += new System.EventHandler(this.secuencia_Click);
             // 
             // describe
             // 
             this.describe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.describe.BackgroundImage = global::Proyecto_Escuela.Properties.Resources.draco;
             this.describe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.describe.Font = new System.Drawing.Font("PreCursive", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.describe.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.describe.ForeColor = System.Drawing.Color.Black;
             this.describe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.describe.Location = new System.Drawing.Point(12, 179);
@@ -80,7 +81,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
             this.Controls.Add(this.describe);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.secuencia);
             this.Controls.Add(this.tituloLabel);
             this.Name = "MenuActividades";
             this.Text = "MenuActividades";
@@ -92,7 +93,7 @@
 
         #endregion
         private System.Windows.Forms.Label tituloLabel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button secuencia;
         private System.Windows.Forms.Button describe;
     }
 }

@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,33 +50,120 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\DescribeImageController.cs" />
-    <Compile Include="Controllers\SecuenciaController.cs" />
+    <Compile Include="Controllers\DescribeImagenController.cs" />
+    <Compile Include="Controllers\EstudianteController.cs" />
+    <Compile Include="Controllers\ImagenController.cs" />
+    <Compile Include="Controllers\JugadorController.cs" />
+    <Compile Include="Controllers\ListaEstudianteController.cs" />
+    <Compile Include="Controllers\ListaTextosController.cs" />
+    <Compile Include="Controllers\LecturaController.cs" />
+    <Compile Include="Controllers\SecuenciaImagenController.cs" />
     <Compile Include="Controllers\TextoController.cs" />
-    <Compile Include="Models\DescribeImage.cs" />
+    <Compile Include="DAOS\ConexionDB.cs" />
+    <Compile Include="DAOS\DAODescribeImagen.cs" />
+    <Compile Include="DAOS\DAOEstudiante.cs" />
+    <Compile Include="DAOS\DAOJugador.cs" />
+    <Compile Include="DAOS\DAOTexto.cs" />
+    <Compile Include="dbescuelaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbescuelaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DescribeImagenModel.cs" />
+    <Compile Include="Models\Desempeño.cs" />
+    <Compile Include="Models\Estudiante.cs" />
+    <Compile Include="Models\Imagen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\Jugador.cs" />
+    <Compile Include="Models\Relacion.cs" />
+    <Compile Include="Models\RelacionModel.cs" />
+    <Compile Include="Models\SecuenciaImagenModel.cs" />
     <Compile Include="Models\smTile.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Models\Text.cs" />
-    <Compile Include="Views\Describe.cs" />
-    <Compile Include="Views\Describe.Designer.cs">
-      <DependentUpon>Describe.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Texto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfiguracionDescribeImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConfiguracionDescribeImagen.Designer.cs">
+      <DependentUpon>ConfiguracionDescribeImagen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfiguracionEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConfiguracionEstudiantes.Designer.cs">
+      <DependentUpon>ConfiguracionEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfigurarTexto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConfigurarTexto.Designer.cs">
+      <DependentUpon>ConfigurarTexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DescripcionImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DescripcionImagen.Designer.cs">
+      <DependentUpon>DescripcionImagen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MenuActividadesController.cs" />
+    <Compile Include="Views\Estadistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Estadistica.Designer.cs">
+      <DependentUpon>Estadistica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListaEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ListaEstudiantes.Designer.cs">
+      <DependentUpon>ListaEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListaTextos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ListaTextos.Designer.cs">
+      <DependentUpon>ListaTextos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MenuActividades.Designer.cs">
+      <DependentUpon>MenuActividades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SecuenciaImagenes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\SecuenciaImagenes.Designer.cs">
       <DependentUpon>SecuenciaImagenes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Texto.cs" />
-    <Compile Include="Views\Texto.Designer.cs">
-      <DependentUpon>Texto.cs</DependentUpon>
+    <Compile Include="Views\VistaLectura.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Views\Describe.resx">
-      <DependentUpon>Describe.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Views\VistaLectura.Designer.cs">
+      <DependentUpon>VistaLectura.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -83,12 +174,56 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Configuracion.resx">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfiguracionDescribeImagen.resx">
+      <DependentUpon>ConfiguracionDescribeImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfiguracionEstudiantes.resx">
+      <DependentUpon>ConfiguracionEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfigurarTexto.resx">
+      <DependentUpon>ConfigurarTexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DescripcionImagen.resx">
+      <DependentUpon>DescripcionImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Estadistica.resx">
+      <DependentUpon>Estadistica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListaEstudiantes.resx">
+      <DependentUpon>ListaEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListaTextos.resx">
+      <DependentUpon>ListaTextos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MenuActividades.resx">
+      <DependentUpon>MenuActividades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SecuenciaImagenes.resx">
       <DependentUpon>SecuenciaImagenes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Texto.resx">
-      <DependentUpon>Texto.cs</DependentUpon>
+    <EmbeddedResource Include="Views\VistaLectura.resx">
+      <DependentUpon>VistaLectura.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dbescuelaDataSet.xsc">
+      <DependentUpon>dbescuelaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbescuelaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbescuelaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbescuelaDataSet.xss">
+      <DependentUpon>dbescuelaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -148,14 +283,7 @@
     <None Include="Resources\Rafael_Pombo-21.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\brokenLineSquareBorderSLT.jpg" />
-    <None Include="Resources\spaceSelected.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\brokenLineSquareBorder.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\info.png" />
+    <Folder Include="Resources\Fotos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

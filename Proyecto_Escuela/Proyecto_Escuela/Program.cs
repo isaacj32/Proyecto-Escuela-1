@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto_Escuela.DAOS;
+using MySql.Data.MySqlClient;
 
 namespace Proyecto_Escuela
 {
@@ -17,11 +19,25 @@ namespace Proyecto_Escuela
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Texto t = new Texto();
-            ListaTextosController ltc = new ListaTextosController(t);      
-            Application.Run();
+           
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+                if (conexion.AbrirConexion() == true)
+                {
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    conexion.CerrarConexion();
+                    new Inicio().Show();
+                    Application.Run();
+                    
+                }
+            }catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+                
+            
         }
     }
 }

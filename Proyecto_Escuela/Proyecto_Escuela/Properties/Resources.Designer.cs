@@ -65,7 +65,7 @@ namespace Proyecto_Escuela.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _34605_NZPAI2 {
             get {
-                object obj = ResourceManager.GetObject("34605-NZPAI2", resourceCulture);
+                object obj = ResourceManager.GetObject("_34605_NZPAI2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,6 +133,16 @@ namespace Proyecto_Escuela.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap equivocacion {
+            get {
+                object obj = ResourceManager.GetObject("equivocacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap espada {
             get {
                 object obj = ResourceManager.GetObject("espada", resourceCulture);
@@ -143,9 +153,9 @@ namespace Proyecto_Escuela.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap flecha {
+        internal static System.Drawing.Bitmap felicitaciones {
             get {
-                object obj = ResourceManager.GetObject("flecha", resourceCulture);
+                object obj = ResourceManager.GetObject("felicitaciones", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,16 +173,6 @@ namespace Proyecto_Escuela.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap flecha_ab1 {
-            get {
-                object obj = ResourceManager.GetObject("flecha_ab1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap flecha1 {
             get {
                 object obj = ResourceManager.GetObject("flecha1", resourceCulture);
@@ -183,19 +183,9 @@ namespace Proyecto_Escuela.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap info {
+        internal static System.Drawing.Bitmap llave {
             get {
-                object obj = ResourceManager.GetObject("info", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap llave___copia {
-            get {
-                object obj = ResourceManager.GetObject("llave - copia", resourceCulture);
+                object obj = ResourceManager.GetObject("llave", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -221,7 +211,7 @@ namespace Proyecto_Escuela.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Rafael_Pombo_21 {
             get {

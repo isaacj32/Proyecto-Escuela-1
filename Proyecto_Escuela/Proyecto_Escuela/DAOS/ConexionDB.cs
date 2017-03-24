@@ -7,16 +7,22 @@ using MySql.Data.MySqlClient;
 
 namespace Proyecto_Escuela.DAOS
 {
-    class ConexionDB
+    public class ConexionDB
     {
         MySqlConnection conexion;
 
         public ConexionDB()
         {
-            conexion = new MySqlConnection("server=localhost; port=3306; database=dbescuela; Uid=root; pwd=1234");
-        } 
+            conexion = new MySqlConnection("server="+Properties.Settings.Default.DBServer+ "; port=" + Properties.Settings.Default.DBPort + "; database=" + Properties.Settings.Default.DBName + "; Uid=" + Properties.Settings.Default.DBUser + "; pwd=" + Properties.Settings.Default.DBPassword);
+        }
 
-        public bool AbrirCOnexion()
+        public ConexionDB(string user, string password)
+        {
+            conexion = new MySqlConnection("server=" + Properties.Settings.Default.DBServer + "; port=" + Properties.Settings.Default.DBPort + "; database=" + Properties.Settings.Default.DBName + "; Uid=" + user + "; pwd=" + password);
+
+        }
+
+        public bool AbrirConexion()
         {
             try
             {
@@ -43,6 +49,11 @@ namespace Proyecto_Escuela.DAOS
                 throw e;
 
             }
+        }
+
+        public MySqlConnection GetConexion()
+        {
+            return conexion;
         }
     }
 }

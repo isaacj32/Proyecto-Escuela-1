@@ -14,25 +14,14 @@ namespace Proyecto_Escuela.Controllers
 {
     class ListaTextosController
     {
-        ListaTextos lt;
-        Texto texto;
+        ListaTextos listaTexto;
 
-        public ListaTextosController(Texto texto)
+        public ListaTextosController()
         {
-            this.texto = texto;
-            lt = new ListaTextos(texto);
-            lt.Show();
-            lt.getLista().CellClick += new DataGridViewCellEventHandler(ClickEnCelda);
+            ListaTextos listaTexto = new ListaTextos();
+            listaTexto.Show();
         }
 
-        //Evento que lleva a la ventana de actividades relacionadas a un texto
-        //Cuando se selecciona de la lista de textos
-        public void ClickEnCelda(object sender, DataGridViewCellEventArgs e)
-        {
-            string titulo = lt.getLista()[0, e.RowIndex].Value.ToString();
-            LecturaController lc = new LecturaController(texto);
-            //MenuActividadesController mac = new MenuActividadesController(titulo);
-            lt.Dispose();
-        }
+        
     }
 }
