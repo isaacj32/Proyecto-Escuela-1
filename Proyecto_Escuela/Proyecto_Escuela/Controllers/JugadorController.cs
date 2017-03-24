@@ -34,14 +34,12 @@ namespace Proyecto_Escuela.Controllers
                         lista[0].SetApellido(estudiante.GetApellido());
                         lista[0].SetGrado(estudiante.GetGrado());
                         lista[0].SetGrupo(estudiante.GetGrado());
-
                     }
                     for (int i = 0; i < lista.Count; i++)
                     {
                         tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo(), lista[i].GetDesempeño().GetAciertos(), lista[i].GetDesempeño().GetErrores());
                     }
                     conexion.CerrarConexion();
-
                 }
             }
             catch (MySqlException ex)

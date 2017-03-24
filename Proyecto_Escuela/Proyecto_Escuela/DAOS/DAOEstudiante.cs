@@ -13,6 +13,7 @@ namespace Proyecto_Escuela.DAOS
         public DAOEstudiante()
         {
         }
+
         public static int AgregarEstudiante(MySqlConnection conexion, Estudiante estudiante)
         {
             int retorno = 0;
@@ -28,6 +29,7 @@ namespace Proyecto_Escuela.DAOS
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
+
         public static IList<Estudiante> BuscarEstudiante(MySqlConnection conexion, Estudiante pEstudiante, int i)
         {
             List<Estudiante> lista = new List<Estudiante>();

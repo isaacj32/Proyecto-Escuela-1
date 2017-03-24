@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DescribeImagenController.cs" />
+    <Compile Include="Controllers\EstadisticaController.cs" />
     <Compile Include="Controllers\EstudianteController.cs" />
     <Compile Include="Controllers\ImagenController.cs" />
     <Compile Include="Controllers\JugadorController.cs" />
@@ -76,8 +77,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Models\Jugador.cs" />
-    <Compile Include="Models\Relacion.cs" />
-    <Compile Include="Models\RelacionModel.cs" />
+    <Compile Include="Models\ModeloEstadistica.cs" />
     <Compile Include="Models\SecuenciaImagenModel.cs" />
     <Compile Include="Models\smTile.cs">
       <SubType>Component</SubType>

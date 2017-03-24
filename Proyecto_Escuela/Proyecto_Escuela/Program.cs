@@ -19,7 +19,7 @@ namespace Proyecto_Escuela
         [STAThread]
         static void Main()
         {
-           
+
             ConexionDB conexion = new ConexionDB();
             try
             {
@@ -30,14 +30,14 @@ namespace Proyecto_Escuela
                     conexion.CerrarConexion();
                     new Inicio().Show();
                     Application.Run();
-                    
+
                 }
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-                
-            
+            }                       
+          
         }
     }
 }
