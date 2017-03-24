@@ -224,7 +224,7 @@
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(83, 23);
             this.clear.TabIndex = 17;
-            this.clear.Text = "claer";
+            this.clear.Text = "clear";
             this.clear.UseVisualStyleBackColor = true;
             this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
@@ -278,6 +278,7 @@
             // fotoE
             // 
             this.fotoE.HeaderText = "foto";
+            this.fotoE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.fotoE.Name = "fotoE";
             this.fotoE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.fotoE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;

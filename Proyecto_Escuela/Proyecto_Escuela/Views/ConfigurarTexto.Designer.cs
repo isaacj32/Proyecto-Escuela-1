@@ -32,9 +32,6 @@
             this.clear = new System.Windows.Forms.Button();
             this.foto = new System.Windows.Forms.PictureBox();
             this.tabla = new System.Windows.Forms.DataGridView();
-            this.tituloT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiempoT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.potadaT = new System.Windows.Forms.DataGridViewImageColumn();
             this.modificar = new System.Windows.Forms.Button();
             this.eliminar = new System.Windows.Forms.Button();
             this.buscar = new System.Windows.Forms.Button();
@@ -44,6 +41,9 @@
             this.titulo = new System.Windows.Forms.TextBox();
             this.tiempo = new System.Windows.Forms.TextBox();
             this.cuento = new System.Windows.Forms.RichTextBox();
+            this.tituloT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiempoT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.potadaT = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.foto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
@@ -101,23 +101,6 @@
             this.tabla.Size = new System.Drawing.Size(445, 404);
             this.tabla.TabIndex = 32;
             this.tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellClick);
-            // 
-            // tituloT
-            // 
-            this.tituloT.HeaderText = "Titulo";
-            this.tituloT.Name = "tituloT";
-            // 
-            // tiempoT
-            // 
-            this.tiempoT.HeaderText = "Tiempo";
-            this.tiempoT.Name = "tiempoT";
-            // 
-            // potadaT
-            // 
-            this.potadaT.HeaderText = "Portada";
-            this.potadaT.Name = "potadaT";
-            this.potadaT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.potadaT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // modificar
             // 
@@ -198,6 +181,24 @@
             this.cuento.Size = new System.Drawing.Size(533, 376);
             this.cuento.TabIndex = 38;
             this.cuento.Text = "";
+            // 
+            // tituloT
+            // 
+            this.tituloT.HeaderText = "Titulo";
+            this.tituloT.Name = "tituloT";
+            // 
+            // tiempoT
+            // 
+            this.tiempoT.HeaderText = "Tiempo";
+            this.tiempoT.Name = "tiempoT";
+            // 
+            // potadaT
+            // 
+            this.potadaT.HeaderText = "Portada";
+            this.potadaT.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.potadaT.Name = "potadaT";
+            this.potadaT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.potadaT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // ConfigurarTexto
             // 

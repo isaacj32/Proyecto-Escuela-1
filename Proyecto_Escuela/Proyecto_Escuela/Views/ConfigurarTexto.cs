@@ -95,48 +95,55 @@ namespace Proyecto_Escuela.Views
 
         private void modificar_Click(object sender, EventArgs e)
         {
-            try
+            if (tabla.Rows.Count != 0)
             {
-                texto = textoController.Seleccionar(tabla);
-                titulo.Text = texto.getTitulo();
-                titulo.Text = texto.getTitulo();
-                tiempo.Text = texto.getTiempo().ToString();
-                cuento.Text = texto.getTexto();
-                modificacion = true;
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message + " Debe seleccionar un registro.");
+                try
+                {
+                    texto = textoController.Seleccionar(tabla);
+                    titulo.Text = texto.getTitulo();
+                    titulo.Text = texto.getTitulo();
+                    tiempo.Text = texto.getTiempo().ToString();
+                    cuento.Text = texto.getTexto();
+                    modificacion = true;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message + " Debe seleccionar un registro.");
+                }
             }
         }
 
         private void eliminar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(titulo.Text))
+            if (tabla.Rows.Count != 0)
             {
-                texto = textoController.Seleccionar(tabla);
-                titulo.Text = texto.getTitulo();
-                tiempo.Text = texto.getTiempo().ToString();
-                cuento.Text = texto.getTexto();
-
-
-            }
-            else
-            {
-                DialogResult confirmar = MessageBox.Show("Se eliminará el cuento: " + titulo.Text + " desea continuar?", "Alerta Eliminacion", MessageBoxButtons.YesNo);
-                if (confirmar == DialogResult.Yes)
+                if (string.IsNullOrEmpty(titulo.Text))
                 {
-                    if (textoController.Eliminar(titulo.Text) != 0)
-                    {
-                        titulo.Clear();
-                        tiempo.Clear();
-                        cuento.Clear();
-                        Listar();
-                    }
+
+                    texto = textoController.Seleccionar(tabla);
+                    titulo.Text = texto.getTitulo();
+                    tiempo.Text = texto.getTiempo().ToString();
+                    cuento.Text = texto.getTexto();
+
+
                 }
                 else
                 {
-                    MessageBox.Show("Eliminacion cancelada");
+                    DialogResult confirmar = MessageBox.Show("Se eliminará el cuento: " + titulo.Text + " desea continuar?", "Alerta Eliminacion", MessageBoxButtons.YesNo);
+                    if (confirmar == DialogResult.Yes)
+                    {
+                        if (textoController.Eliminar(titulo.Text) != 0)
+                        {
+                            titulo.Clear();
+                            tiempo.Clear();
+                            cuento.Clear();
+                            Listar();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Eliminacion cancelada");
+                    }
                 }
             }
         }
@@ -161,5 +168,36 @@ namespace Proyecto_Escuela.Views
                 MessageBox.Show("No selecciono ninguna Imagen", "Sin seleccion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        private void BloquearBotones()
+        {
+            buscar.Enabled = false;
+            modificar.Enabled = false;
+            guardar.Enabled = false;
+            eliminar.Enabled = false;
+        }
+        private void HabilitarBotones()
+        {
+            buscar.Enabled = true;
+            modificar.Enabled = true;
+            guardar.Enabled = true;
+            eliminar.Enabled = true;
+        }
+        private void BloquearEntradas()
+        {
+            tiempo.Enabled = false;
+            titulo.Enabled = false;
+            cuento.Enabled = false;
+            foto.Enabled = false;
+
+
+        }
+        private void HabilitarEntrada()
+        {
+            tiempo.Enabled = true;
+            titulo.Enabled = true;
+            cuento.Enabled = true;
+            foto.Enabled = true;
+        }
+
     }
 }

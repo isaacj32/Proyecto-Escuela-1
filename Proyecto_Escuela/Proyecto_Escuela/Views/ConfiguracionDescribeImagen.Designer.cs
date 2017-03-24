@@ -55,33 +55,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Configuración de juego: Describir Imágenes";
             // 
-            // agregar
-            // 
-            this.botonAgregar.Location = new System.Drawing.Point(671, 59);
-            this.botonAgregar.Name = "botonAgregar";
-            this.botonAgregar.Size = new System.Drawing.Size(195, 30);
-            this.botonAgregar.TabIndex = 2;
-            this.botonAgregar.Text = "Agregar Imagen";
-            this.botonAgregar.UseVisualStyleBackColor = true;
-            // 
-            // borrar
-            // 
-            this.botonBorrar.Location = new System.Drawing.Point(671, 95);
-            this.botonBorrar.Name = "botonBorrar";
-            this.botonBorrar.Size = new System.Drawing.Size(195, 30);
-            this.botonBorrar.TabIndex = 3;
-            this.botonBorrar.Text = "Borrar Imagen";
-            this.botonBorrar.UseVisualStyleBackColor = true;
-            // 
-            // modificar
-            // 
-            this.botonModificar.Location = new System.Drawing.Point(671, 131);
-            this.botonModificar.Name = "botonModificar";
-            this.botonModificar.Size = new System.Drawing.Size(195, 30);
-            this.botonModificar.TabIndex = 4;
-            this.botonModificar.Text = "Modificar";
-            this.botonModificar.UseVisualStyleBackColor = true;
-            // 
             // campoDescripcion
             // 
             this.campoDescripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,15 +100,7 @@
             this.campoImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.campoImagen.TabIndex = 7;
             this.campoImagen.TabStop = false;
-            // 
-            // botonBuscar
-            // 
-            this.botonBuscar.Location = new System.Drawing.Point(432, 167);
-            this.botonBuscar.Name = "botonBuscar";
-            this.botonBuscar.Size = new System.Drawing.Size(106, 23);
-            this.botonBuscar.TabIndex = 8;
-            this.botonBuscar.Text = "Buscar Imagen";
-            this.botonBuscar.UseVisualStyleBackColor = true;
+            
             // 
             // label2
             // 

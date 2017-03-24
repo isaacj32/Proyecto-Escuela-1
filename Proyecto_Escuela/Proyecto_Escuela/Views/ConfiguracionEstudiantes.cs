@@ -64,8 +64,11 @@ namespace Proyecto_Escuela.Views
                     grupo.Clear();
                     grado.SelectedIndex = 0;
                     foto.Image = null;
+                    HabilitarEntrada();
+                    HabilitarBotones();
                     Listar();
                     documento.ReadOnly = false;
+
 
                 }
             }
@@ -97,6 +100,8 @@ namespace Proyecto_Escuela.Views
                 asignarGrado(estudiante.GetGrado());
                 foto.Image = Image.FromFile(estudiante.GetFoto());
                 documento.Enabled = true;
+                BloquearBotones();
+                guardar.Enabled = true;
             }
             catch (MySqlException ex)
             {
@@ -118,7 +123,7 @@ namespace Proyecto_Escuela.Views
                 foto.Image = Image.FromFile(estudiante.GetFoto());
                 BloquearBotones();
                 BloquearEntradas();
-                clear.Enabled = true;
+                eliminar.Enabled = true;
                 
 
 
@@ -136,7 +141,8 @@ namespace Proyecto_Escuela.Views
                         documento.Clear();
                         grupo.Clear();
                         grado.SelectedIndex = 0;
-
+                        HabilitarBotones();
+                        HabilitarEntrada();
                         Listar();
                     }
                 }
