@@ -29,7 +29,6 @@ namespace Proyecto_Escuela
         /// <summary>
         /// Indica el orden que lleva la imagen en la secuencia
         /// </summary>
-        protected int order;
         protected string path;
         #endregion
 
@@ -37,11 +36,10 @@ namespace Proyecto_Escuela
         /// <summary>
         /// Carga las imagenes e inicializa la baldosa.
         /// </summary>
-		public smTile(string ruta, int orden)
+		public smTile(string ruta)
         {
             // Carga las imagenes
             path = ruta;
-            order = orden;
             filledImage = new Bitmap(path);
             emptyImage = new Bitmap(global::Proyecto_Escuela.Properties.Resources.brokenLineSquareBorder);
             overImage = new Bitmap(global::Proyecto_Escuela.Properties.Resources.brokenLineSquareBorderSLT);
@@ -110,14 +108,6 @@ namespace Proyecto_Escuela
             }
         }
 
-        public int Order
-        {
-            get
-            {
-                return order;
-            }
-        }
-
         #region OnDragDrop
         /// <summary>
         /// Maneja el evento DragDrop
@@ -129,11 +119,9 @@ namespace Proyecto_Escuela
             // Cambia el cursor a la flecha
             this.Cursor = Cursors.Default;
             // Coloca in elemento aquí
-            //smTile used =(smTile) e.Data.GetData(DataFormats.Locale);
-            this.filledImage =(Bitmap) e.Data.GetData(DataFormats.Bitmap);
-            //this.filledImage = (Bitmap)used.FilledImage;
-            //this.order = (int)used.Order;
-            PutItem(this.filledImage, this.order);
+            this.filledImage = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
+
+            PutItem(this.filledImage);
         }
         #endregion
 
@@ -185,7 +173,6 @@ namespace Proyecto_Escuela
                 this.Cursor = Cursors.Default;
                 // Cambia la imagen a vacía
                 this.BackgroundImage = emptyImage;
-                this.order = int.MaxValue;
             }
         }
         #endregion
@@ -232,14 +219,13 @@ namespace Proyecto_Escuela
         /// <summary>
         /// Pone un elemento en la baldosa
         /// </summary>
-		public void PutItem(Bitmap bm, int order)
+		public void PutItem(Bitmap bm)
         {
             // Indica la existencia de un item como verdadera
             hasItem = true;
             // Pone la imagen que debería tener de relleno
-            //Bitmap bm = new Bitmap(path);
+            //this.path = ruta;
             this.BackgroundImage = bm;
-            this.order = order;
         }
         #endregion
 
@@ -253,8 +239,15 @@ namespace Proyecto_Escuela
             hasItem = false;
             // Cambia la imagen a la imagen 'vacía'
             this.BackgroundImage = emptyImage;
-            this.order = int.MaxValue;
         }
         #endregion
+
+        public string Path
+        {
+            get
+            {
+                return path;
+            }
+        }
     }
 }
