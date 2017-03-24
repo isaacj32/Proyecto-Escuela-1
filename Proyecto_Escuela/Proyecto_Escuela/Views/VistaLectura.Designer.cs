@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Escuela
 {
-    partial class Texto
+    partial class VistaLectura
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tituloLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.jugar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,19 +53,19 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Andrés Felipe Aparicio Mestre";
             // 
-            // label3
+            // tituloLabel
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tituloLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(477, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 26);
-            this.label3.TabIndex = 58;
-            this.label3.Text = "Titulo";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tituloLabel.AutoSize = true;
+            this.tituloLabel.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloLabel.Location = new System.Drawing.Point(473, 84);
+            this.tituloLabel.Name = "tituloLabel";
+            this.tituloLabel.Size = new System.Drawing.Size(62, 26);
+            this.tituloLabel.TabIndex = 58;
+            this.tituloLabel.Text = "Titulo";
+            this.tituloLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -80,14 +80,20 @@
             this.label4.TabIndex = 61;
             this.label4.Text = "Tiempo:";
             // 
-            // button1
+            // richTextBox1
             // 
-            this.button1.Location = new System.Drawing.Point(317, 464);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(406, 61);
-            this.button1.TabIndex = 62;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(317, 148);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(427, 277);
+            this.richTextBox1.TabIndex = 65;
+            this.richTextBox1.Text = "";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox3
             // 
@@ -103,7 +109,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::Proyecto_Escuela.Properties.Resources.flecha_ab1;
+            this.pictureBox2.BackgroundImage = global::Proyecto_Escuela.Properties.Resources.flecha_ab;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(833, 299);
             this.pictureBox2.Name = "pictureBox2";
@@ -122,36 +128,32 @@
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
             // 
-            // richTextBox1
+            // jugar
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(317, 148);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(427, 277);
-            this.richTextBox1.TabIndex = 65;
-            this.richTextBox1.Text = "";
+            this.jugar.Font = new System.Drawing.Font("PreCursive", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jugar.Location = new System.Drawing.Point(423, 455);
+            this.jugar.Name = "jugar";
+            this.jugar.Size = new System.Drawing.Size(162, 52);
+            this.jugar.TabIndex = 66;
+            this.jugar.Text = "Ir a Jugar!";
+            this.jugar.UseVisualStyleBackColor = true;
+            this.jugar.Click += new System.EventHandler(this.jugar_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // Texto
+            // VistaLectura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
             this.ClientSize = new System.Drawing.Size(1008, 537);
+            this.Controls.Add(this.jugar);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tituloLabel);
             this.Controls.Add(this.label1);
-            this.Name = "Texto";
+            this.Name = "VistaLectura";
             this.Text = "Texto";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -167,10 +169,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label tituloLabel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button jugar;
     }
 }
