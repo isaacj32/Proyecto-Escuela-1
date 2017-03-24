@@ -26,7 +26,6 @@ namespace Proyecto_Escuela.Views
         private smTile[] grid;
         private smTile[] encaje;
         private SecuenciaController tc;
-        private SecuenciaImagenModel secuenciaImagenModel;
         private string[] ordenCorrecto;
         private bool ansiado = false;
         private int intentos = 1;
@@ -35,15 +34,16 @@ namespace Proyecto_Escuela.Views
         /// <summary>
         /// Empty constructor
         /// </summary>
-        public SecuenciaImagenes(int numImagenes, string nombreNino, string[] ordenCorrectoImagenes)
+        public SecuenciaImagenes(int numImagenes, Jugador nino, string rutaDeImagenes, string[] ordenCorrectoImagenes)
         {
             InitializeComponent();
             this.BackColor = Color.Chocolate;
-            this.lblNombre.Text = nombreNino;
+            this.lblNombre.Text = nino.GetNombre() + " " + nino.GetApellido();
             int xSpot;
             int ySpot;
             int pp;
-            string[] imagenes = new string[numImagenes];
+            string pathImg = rutaDeImagenes;
+            string[] imagenes = Directory.GetFiles(pathImg, "*.png");
             ordenCorrecto = ordenCorrectoImagenes;
             Random rnd = new Random();
             bool[] imgUsada = new bool[numImagenes];
@@ -116,7 +116,7 @@ namespace Proyecto_Escuela.Views
                 }
                 catch
                 {
-                    Console.WriteLine("Error papuh en: {0}", i);
+                    Console.WriteLine("Error en: {0}", i);
                 }
             }
         }
@@ -134,13 +134,13 @@ namespace Proyecto_Escuela.Views
             ansiado = tc.Comprobar(encaje, ordenCorrecto);
             if (ansiado)
             {
-                MessageBox.Show("Felicidades papuh :D");
+                MessageBox.Show("Felicidades :D","Felicitaciones");
 
             }
             else
             {
                 intentos++;
-                MessageBox.Show("Sigue intentando, vas para el intento #" + intentos);
+                MessageBox.Show("Sigue intentando, vas para el intento #" + intentos,"Felicitaciones");
             }
         }
 

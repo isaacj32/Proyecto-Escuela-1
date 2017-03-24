@@ -39,9 +39,9 @@
             this.tituloLabel.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloLabel.Location = new System.Drawing.Point(315, 60);
             this.tituloLabel.Name = "tituloLabel";
-            this.tituloLabel.Size = new System.Drawing.Size(184, 78);
+            this.tituloLabel.Size = new System.Drawing.Size(189, 78);
             this.tituloLabel.TabIndex = 2;
-            this.tituloLabel.Text = "titulo";
+            this.tituloLabel.Text = "Título";
             // 
             // secuencia
             // 

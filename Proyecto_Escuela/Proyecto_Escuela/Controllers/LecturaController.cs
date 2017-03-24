@@ -13,9 +13,9 @@ namespace Proyecto_Escuela.Controllers
         private VistaLectura vistaTexto;
         
 
-        public LecturaController(Texto texto)
+        public LecturaController(Texto texto, Jugador jugador)
         {
-            vistaTexto = new VistaLectura(texto);           
+            vistaTexto = new VistaLectura(texto, jugador);
             vistaTexto.Show(); 
         }
     }

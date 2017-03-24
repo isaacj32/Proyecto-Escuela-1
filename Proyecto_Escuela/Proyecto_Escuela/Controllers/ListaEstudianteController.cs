@@ -7,6 +7,7 @@ using Proyecto_Escuela.Views;
 using System.Windows.Forms;
 using Proyecto_Escuela.DAOS;
 using MySql.Data.MySqlClient;
+using System.Drawing;
 using Proyecto_Escuela.Models;
 
 namespace Proyecto_Escuela.Controllers
@@ -22,25 +23,24 @@ namespace Proyecto_Escuela.Controllers
             listaEstudiantes.Show();
 
         }
-        public void Listar(DataGridView tabla)
+        public List<List<Estudiante>> Listar(DataGridView tabla)
         {
             try
             {
                 if (conexion.AbrirConexion() == true)
                 {
                     IList<Estudiante> lista = DAOS.DAOEstudiante.ListarEstudiantes(conexion.GetConexion());
-                    List<List<Imagen>> filas = new List<List<Imagen>>();
+                    List<List<Estudiante>> filas = new List<List<Estudiante>>();
                     for (int i = 0; i < lista.Count; i += 4)
                     {
-                        List<Imagen> estudiantes = new List<Imagen>();
+                        List<Estudiante> estudiantes = new List<Estudiante>();
                         for (int j = 0; j < 4; j++)
                         {
-                            Imagen boton = new Imagen();
+                            Estudiante estudiante = new Estudiante();
                             try
                             {
-                                boton.SetDescripcion(lista[i + j].GetNombre());
-                                boton.SetImagen(Properties.Resources.buho);
-                                estudiantes.Add(boton);
+                                estudiante = lista[i + j];
+                                estudiantes.Add(estudiante);
                             }
                             catch
                             {
@@ -57,29 +57,46 @@ namespace Proyecto_Escuela.Controllers
                         {
                             case 1:
 
-                                tabla.Rows.Add(filas[i][0].GetImagen());
+                                tabla.Rows.Add(Image.FromFile(filas[i][0].GetFoto()));
                                 break;
                             case 2:
-                                tabla.Rows.Add(filas[i][0].GetImagen(), filas[i][1].GetImagen());
+                                tabla.Rows.Add(Image.FromFile(filas[i][0].GetFoto()), Image.FromFile(filas[i][1].GetFoto()));
 
                                 break;
                             case 3:
-                                tabla.Rows.Add(filas[i][0].GetImagen(), filas[i][1].GetImagen(), filas[i][2].GetImagen());
+                                tabla.Rows.Add(Image.FromFile(filas[i][0].GetFoto()), Image.FromFile(filas[i][1].GetFoto()), Image.FromFile(filas[i][2].GetFoto()));
 
                                 break;
                             case 4:
-                                tabla.Rows.Add(filas[i][0].GetImagen(), filas[i][1].GetImagen(), filas[i][2].GetImagen(), filas[i][3].GetImagen());
+                                tabla.Rows.Add(Image.FromFile(filas[i][0].GetFoto()), Image.FromFile(filas[i][1].GetFoto()), Image.FromFile(filas[i][2].GetFoto()), Image.FromFile(filas[i][3].GetFoto()));
                                 break;
                         }
                     }
+                    return filas;
                 }
+                return null;
             }
 
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
                 conexion.CerrarConexion();
+                return null;
             }
+        }
+
+        public Jugador retornarEstudiante(DataGridView tabla, List<List<Estudiante>> lista)
+        {
+            int row = tabla.CurrentCell.RowIndex;
+            int col = tabla.CurrentCell.ColumnIndex;
+            Jugador men = new Jugador();
+            men.SetNombre(lista[row][col].GetNombre());
+            men.SetApellido(lista[row][col].GetApellido());
+            men.SetDocumento(lista[row][col].GetDocumento().ToString());
+            men.SetFoto(lista[row][col].GetFoto());
+            men.SetGrado(lista[row][col].GetGrado());
+            men.SetGrupo(lista[row][col].GetGrupo().ToString());
+            return men;
         }
 
     }
