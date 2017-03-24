@@ -11,16 +11,15 @@ namespace Proyecto_Escuela.Models
     public class Texto
     {
         //Atributos
-        private string texto = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-            + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-            + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-            + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-            + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-            + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-            + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-        private string titulo = "a";
-        private Image imagen =Proyecto_Escuela.Properties.Resources.buho;
+        private string texto;
+        private string titulo;
+        private string imagen;
         private int tiempo = 5;
+
+        public Texto()
+        {
+
+        }
 
         //Getters y Setters para los atributos
         public void setTexto(string texto)
@@ -43,12 +42,12 @@ namespace Proyecto_Escuela.Models
             return titulo;
         }
 
-        public void setImagen(Image imagen)
+        public void setImagen(string imagen)
         {
             this.imagen = imagen;
         }
 
-        public Image getImage()
+        public string getImage()
         {
             return imagen;
         }

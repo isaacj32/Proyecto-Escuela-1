@@ -27,13 +27,12 @@ namespace Proyecto_Escuela
                 {
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    conexion.CerrarConexion();
+                    //conexion.CerrarConexion();
                     new Inicio().Show();
                     Application.Run();
-
+                    
                 }
-            }
-            catch (MySqlException ex)
+            }catch(MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }                       

@@ -34,7 +34,7 @@
             this.tabla = new System.Windows.Forms.DataGridView();
             this.tituloT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tiempoT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.potadaT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.potadaT = new System.Windows.Forms.DataGridViewImageColumn();
             this.modificar = new System.Windows.Forms.Button();
             this.eliminar = new System.Windows.Forms.Button();
             this.buscar = new System.Windows.Forms.Button();
@@ -89,6 +89,10 @@
             // 
             // tabla
             // 
+            this.tabla.AllowUserToAddRows = false;
+            this.tabla.AllowUserToDeleteRows = false;
+            this.tabla.AllowUserToResizeColumns = false;
+            this.tabla.AllowUserToResizeRows = false;
             this.tabla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -101,6 +105,7 @@
             this.tabla.Location = new System.Drawing.Point(12, 121);
             this.tabla.MultiSelect = false;
             this.tabla.Name = "tabla";
+            this.tabla.RowTemplate.Height = 120;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(445, 404);
             this.tabla.TabIndex = 32;
@@ -120,6 +125,8 @@
             // 
             this.potadaT.HeaderText = "Portada";
             this.potadaT.Name = "potadaT";
+            this.potadaT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.potadaT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // modificar
             // 
@@ -218,9 +225,9 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(10, 65);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(80, 17);
+            this.checkBox3.Size = new System.Drawing.Size(63, 17);
             this.checkBox3.TabIndex = 48;
-            this.checkBox3.Text = "checkBox3";
+            this.checkBox3.Text = "Dictado";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // cuento
@@ -234,31 +241,31 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(209, 65);
+            this.checkBox4.Location = new System.Drawing.Point(162, 65);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(80, 17);
+            this.checkBox4.Size = new System.Drawing.Size(74, 17);
             this.checkBox4.TabIndex = 51;
-            this.checkBox4.Text = "checkBox4";
+            this.checkBox4.Text = "Preguntas";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(209, 35);
+            this.checkBox5.Location = new System.Drawing.Point(162, 35);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(80, 17);
+            this.checkBox5.Size = new System.Drawing.Size(109, 17);
             this.checkBox5.TabIndex = 50;
-            this.checkBox5.Text = "checkBox5";
+            this.checkBox5.Text = "Colorear Palabras";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(209, 6);
+            this.checkBox6.Location = new System.Drawing.Point(162, 6);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(80, 17);
+            this.checkBox6.Size = new System.Drawing.Size(91, 17);
             this.checkBox6.TabIndex = 49;
-            this.checkBox6.Text = "checkBox6";
+            this.checkBox6.Text = "Apareamiento";
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -322,9 +329,6 @@
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.PictureBox foto;
         private System.Windows.Forms.DataGridView tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tituloT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tiempoT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn potadaT;
         private System.Windows.Forms.Button modificar;
         private System.Windows.Forms.Button eliminar;
         private System.Windows.Forms.Button buscar;
@@ -342,5 +346,8 @@
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tituloT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tiempoT;
+        private System.Windows.Forms.DataGridViewImageColumn potadaT;
     }
 }

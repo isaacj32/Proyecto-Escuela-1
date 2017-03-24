@@ -9,19 +9,19 @@ namespace Proyecto_Escuela.Models
 {
     public class Estudiante
     {
-        protected int documento;
-        protected string nombre;
-        protected string apellidos;
-        protected int grupo;
-        protected string grado;
-        protected Image foto; 
+        protected int documento { get; set; }
+        protected string nombre { get; set; }
+        protected string apellidos { get; set; }
+        protected int grupo { get; set; }
+        protected string grado { get; set; }
+        protected Image foto { get; set; }
 
 
         public Estudiante()
         {
         }
 
-        public Estudiante(string nombre, string apellido, int grupo, int documento, string grado, Image foto)
+        public Estudiante(string nombre, string apellido, int grupo, int documento, string grado, string foto)
         {
             this.nombre = nombre;
             this.apellidos = apellido;
@@ -52,7 +52,7 @@ namespace Proyecto_Escuela.Models
         {
             return grado;
         }
-        public Image GetFoto()
+        public string GetFoto()
         {
             return foto;
         }
@@ -77,13 +77,13 @@ namespace Proyecto_Escuela.Models
             {
                 this.documento = int.Parse(documento);
             }
-
+           
         }
         public void SetGrado(string grado)
         {
             this.grado = grado;
         }
-        public void SetFoto(Image foto)
+        public void SetFoto(string foto)
         {
             this.foto = foto;
         } 

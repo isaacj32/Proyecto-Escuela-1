@@ -34,14 +34,14 @@
             this.botonModificar = new System.Windows.Forms.Button();
             this.campoDescripcion = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.campoImagen = new System.Windows.Forms.PictureBox();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagen = new System.Windows.Forms.DataGridViewImageColumn();
+            this.campoImagen = new System.Windows.Forms.PictureBox();
             this.botonBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.labelTitulo = new System.Windows.Forms.Label();
             this.botnoAceptar = new System.Windows.Forms.Button();
+            this.titulo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoImagen)).BeginInit();
             this.SuspendLayout();
@@ -106,15 +106,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(763, 270);
             this.dataGridView1.TabIndex = 6;
             // 
-            // campoImagen
-            // 
-            this.campoImagen.Location = new System.Drawing.Point(432, 59);
-            this.campoImagen.Name = "campoImagen";
-            this.campoImagen.Size = new System.Drawing.Size(106, 102);
-            this.campoImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.campoImagen.TabIndex = 7;
-            this.campoImagen.TabStop = false;
-            // 
             // descripcion
             // 
             this.descripcion.HeaderText = "Palabra clave";
@@ -127,6 +118,15 @@
             this.imagen.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.imagen.Name = "imagen";
             this.imagen.ReadOnly = true;
+            // 
+            // campoImagen
+            // 
+            this.campoImagen.Location = new System.Drawing.Point(432, 59);
+            this.campoImagen.Name = "campoImagen";
+            this.campoImagen.Size = new System.Drawing.Size(106, 102);
+            this.campoImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.campoImagen.TabIndex = 7;
+            this.campoImagen.TabStop = false;
             // 
             // botonBuscar
             // 
@@ -155,15 +155,6 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Título del texto:";
             // 
-            // labelTitulo
-            // 
-            this.labelTitulo.AutoSize = true;
-            this.labelTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTitulo.Location = new System.Drawing.Point(106, 76);
-            this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(2, 15);
-            this.labelTitulo.TabIndex = 11;
-            // 
             // botnoAceptar
             // 
             this.botnoAceptar.Location = new System.Drawing.Point(671, 498);
@@ -173,13 +164,21 @@
             this.botnoAceptar.Text = "Aceptar";
             this.botnoAceptar.UseVisualStyleBackColor = true;
             // 
+            // titulo
+            // 
+            this.titulo.FormattingEnabled = true;
+            this.titulo.Location = new System.Drawing.Point(103, 75);
+            this.titulo.Name = "titulo";
+            this.titulo.Size = new System.Drawing.Size(195, 21);
+            this.titulo.TabIndex = 13;
+            // 
             // ConfiguracionDescribeImagen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
+            this.Controls.Add(this.titulo);
             this.Controls.Add(this.botnoAceptar);
-            this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.botonBuscar);
@@ -213,7 +212,7 @@
         private System.Windows.Forms.Button botonBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Button botnoAceptar;
+        private System.Windows.Forms.ComboBox titulo;
     }
 }

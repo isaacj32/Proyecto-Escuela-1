@@ -39,6 +39,7 @@ namespace Proyecto_Escuela.Views
             texto.setTitulo(titulo.Text);
             texto.setTiempo(int.Parse(tiempo.Text));
             texto.setTexto(cuento.Text);
+            Console.WriteLine(texto.getImage());
             if (modificacion == false)
             {
                 if (textoController.Agregar(texto) != 0)
@@ -83,6 +84,8 @@ namespace Proyecto_Escuela.Views
             cuento.Clear();
             texto = textoController.Seleccionar(tabla);
             cuento.Text = texto.getTexto();
+            Console.WriteLine(texto.getImage());
+            foto.Image = Image.FromFile(texto.getImage());
         }
 
         private void buscar_Click(object sender, EventArgs e)
@@ -147,7 +150,11 @@ namespace Proyecto_Escuela.Views
             getImagen.Filter = "Archivos de imagen (*.jpg)(*jpeg)|*.jpg;*.jpeg|PNG(*.png)|*.png|GIF(*.gif)|*.gif";
             if (getImagen.ShowDialog() == DialogResult.OK)
             {
+                string a = "\\".Substring(0);                    
+                Console.WriteLine(a);
                 foto.Image = Image.FromFile(getImagen.FileName);
+                string aux = getImagen.FileName.Replace(a, "\\\\");
+                texto.setImagen(aux);                
             }
             else
             {

@@ -19,7 +19,7 @@ namespace Proyecto_Escuela.DAOS
         public static int AgregarTexto(MySqlConnection conexion, Texto texto)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO Cuento (titulo, texto, tiempo, imagen) VALUES('{0}', '{1}', '{2}', '{3}')", texto.getTitulo(), texto.getTexto(), texto.getTiempo(), ImagenController.ConvertirImagenToBytes(texto.getImage())), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO Cuento (titulo, texto, tiempo, imagen) VALUES('{0}', '{1}', '{2}', '{3}')", texto.getTitulo(), texto.getTexto(), texto.getTiempo(), texto.getImage()), conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
@@ -35,21 +35,15 @@ namespace Proyecto_Escuela.DAOS
         {
             List<Texto> lista = new List<Texto>();
 
-            MySqlCommand comando = new MySqlCommand(string.Format("SELECT titulo, texto, tiempo, imagen FROM Cuento WHERE titulo LIKE ('%{0}%')", titulo), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM Cuento WHERE titulo LIKE ('%{0}%')", titulo), conexion);
             MySqlDataReader reader = comando.ExecuteReader();
-
-            
-
-
-
-
-
             while (reader.Read())
             {
                 Texto cuento = new Texto();
                 cuento.setTitulo(reader.GetString(0));
                 cuento.setTexto(reader.GetString(1));
                 cuento.setTiempo(reader.GetInt32(2));
+                cuento.setImagen(reader.GetString(3));
                 lista.Add(cuento);
             }
 
@@ -68,7 +62,7 @@ namespace Proyecto_Escuela.DAOS
         public static IList<Texto> ListarTextos(MySqlConnection conexion)
         {
             List<Texto> lista = new List<Texto>();
-            MySqlCommand comando = new MySqlCommand("SELECT titulo, texto, tiempo FROM Cuento", conexion);
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM Cuento", conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
 
@@ -79,6 +73,8 @@ namespace Proyecto_Escuela.DAOS
                 cuento.setTitulo(reader.GetString(0));
                 cuento.setTexto(reader.GetString(1));
                 cuento.setTiempo(reader.GetInt32(2));
+                cuento.setImagen(reader.GetString(3));
+
                 lista.Add(cuento);
             }
 
@@ -90,7 +86,7 @@ namespace Proyecto_Escuela.DAOS
         public static Texto ObtenerTexto(MySqlConnection conexion, string titulo)
         {
             Texto cuento = new Texto();
-            MySqlCommand comando = new MySqlCommand(string.Format("SELECT titulo, texto, tiempo FROM Cuento WHERE titulo='{0}'", titulo), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT *FROM Cuento WHERE titulo='{0}'", titulo), conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
             while (reader.Read())
@@ -98,6 +94,8 @@ namespace Proyecto_Escuela.DAOS
                 cuento.setTitulo(reader.GetString(0));
                 cuento.setTexto(reader.GetString(1));
                 cuento.setTiempo(reader.GetInt32(2));
+                cuento.setImagen(reader.GetString(3));
+
             }
             return cuento;            
         }

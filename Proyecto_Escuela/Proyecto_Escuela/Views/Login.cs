@@ -49,5 +49,10 @@ namespace Proyecto_Escuela.Views
             inicio.Enabled=true;
             this.Dispose();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

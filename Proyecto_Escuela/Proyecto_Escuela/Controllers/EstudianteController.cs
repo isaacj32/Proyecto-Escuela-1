@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Proyecto_Escuela.DAOS;
 using Proyecto_Escuela.Models;
 using MySql.Data.MySqlClient;
+using System.Drawing;
 
 namespace Proyecto_Escuela.Controllers
 {
@@ -49,7 +50,7 @@ namespace Proyecto_Escuela.Controllers
                     tabla.Rows.Clear();
                     for (int i = 0; i < lista.Count; i++)
                     {
-                        tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo());
+                        tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo(), Image.FromFile(lista[i].GetFoto()));
                         Console.WriteLine("holi " + lista[i].GetDocumento());
                     }
                     conexion.CerrarConexion();
@@ -132,7 +133,7 @@ namespace Proyecto_Escuela.Controllers
                     tabla.Rows.Clear();
                     for (int i = 0; i < lista.Count; i++)
                     {
-                        tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo());
+                        tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo(), Image.FromFile(lista[i].GetFoto()));
                     }
                     conexion.CerrarConexion();
 
