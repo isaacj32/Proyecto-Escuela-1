@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Proyecto_Escuela.Controllers
 {
-    class SecuenciaController
+    public class SecuenciaController
     {
         public bool Comprobar(smTile[] encaje, string[] orden)
         {

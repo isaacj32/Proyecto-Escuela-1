@@ -50,10 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ConfiguracionDescribeControler.cs" />
     <Compile Include="Controllers\DescribeImagenController.cs" />
     <Compile Include="Controllers\EstadisticaController.cs" />
     <Compile Include="Controllers\EstudianteController.cs" />
-    <Compile Include="Controllers\ImagenController.cs" />
     <Compile Include="Controllers\JugadorController.cs" />
     <Compile Include="Controllers\ListaEstudianteController.cs" />
     <Compile Include="Controllers\ListaTextosController.cs" />
@@ -65,6 +65,7 @@
     <Compile Include="DAOS\DAODescribeImagen.cs" />
     <Compile Include="DAOS\DAOEstudiante.cs" />
     <Compile Include="DAOS\DAOJugador.cs" />
+    <Compile Include="DAOS\DAOSecuenciaImagen.cs" />
     <Compile Include="DAOS\DAOTexto.cs" />
     <Compile Include="dbescuelaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -103,6 +104,12 @@
     </Compile>
     <Compile Include="Views\ConfiguracionEstudiantes.Designer.cs">
       <DependentUpon>ConfiguracionEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfiguracionSecuencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConfiguracionSecuencia.Designer.cs">
+      <DependentUpon>ConfiguracionSecuencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ConfigurarTexto.cs">
       <SubType>Form</SubType>
@@ -183,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ConfiguracionEstudiantes.resx">
       <DependentUpon>ConfiguracionEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfiguracionSecuencia.resx">
+      <DependentUpon>ConfiguracionSecuencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ConfigurarTexto.resx">
       <DependentUpon>ConfigurarTexto.cs</DependentUpon>

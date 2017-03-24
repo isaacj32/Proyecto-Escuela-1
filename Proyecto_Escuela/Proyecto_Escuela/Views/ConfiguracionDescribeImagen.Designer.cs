@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.botonAgregar = new System.Windows.Forms.Button();
-            this.botonBorrar = new System.Windows.Forms.Button();
-            this.botonModificar = new System.Windows.Forms.Button();
+            this.agregar = new System.Windows.Forms.Button();
+            this.borrar = new System.Windows.Forms.Button();
+            this.modificar = new System.Windows.Forms.Button();
             this.campoDescripcion = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.campoImagen = new System.Windows.Forms.PictureBox();
-            this.botonBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.botnoAceptar = new System.Windows.Forms.Button();
@@ -49,14 +48,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(279, 9);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(214, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(484, 29);
+            this.label1.Size = new System.Drawing.Size(541, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Configuración de juego: Describir Imágenes";
             // 
-            // botonAgregar
+            // agregar
             // 
             this.botonAgregar.Location = new System.Drawing.Point(671, 59);
             this.botonAgregar.Name = "botonAgregar";
@@ -65,7 +64,7 @@
             this.botonAgregar.Text = "Agregar Imagen";
             this.botonAgregar.UseVisualStyleBackColor = true;
             // 
-            // botonBorrar
+            // borrar
             // 
             this.botonBorrar.Location = new System.Drawing.Point(671, 95);
             this.botonBorrar.Name = "botonBorrar";
@@ -74,7 +73,7 @@
             this.botonBorrar.Text = "Borrar Imagen";
             this.botonBorrar.UseVisualStyleBackColor = true;
             // 
-            // botonModificar
+            // modificar
             // 
             this.botonModificar.Location = new System.Drawing.Point(671, 131);
             this.botonModificar.Name = "botonModificar";
@@ -85,9 +84,10 @@
             // 
             // campoDescripcion
             // 
+            this.campoDescripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoDescripcion.Location = new System.Drawing.Point(103, 167);
             this.campoDescripcion.Name = "campoDescripcion";
-            this.campoDescripcion.Size = new System.Drawing.Size(195, 20);
+            this.campoDescripcion.Size = new System.Drawing.Size(195, 26);
             this.campoDescripcion.TabIndex = 5;
             // 
             // dataGridView1
@@ -121,9 +121,9 @@
             // 
             // campoImagen
             // 
-            this.campoImagen.Location = new System.Drawing.Point(432, 59);
+            this.campoImagen.Location = new System.Drawing.Point(372, 59);
             this.campoImagen.Name = "campoImagen";
-            this.campoImagen.Size = new System.Drawing.Size(106, 102);
+            this.campoImagen.Size = new System.Drawing.Size(240, 144);
             this.campoImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.campoImagen.TabIndex = 7;
             this.campoImagen.TabStop = false;
@@ -140,37 +140,43 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(100, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 13);
+            this.label2.Size = new System.Drawing.Size(217, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Palabra clave de la imagen:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(103, 59);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(100, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.Size = new System.Drawing.Size(116, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Título del texto:";
             // 
             // botnoAceptar
             // 
+            this.botnoAceptar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botnoAceptar.Location = new System.Drawing.Point(671, 498);
             this.botnoAceptar.Name = "botnoAceptar";
             this.botnoAceptar.Size = new System.Drawing.Size(195, 27);
             this.botnoAceptar.TabIndex = 12;
             this.botnoAceptar.Text = "Aceptar";
             this.botnoAceptar.UseVisualStyleBackColor = true;
+            this.botnoAceptar.Click += new System.EventHandler(this.botnoAceptar_Click);
             // 
             // titulo
             // 
+            this.titulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titulo.FormattingEnabled = true;
-            this.titulo.Location = new System.Drawing.Point(103, 75);
+            this.titulo.Location = new System.Drawing.Point(104, 82);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(195, 21);
+            this.titulo.Size = new System.Drawing.Size(195, 28);
             this.titulo.TabIndex = 13;
+            this.titulo.SelectedIndexChanged += new System.EventHandler(this.titulo_SelectedIndexChanged);
             // 
             // ConfiguracionDescribeImagen
             // 
@@ -181,16 +187,16 @@
             this.Controls.Add(this.botnoAceptar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.botonBuscar);
             this.Controls.Add(this.campoImagen);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.campoDescripcion);
-            this.Controls.Add(this.botonModificar);
-            this.Controls.Add(this.botonBorrar);
-            this.Controls.Add(this.botonAgregar);
+            this.Controls.Add(this.modificar);
+            this.Controls.Add(this.borrar);
+            this.Controls.Add(this.agregar);
             this.Controls.Add(this.label1);
             this.Name = "ConfiguracionDescribeImagen";
             this.Text = "ConfiguracionDescribeImagen";
+            this.Load += new System.EventHandler(this.ConfiguracionDescribeImagen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoImagen)).EndInit();
             this.ResumeLayout(false);
@@ -201,15 +207,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button botonAgregar;
-        private System.Windows.Forms.Button botonBorrar;
-        private System.Windows.Forms.Button botonModificar;
+        private System.Windows.Forms.Button agregar;
+        private System.Windows.Forms.Button borrar;
+        private System.Windows.Forms.Button modificar;
         private System.Windows.Forms.TextBox campoDescripcion;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox campoImagen;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewImageColumn imagen;
-        private System.Windows.Forms.Button botonBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button botnoAceptar;

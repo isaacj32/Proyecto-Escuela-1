@@ -32,7 +32,7 @@
             this.textos = new System.Windows.Forms.Button();
             this.atras = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.describe = new System.Windows.Forms.Button();
             this.jugadores = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -79,15 +79,16 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // describe
             // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(313, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(248, 95);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.describe.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.describe.Location = new System.Drawing.Point(313, 12);
+            this.describe.Name = "describe";
+            this.describe.Size = new System.Drawing.Size(248, 95);
+            this.describe.TabIndex = 4;
+            this.describe.Text = "Describe Imagen";
+            this.describe.UseVisualStyleBackColor = true;
+            this.describe.Click += new System.EventHandler(this.describe_Click);
             // 
             // jugadores
             // 
@@ -105,7 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 482);
             this.Controls.Add(this.jugadores);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.describe);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.atras);
             this.Controls.Add(this.textos);
@@ -122,7 +123,7 @@
         private System.Windows.Forms.Button textos;
         private System.Windows.Forms.Button atras;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button describe;
         private System.Windows.Forms.Button jugadores;
     }
 }

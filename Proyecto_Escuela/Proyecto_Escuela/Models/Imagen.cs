@@ -12,6 +12,7 @@ namespace Proyecto_Escuela.Models
     {
         private int posicion;
         private string descripcion;
+        private string ruta="";
 
         public Imagen()
         {           
@@ -28,6 +29,11 @@ namespace Proyecto_Escuela.Models
         {
             return BackgroundImage;
         }
+        public string GetRuta()
+        {
+            return ruta;
+        }
+       
         public void SetDescripcion(string descripcion)
         {
             this.descripcion = descripcion;
@@ -40,5 +46,10 @@ namespace Proyecto_Escuela.Models
         {
             this.posicion = i;
         }
+        public void SetRuta(string path)
+        {
+            this.ruta = path;
+        }
+        
     }
 }
