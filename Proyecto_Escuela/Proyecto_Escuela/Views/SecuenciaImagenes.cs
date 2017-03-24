@@ -142,5 +142,10 @@ namespace Proyecto_Escuela.Views
                 MessageBox.Show("Sigue intentando");
             }
         }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hola participante, para jugar lo que debes hacer es\nhacer clic sobre una imagen, mantenerlo pulsado y\narrastrar la imagen al lugar de encaje que desees.");
+        }
     }
 }

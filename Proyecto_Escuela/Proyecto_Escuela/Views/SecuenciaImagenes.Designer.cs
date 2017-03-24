@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnComprobacion = new System.Windows.Forms.Button();
+            this.btnInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnComprobacion
@@ -42,12 +43,25 @@
             this.btnComprobacion.UseVisualStyleBackColor = true;
             this.btnComprobacion.Click += new System.EventHandler(this.btnComprobacion_Click);
             // 
+            // btnInfo
+            // 
+            this.btnInfo.BackColor = System.Drawing.Color.Transparent;
+            this.btnInfo.BackgroundImage = global::Proyecto_Escuela.Properties.Resources.info;
+            this.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInfo.Location = new System.Drawing.Point(751, 144);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(146, 139);
+            this.btnInfo.TabIndex = 1;
+            this.btnInfo.UseVisualStyleBackColor = false;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
             // SecuenciaImagenes
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 670);
+            this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnComprobacion);
             this.Name = "SecuenciaImagenes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -60,5 +74,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnComprobacion;
+        private System.Windows.Forms.Button btnInfo;
     }
 }
