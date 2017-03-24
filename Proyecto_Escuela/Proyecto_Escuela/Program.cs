@@ -19,23 +19,23 @@ namespace Proyecto_Escuela
         [STAThread]
         static void Main()
         {
-           
-            //ConexionDB conexion = new ConexionDB();
-            //try
-            //{
-            //    if (conexion.AbrirConexion() == true)
-            //    {
+
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+                if (conexion.AbrirConexion() == true)
+                {
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     //conexion.CerrarConexion();
                     new Inicio().Show();
                     Application.Run();
-                    
-            //    }
-            //}catch(MySqlException ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+
+        }
+    }catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
                 
             
         }

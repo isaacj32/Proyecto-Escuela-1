@@ -28,20 +28,22 @@ namespace Proyecto_Escuela.Views
         private SecuenciaController tc;
         private string[] ordenCorrecto;
         private bool ansiado = false;
+        private int intentos = 1;
 
         #region Empty constructor
         /// <summary>
         /// Empty constructor
         /// </summary>
-        public SecuenciaImagenes(int numImagenes)
+        public SecuenciaImagenes(int numImagenes, string rutaDeImagenes, string[] ordenCorrectoImagenes)
         {
             InitializeComponent();
+            this.BackColor = Color.Chocolate;
             int xSpot;
             int ySpot;
             int pp;
-            string pathImg = "C:\\Users\\Alejo Castaño Rojas\\Desktop\\DEVELOPMENT\\C#\\JuegosProyectoEscuela\\JuegosProyectoEscuela\\Resources";
-            string[] imagenes = Directory.GetFiles(pathImg, "*.jpg");
-            ordenCorrecto = imagenes;
+            string pathImg = rutaDeImagenes;
+            string[] imagenes = Directory.GetFiles(pathImg, "*.png");
+            ordenCorrecto = ordenCorrectoImagenes;
             Random rnd = new Random();
             bool[] imgUsada = new bool[numImagenes];
             // Initialize the grid
@@ -116,10 +118,6 @@ namespace Proyecto_Escuela.Views
                     Console.WriteLine("Error papuh en: {0}", i);
                 }
             }
-
-            //grid[0, 0].HasItem = true;
-            //grid[0, 0].BackgroundImage = grid[0, 0].FilledImage;
-
         }
         #endregion
 
@@ -136,10 +134,12 @@ namespace Proyecto_Escuela.Views
             if (ansiado)
             {
                 MessageBox.Show("Felicidades papuh :D");
+
             }
             else
             {
-                MessageBox.Show("Sigue intentando");
+                intentos++;
+                MessageBox.Show("Sigue intentando, vas para el intento #" + intentos);
             }
         }
 
