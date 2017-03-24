@@ -34,10 +34,11 @@ namespace Proyecto_Escuela.Views
         /// <summary>
         /// Empty constructor
         /// </summary>
-        public SecuenciaImagenes(int numImagenes, string rutaDeImagenes, string[] ordenCorrectoImagenes)
+        public SecuenciaImagenes(int numImagenes, string nombreNino, string rutaDeImagenes, string[] ordenCorrectoImagenes)
         {
             InitializeComponent();
             this.BackColor = Color.Chocolate;
+            this.lblNombre.Text = nombreNino;
             int xSpot;
             int ySpot;
             int pp;
