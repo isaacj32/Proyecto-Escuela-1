@@ -38,6 +38,7 @@
             // 
             // estudiantes
             // 
+            this.estudiantes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estudiantes.Location = new System.Drawing.Point(12, 85);
             this.estudiantes.Name = "estudiantes";
             this.estudiantes.Size = new System.Drawing.Size(248, 95);
@@ -48,6 +49,7 @@
             // 
             // textos
             // 
+            this.textos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textos.Location = new System.Drawing.Point(12, 200);
             this.textos.Name = "textos";
             this.textos.Size = new System.Drawing.Size(248, 95);
@@ -58,6 +60,7 @@
             // 
             // atras
             // 
+            this.atras.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atras.Location = new System.Drawing.Point(12, 464);
             this.atras.Name = "atras";
             this.atras.Size = new System.Drawing.Size(248, 61);
@@ -68,6 +71,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(307, 200);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(248, 95);
@@ -77,6 +81,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(307, 85);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(248, 95);
@@ -86,12 +91,14 @@
             // 
             // jugadores
             // 
+            this.jugadores.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jugadores.Location = new System.Drawing.Point(12, 317);
             this.jugadores.Name = "jugadores";
             this.jugadores.Size = new System.Drawing.Size(248, 95);
             this.jugadores.TabIndex = 5;
-            this.jugadores.Text = "Gestionar Jugadores";
+            this.jugadores.Text = "Acceder a Estadísticas";
             this.jugadores.UseVisualStyleBackColor = true;
+            this.jugadores.Click += new System.EventHandler(this.jugadores_Click);
             // 
             // Configuracion
             // 
