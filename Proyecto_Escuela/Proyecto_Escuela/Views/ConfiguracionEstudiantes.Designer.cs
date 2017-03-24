@@ -43,18 +43,18 @@
             this.eliminar = new System.Windows.Forms.Button();
             this.modificar = new System.Windows.Forms.Button();
             this.tabla = new System.Windows.Forms.DataGridView();
-            this.documentoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gradoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grupoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fotoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dbescuelaDataSet = new Proyecto_Escuela.dbescuelaDataSet();
             this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estudianteTableAdapter = new Proyecto_Escuela.dbescuelaDataSetTableAdapters.estudianteTableAdapter();
             this.clear = new System.Windows.Forms.Button();
             this.aceptar = new System.Windows.Forms.Button();
             this.foto = new System.Windows.Forms.PictureBox();
+            this.documentoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gradoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grupoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fotoE = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbescuelaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
@@ -180,6 +180,10 @@
             // 
             // tabla
             // 
+            this.tabla.AllowUserToAddRows = false;
+            this.tabla.AllowUserToDeleteRows = false;
+            this.tabla.AllowUserToResizeColumns = false;
+            this.tabla.AllowUserToResizeRows = false;
             this.tabla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -195,39 +199,10 @@
             this.tabla.Location = new System.Drawing.Point(12, 120);
             this.tabla.MultiSelect = false;
             this.tabla.Name = "tabla";
+            this.tabla.RowTemplate.Height = 120;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(984, 375);
             this.tabla.TabIndex = 15;
-            // 
-            // documentoE
-            // 
-            this.documentoE.HeaderText = "documento";
-            this.documentoE.Name = "documentoE";
-            // 
-            // nombreE
-            // 
-            this.nombreE.HeaderText = "nombre";
-            this.nombreE.Name = "nombreE";
-            // 
-            // apellidoE
-            // 
-            this.apellidoE.HeaderText = "apellidos";
-            this.apellidoE.Name = "apellidoE";
-            // 
-            // gradoE
-            // 
-            this.gradoE.HeaderText = "grado";
-            this.gradoE.Name = "gradoE";
-            // 
-            // grupoE
-            // 
-            this.grupoE.HeaderText = "grupo";
-            this.grupoE.Name = "grupoE";
-            // 
-            // fotoE
-            // 
-            this.fotoE.HeaderText = "foto";
-            this.fotoE.Name = "fotoE";
             // 
             // dbescuelaDataSet
             // 
@@ -274,6 +249,38 @@
             this.foto.TabIndex = 16;
             this.foto.TabStop = false;
             this.foto.Click += new System.EventHandler(this.foto_Click);
+            // 
+            // documentoE
+            // 
+            this.documentoE.HeaderText = "documento";
+            this.documentoE.Name = "documentoE";
+            // 
+            // nombreE
+            // 
+            this.nombreE.HeaderText = "nombre";
+            this.nombreE.Name = "nombreE";
+            // 
+            // apellidoE
+            // 
+            this.apellidoE.HeaderText = "apellidos";
+            this.apellidoE.Name = "apellidoE";
+            // 
+            // gradoE
+            // 
+            this.gradoE.HeaderText = "grado";
+            this.gradoE.Name = "gradoE";
+            // 
+            // grupoE
+            // 
+            this.grupoE.HeaderText = "grupo";
+            this.grupoE.Name = "grupoE";
+            // 
+            // fotoE
+            // 
+            this.fotoE.HeaderText = "foto";
+            this.fotoE.Name = "fotoE";
+            this.fotoE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.fotoE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // ConfiguracionEstudiantes
             // 
@@ -328,14 +335,14 @@
         private System.Windows.Forms.BindingSource estudianteBindingSource;
         private dbescuelaDataSetTableAdapters.estudianteTableAdapter estudianteTableAdapter;
         private System.Windows.Forms.DataGridView tabla;
+        private System.Windows.Forms.PictureBox foto;
+        private System.Windows.Forms.Button clear;
+        private System.Windows.Forms.Button aceptar;
         private System.Windows.Forms.DataGridViewTextBoxColumn documentoE;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreE;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoE;
         private System.Windows.Forms.DataGridViewTextBoxColumn gradoE;
         private System.Windows.Forms.DataGridViewTextBoxColumn grupoE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fotoE;
-        private System.Windows.Forms.PictureBox foto;
-        private System.Windows.Forms.Button clear;
-        private System.Windows.Forms.Button aceptar;
+        private System.Windows.Forms.DataGridViewImageColumn fotoE;
     }
 }

@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using Proyecto_Escuela.DAOS;
 using Proyecto_Escuela.Models;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Proyecto_Escuela.Controllers
 {
@@ -134,7 +135,7 @@ namespace Proyecto_Escuela.Controllers
                     {
                         for (int i = 0; i < lista.Count; i++)
                         {
-                            tabla.Rows.Add(lista[i].getTitulo(), lista[i].getTiempo());
+                            tabla.Rows.Add(lista[i].getTitulo(), lista[i].getTiempo(), Image.FromFile(lista[i].getImage()));
                         }
                     }
                     else if(index == 1)

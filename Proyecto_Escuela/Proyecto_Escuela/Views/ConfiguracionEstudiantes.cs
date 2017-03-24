@@ -46,7 +46,6 @@ namespace Proyecto_Escuela.Views
             estudiante.SetDocumento(documento.Text);
             estudiante.SetGrupo(grupo.Text);
             estudiante.SetGrado(grado.SelectedItem.ToString());
-            estudiante.SetFoto(foto.Image);
 
             if (documento.ReadOnly == false)
             {
@@ -186,7 +185,11 @@ namespace Proyecto_Escuela.Views
             getImagen.Filter = "Archivos de imagen (*.jpg)(*jpeg)|*.jpg;*.jpeg|PNG(*.png)|*.png|GIF(*.gif)|*.gif";
             if (getImagen.ShowDialog() == DialogResult.OK)
             {
-                foto.Image = Image.FromFile(getImagen.FileName);               
+                string a = "\\".Substring(0);
+                Console.WriteLine(a);
+                foto.Image = Image.FromFile(getImagen.FileName);
+                string aux = getImagen.FileName.Replace(a, "\\\\");
+                estudiante.SetFoto(aux);
             }
             else
             {

@@ -16,7 +16,7 @@ namespace Proyecto_Escuela.DAOS
         public static int AgregarEstudiante(MySqlConnection conexion, Estudiante estudiante)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO Estudiante (documento, nombre, apellidos, grado, grupo) VALUES('{0}', '{1}', '{2}', '{3}', '{4}')", estudiante.GetDocumento(), estudiante.GetNombre(), estudiante.GetApellido(), estudiante.GetGrado(), estudiante.GetGrupo()), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO Estudiante (documento, nombre, apellidos, grado, grupo, foto) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", estudiante.GetDocumento(), estudiante.GetNombre(), estudiante.GetApellido(), estudiante.GetGrado(), estudiante.GetGrupo(), estudiante.GetFoto()), conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
@@ -34,11 +34,11 @@ namespace Proyecto_Escuela.DAOS
             MySqlCommand comando;
             if (i == 0)
             {
-                comando = new MySqlCommand(string.Format("SELECT documento, nombre, apellidos, grado, grupo FROM Estudiante WHERE nombre LIKE ('%{0}%') AND apellidos LIKE ('%{1}%') AND grado LIKE ('%{2}%')", pEstudiante.GetNombre(), pEstudiante.GetApellido(), pEstudiante.GetGrado()), conexion);
+                comando = new MySqlCommand(string.Format("SELECT * FROM Estudiante WHERE nombre LIKE ('%{0}%') AND apellidos LIKE ('%{1}%') AND grado LIKE ('%{2}%')", pEstudiante.GetNombre(), pEstudiante.GetApellido(), pEstudiante.GetGrado()), conexion);
             }
             else
             {
-                comando = new MySqlCommand(string.Format("SELECT documento, nombre, apellidos, grado, grupo FROM Estudiante WHERE documento LIKE ('%{0}%') AND nombre LIKE ('%{1}%') AND apellidos LIKE ('%{2}%') AND grado LIKE ('%{3}%')", pEstudiante.GetDocumento(), pEstudiante.GetNombre(), pEstudiante.GetApellido(), pEstudiante.GetGrado()), conexion);
+                comando = new MySqlCommand(string.Format("SELECT * FROM Estudiante WHERE documento LIKE ('%{0}%') AND nombre LIKE ('%{1}%') AND apellidos LIKE ('%{2}%') AND grado LIKE ('%{3}%')", pEstudiante.GetDocumento(), pEstudiante.GetNombre(), pEstudiante.GetApellido(), pEstudiante.GetGrado()), conexion);
             }
             MySqlDataReader reader = comando.ExecuteReader();
 
@@ -52,6 +52,7 @@ namespace Proyecto_Escuela.DAOS
                 estudiante.SetApellido(reader.GetString(2));
                 estudiante.SetGrado(reader.GetString(3));
                 estudiante.SetGrupo(reader.GetString(4));
+                estudiante.SetFoto(reader.GetString(5));
 
                 lista.Add(estudiante);
             }
@@ -63,7 +64,7 @@ namespace Proyecto_Escuela.DAOS
         public static int ModificarEstudiante(MySqlConnection conexion, Estudiante estudiante)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("UPDATE Estudiante set nombre='{1}', apellidos='{2}', grado='{3}', grupo='{4}' WHERE documento='{0}'", estudiante.GetDocumento(), estudiante.GetNombre(), estudiante.GetApellido(),estudiante.GetGrado(), estudiante.GetGrupo()), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("UPDATE Estudiante set nombre='{1}', apellidos='{2}', grado='{3}', grupo='{4}', foto='{5}' WHERE documento='{0}'", estudiante.GetDocumento(), estudiante.GetNombre(), estudiante.GetApellido(),estudiante.GetGrado(), estudiante.GetGrupo(), estudiante.GetFoto()), conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
@@ -81,6 +82,7 @@ namespace Proyecto_Escuela.DAOS
                 estudiante.SetNombre(reader.GetString(1));
                 estudiante.SetApellido(reader.GetString(2));
                 estudiante.SetGrupo(reader.GetString(4));
+                estudiante.SetFoto(reader.GetString(5));
                 estudiante.SetGrado(reader.GetString(3));
 
             }
@@ -106,6 +108,8 @@ namespace Proyecto_Escuela.DAOS
                 estudiante.SetApellido(reader.GetString(2));
                 estudiante.SetGrado(reader.GetString(3));
                 estudiante.SetGrupo(reader.GetString(4));
+                estudiante.SetFoto(reader.GetString(5));
+
 
                 lista.Add(estudiante);
             }
