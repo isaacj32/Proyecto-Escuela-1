@@ -96,14 +96,14 @@ namespace Proyecto_Escuela.Views
                 grupo.Text = estudiante.GetGrupo().ToString();
                 asignarGrado(estudiante.GetGrado());
                 foto.Image = Image.FromFile(estudiante.GetFoto());
-                documento.ReadOnly = true;
+                documento.Enabled = true;
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message + " Debe seleccionar un registro.");
             }
 
-}
+        }
 
         private void eliminar_Click(object sender, EventArgs e)
         {
@@ -116,6 +116,13 @@ namespace Proyecto_Escuela.Views
                 grupo.Text = estudiante.GetGrupo().ToString();
                 asignarGrado(estudiante.GetGrado());
                 foto.Image = Image.FromFile(estudiante.GetFoto());
+                BloquearBotones();
+                BloquearEntradas();
+                clear.Enabled = true;
+                
+
+
+
             }
             else
             {
@@ -150,6 +157,8 @@ namespace Proyecto_Escuela.Views
             grado.SelectedIndex = 0;
             foto.Image = null;
             documento.ReadOnly = false;
+            HabilitarBotones();
+            HabilitarEntrada();
         }
 
         private void asignarGrado(string grado)
@@ -194,6 +203,38 @@ namespace Proyecto_Escuela.Views
             {
                 MessageBox.Show("No selecciono ninguna Imagen", "Sin seleccion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+        private void BloquearBotones()
+        {
+            buscar.Enabled = false;
+            modificar.Enabled = false;
+            guardar.Enabled = false;
+            eliminar.Enabled = false;
+        }
+        private void HabilitarBotones()
+        {
+            buscar.Enabled = true;
+            modificar.Enabled = true;
+            guardar.Enabled = true;
+            eliminar.Enabled = true;
+        }
+        private void BloquearEntradas()
+        {
+            documento.Enabled = false;
+            nombre.Enabled = false;
+            apellido.Enabled = false;
+            grado.Enabled = false;
+            grupo.Enabled = false;
+            foto.Enabled = false;
+        }
+        private void HabilitarEntrada()
+        {
+            documento.Enabled = true;
+            nombre.Enabled = true;
+            apellido.Enabled = true;
+            grado.Enabled = true;
+            grupo.Enabled = true;
+            foto.Enabled = true;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Proyecto_Escuela.Models
         protected string apellidos { get; set; }
         protected int grupo { get; set; }
         protected string grado { get; set; }
-        protected Image foto { get; set; }
+        protected string foto { get; set; }
 
 
         public Estudiante()

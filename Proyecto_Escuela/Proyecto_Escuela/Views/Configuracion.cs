@@ -35,5 +35,10 @@ namespace Proyecto_Escuela.Views
             new ConfigurarTexto().Show();
             this.Dispose();
         }
+
+        private void describe_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

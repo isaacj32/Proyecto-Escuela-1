@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.botonAgregar = new System.Windows.Forms.Button();
-            this.botonBorrar = new System.Windows.Forms.Button();
-            this.botonModificar = new System.Windows.Forms.Button();
+            this.agregar = new System.Windows.Forms.Button();
+            this.borrar = new System.Windows.Forms.Button();
+            this.modificar = new System.Windows.Forms.Button();
             this.campoDescripcion = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.campoImagen = new System.Windows.Forms.PictureBox();
-            this.botonBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.botnoAceptar = new System.Windows.Forms.Button();
@@ -56,32 +55,35 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Configuración de juego: Describir Imágenes";
             // 
-            // botonAgregar
+            // agregar
             // 
-            this.botonAgregar.Location = new System.Drawing.Point(671, 59);
-            this.botonAgregar.Name = "botonAgregar";
-            this.botonAgregar.Size = new System.Drawing.Size(195, 30);
-            this.botonAgregar.TabIndex = 2;
-            this.botonAgregar.Text = "Agregar Imagen";
-            this.botonAgregar.UseVisualStyleBackColor = true;
+            this.agregar.Location = new System.Drawing.Point(671, 59);
+            this.agregar.Name = "agregar";
+            this.agregar.Size = new System.Drawing.Size(195, 30);
+            this.agregar.TabIndex = 2;
+            this.agregar.Text = "Agregar Imagen";
+            this.agregar.UseVisualStyleBackColor = true;
+            this.agregar.Click += new System.EventHandler(this.agregar_Click);
             // 
-            // botonBorrar
+            // borrar
             // 
-            this.botonBorrar.Location = new System.Drawing.Point(671, 95);
-            this.botonBorrar.Name = "botonBorrar";
-            this.botonBorrar.Size = new System.Drawing.Size(195, 30);
-            this.botonBorrar.TabIndex = 3;
-            this.botonBorrar.Text = "Borrar Imagen";
-            this.botonBorrar.UseVisualStyleBackColor = true;
+            this.borrar.Location = new System.Drawing.Point(671, 95);
+            this.borrar.Name = "borrar";
+            this.borrar.Size = new System.Drawing.Size(195, 30);
+            this.borrar.TabIndex = 3;
+            this.borrar.Text = "Borrar Imagen";
+            this.borrar.UseVisualStyleBackColor = true;
+            this.borrar.Click += new System.EventHandler(this.borrar_Click);
             // 
-            // botonModificar
+            // modificar
             // 
-            this.botonModificar.Location = new System.Drawing.Point(671, 131);
-            this.botonModificar.Name = "botonModificar";
-            this.botonModificar.Size = new System.Drawing.Size(195, 30);
-            this.botonModificar.TabIndex = 4;
-            this.botonModificar.Text = "Modificar";
-            this.botonModificar.UseVisualStyleBackColor = true;
+            this.modificar.Location = new System.Drawing.Point(671, 131);
+            this.modificar.Name = "modificar";
+            this.modificar.Size = new System.Drawing.Size(195, 30);
+            this.modificar.TabIndex = 4;
+            this.modificar.Text = "Modificar";
+            this.modificar.UseVisualStyleBackColor = true;
+            this.modificar.Click += new System.EventHandler(this.modificar_Click);
             // 
             // campoDescripcion
             // 
@@ -121,21 +123,13 @@
             // 
             // campoImagen
             // 
-            this.campoImagen.Location = new System.Drawing.Point(432, 59);
+            this.campoImagen.Location = new System.Drawing.Point(372, 59);
             this.campoImagen.Name = "campoImagen";
-            this.campoImagen.Size = new System.Drawing.Size(106, 102);
+            this.campoImagen.Size = new System.Drawing.Size(240, 144);
             this.campoImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.campoImagen.TabIndex = 7;
             this.campoImagen.TabStop = false;
-            // 
-            // botonBuscar
-            // 
-            this.botonBuscar.Location = new System.Drawing.Point(432, 167);
-            this.botonBuscar.Name = "botonBuscar";
-            this.botonBuscar.Size = new System.Drawing.Size(106, 23);
-            this.botonBuscar.TabIndex = 8;
-            this.botonBuscar.Text = "Buscar Imagen";
-            this.botonBuscar.UseVisualStyleBackColor = true;
+            this.campoImagen.Click += new System.EventHandler(this.campoImagen_Click);
             // 
             // label2
             // 
@@ -163,6 +157,7 @@
             this.botnoAceptar.TabIndex = 12;
             this.botnoAceptar.Text = "Aceptar";
             this.botnoAceptar.UseVisualStyleBackColor = true;
+            this.botnoAceptar.Click += new System.EventHandler(this.botnoAceptar_Click);
             // 
             // titulo
             // 
@@ -171,6 +166,7 @@
             this.titulo.Name = "titulo";
             this.titulo.Size = new System.Drawing.Size(195, 21);
             this.titulo.TabIndex = 13;
+            this.titulo.SelectedIndexChanged += new System.EventHandler(this.titulo_SelectedIndexChanged);
             // 
             // ConfiguracionDescribeImagen
             // 
@@ -181,16 +177,16 @@
             this.Controls.Add(this.botnoAceptar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.botonBuscar);
             this.Controls.Add(this.campoImagen);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.campoDescripcion);
-            this.Controls.Add(this.botonModificar);
-            this.Controls.Add(this.botonBorrar);
-            this.Controls.Add(this.botonAgregar);
+            this.Controls.Add(this.modificar);
+            this.Controls.Add(this.borrar);
+            this.Controls.Add(this.agregar);
             this.Controls.Add(this.label1);
             this.Name = "ConfiguracionDescribeImagen";
             this.Text = "ConfiguracionDescribeImagen";
+            this.Load += new System.EventHandler(this.ConfiguracionDescribeImagen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoImagen)).EndInit();
             this.ResumeLayout(false);
@@ -201,15 +197,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button botonAgregar;
-        private System.Windows.Forms.Button botonBorrar;
-        private System.Windows.Forms.Button botonModificar;
+        private System.Windows.Forms.Button agregar;
+        private System.Windows.Forms.Button borrar;
+        private System.Windows.Forms.Button modificar;
         private System.Windows.Forms.TextBox campoDescripcion;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox campoImagen;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewImageColumn imagen;
-        private System.Windows.Forms.Button botonBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button botnoAceptar;

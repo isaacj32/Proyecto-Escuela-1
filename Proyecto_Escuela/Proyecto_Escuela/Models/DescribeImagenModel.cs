@@ -10,7 +10,7 @@ namespace Proyecto_Escuela.Models
     public class DescribeImagenModel
     {
         private List<Imagen> imagenes = new List<Imagen>();
-
+        private string texto;
         public DescribeImagenModel() { }
 
         #region Getters y Setters
@@ -34,6 +34,14 @@ namespace Proyecto_Escuela.Models
         public void AgregarImagen(Imagen imagen)
         {
             this.imagenes.Add(imagen);
+        }
+        public void SetTexto(string texto)
+        {
+            this.texto = texto;
+        }
+        public string GetTexto()
+        {
+            return texto;
         }
         #endregion
     }

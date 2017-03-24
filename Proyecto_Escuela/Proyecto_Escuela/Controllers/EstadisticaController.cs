@@ -19,6 +19,36 @@ namespace Proyecto_Escuela.Controllers
         {
         }
 
+        public void Listar(DataGridView tabla)
+        {
+            try
+            {
+                if (conexion.AbrirConexion() == true)
+                {
+                    IList<Jugador> lista = DAOJugador.ListarJugadores(conexion.GetConexion());
+                    tabla.Rows.Clear();
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        Estudiante estudiante = DAOEstudiante.ObtenerEstudiante(conexion.GetConexion(), lista[0].GetDocumento());
+                        lista[0].SetNombre(estudiante.GetNombre());
+                        lista[0].SetApellido(estudiante.GetApellido());
+                        lista[0].SetGrado(estudiante.GetGrado());
+                        lista[0].SetGrupo(estudiante.GetGrado());
+                    }
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo(), lista[i].GetDesempeño().GetAciertos(), lista[i].GetDesempeño().GetErrores());
+                    }
+                    conexion.CerrarConexion();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                conexion.CerrarConexion();
+            }
+        }
+
         public void Buscar(Jugador jugador, DataGridView tabla, int x)
         {
             try

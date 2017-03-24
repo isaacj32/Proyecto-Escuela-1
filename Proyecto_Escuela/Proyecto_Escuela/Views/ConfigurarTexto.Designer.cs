@@ -43,18 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.TextBox();
             this.tiempo = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.cuento = new System.Windows.Forms.RichTextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.foto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // aceptar
@@ -69,9 +60,9 @@
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(12, 92);
+            this.clear.Location = new System.Drawing.Point(420, 28);
             this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(72, 23);
+            this.clear.Size = new System.Drawing.Size(65, 23);
             this.clear.TabIndex = 34;
             this.clear.Text = "clear";
             this.clear.UseVisualStyleBackColor = true;
@@ -79,9 +70,9 @@
             // foto
             // 
             this.foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.foto.Location = new System.Drawing.Point(782, 12);
+            this.foto.Location = new System.Drawing.Point(828, 12);
             this.foto.Name = "foto";
-            this.foto.Size = new System.Drawing.Size(214, 105);
+            this.foto.Size = new System.Drawing.Size(168, 105);
             this.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.foto.TabIndex = 33;
             this.foto.TabStop = false;
@@ -130,7 +121,7 @@
             // 
             // modificar
             // 
-            this.modificar.Location = new System.Drawing.Point(222, 63);
+            this.modificar.Location = new System.Drawing.Point(216, 82);
             this.modificar.Name = "modificar";
             this.modificar.Size = new System.Drawing.Size(198, 23);
             this.modificar.TabIndex = 31;
@@ -140,7 +131,7 @@
             // 
             // eliminar
             // 
-            this.eliminar.Location = new System.Drawing.Point(222, 92);
+            this.eliminar.Location = new System.Drawing.Point(12, 82);
             this.eliminar.Name = "eliminar";
             this.eliminar.Size = new System.Drawing.Size(198, 23);
             this.eliminar.TabIndex = 30;
@@ -150,7 +141,7 @@
             // 
             // buscar
             // 
-            this.buscar.Location = new System.Drawing.Point(222, 5);
+            this.buscar.Location = new System.Drawing.Point(12, 53);
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(198, 23);
             this.buscar.TabIndex = 29;
@@ -160,7 +151,7 @@
             // 
             // guardar
             // 
-            this.guardar.Location = new System.Drawing.Point(222, 34);
+            this.guardar.Location = new System.Drawing.Point(216, 53);
             this.guardar.Name = "guardar";
             this.guardar.Size = new System.Drawing.Size(198, 23);
             this.guardar.TabIndex = 28;
@@ -171,7 +162,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 50);
+            this.label2.Location = new System.Drawing.Point(213, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 13);
             this.label2.TabIndex = 23;
@@ -195,40 +186,10 @@
             // 
             // tiempo
             // 
-            this.tiempo.Location = new System.Drawing.Point(12, 66);
+            this.tiempo.Location = new System.Drawing.Point(216, 28);
             this.tiempo.Name = "tiempo";
             this.tiempo.Size = new System.Drawing.Size(195, 20);
             this.tiempo.TabIndex = 20;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(10, 6);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(117, 17);
-            this.checkBox1.TabIndex = 46;
-            this.checkBox1.Text = "Describe Imagenes";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(10, 35);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(141, 17);
-            this.checkBox2.TabIndex = 47;
-            this.checkBox2.Text = "Secuencia de Imagenes";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(10, 65);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(63, 17);
-            this.checkBox3.TabIndex = 48;
-            this.checkBox3.Text = "Dictado";
-            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // cuento
             // 
@@ -238,66 +199,11 @@
             this.cuento.TabIndex = 38;
             this.cuento.Text = "";
             // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(162, 65);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(74, 17);
-            this.checkBox4.TabIndex = 51;
-            this.checkBox4.Text = "Preguntas";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(162, 35);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(109, 17);
-            this.checkBox5.TabIndex = 50;
-            this.checkBox5.Text = "Colorear Palabras";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(162, 6);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(91, 17);
-            this.checkBox6.TabIndex = 49;
-            this.checkBox6.Text = "Apareamiento";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(460, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "Actividades";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.checkBox4);
-            this.panel1.Controls.Add(this.checkBox5);
-            this.panel1.Controls.Add(this.checkBox6);
-            this.panel1.Controls.Add(this.checkBox3);
-            this.panel1.Controls.Add(this.checkBox2);
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Location = new System.Drawing.Point(463, 22);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(313, 87);
-            this.panel1.TabIndex = 53;
-            // 
             // ConfigurarTexto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.cuento);
             this.Controls.Add(this.aceptar);
             this.Controls.Add(this.clear);
@@ -316,8 +222,6 @@
             this.Load += new System.EventHandler(this.ConfigurarTexto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.foto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,15 +241,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox titulo;
         private System.Windows.Forms.TextBox tiempo;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.RichTextBox cuento;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tituloT;
         private System.Windows.Forms.DataGridViewTextBoxColumn tiempoT;
         private System.Windows.Forms.DataGridViewImageColumn potadaT;

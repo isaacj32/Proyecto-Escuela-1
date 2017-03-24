@@ -26,6 +26,7 @@ namespace Proyecto_Escuela.Views
         private smTile[] grid;
         private smTile[] encaje;
         private SecuenciaController tc;
+        private SecuenciaImagenModel secuenciaImagenModel;
         private string[] ordenCorrecto;
         private bool ansiado = false;
         private int intentos = 1;
@@ -34,7 +35,7 @@ namespace Proyecto_Escuela.Views
         /// <summary>
         /// Empty constructor
         /// </summary>
-        public SecuenciaImagenes(int numImagenes, string nombreNino, string rutaDeImagenes, string[] ordenCorrectoImagenes)
+        public SecuenciaImagenes(int numImagenes, string nombreNino, string[] ordenCorrectoImagenes)
         {
             InitializeComponent();
             this.BackColor = Color.Chocolate;
@@ -42,8 +43,7 @@ namespace Proyecto_Escuela.Views
             int xSpot;
             int ySpot;
             int pp;
-            string pathImg = rutaDeImagenes;
-            string[] imagenes = Directory.GetFiles(pathImg, "*.png");
+            string[] imagenes = new string[numImagenes];
             ordenCorrecto = ordenCorrectoImagenes;
             Random rnd = new Random();
             bool[] imgUsada = new bool[numImagenes];

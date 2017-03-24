@@ -73,7 +73,7 @@ namespace Proyecto_Escuela.Views
 
         private void secuencia_Click(object sender, EventArgs e)
         {
-            new SecuenciaImagenController(6, tituloLabel.Text);
+            new SecuenciaImagenController(6, tituloLabel.Text,);
             this.Visible = false;
         }
     }
