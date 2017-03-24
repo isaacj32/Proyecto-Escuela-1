@@ -30,14 +30,13 @@ namespace Proyecto_Escuela
                     //conexion.CerrarConexion();
                     new Inicio().Show();
                     Application.Run();
-
-        }
-    }catch(MySqlException ex)
+                    
+                }
+            }catch(MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-                
-            
+            }                       
+          
         }
     }
 }
