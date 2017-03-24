@@ -20,5 +20,35 @@ namespace Proyecto_Escuela.Models
             this.moda = moda;
             this.mediana = mediana;
         }
+
+        public double getMedia()
+        {
+            return media;
+        }
+
+        public void setMedia(double media)
+        {
+            this.media = media;
+        }
+
+        public double getMediana()
+        {
+            return mediana;
+        }
+
+        public void setMediana(double mediana)
+        {
+            this.mediana = mediana;
+        }
+
+        public double getModa()
+        {
+            return moda;
+        }
+
+        public void setModa(double moda)
+        {
+            this.moda = moda;
+        }
     }
 }

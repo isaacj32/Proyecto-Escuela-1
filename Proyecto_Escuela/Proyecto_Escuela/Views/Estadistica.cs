@@ -77,5 +77,10 @@ namespace Proyecto_Escuela.Views
                 estadisticaController.Buscar(jugador, tabla, 1);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            estadisticaController.CalcularEstadisticas(tabla);
+        }
     }
 }
