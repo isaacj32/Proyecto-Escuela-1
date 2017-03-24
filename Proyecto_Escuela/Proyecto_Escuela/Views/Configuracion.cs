@@ -36,9 +36,10 @@ namespace Proyecto_Escuela.Views
             this.Dispose();
         }
 
-        private void describe_Click(object sender, EventArgs e)
+        private void jugadores_Click(object sender, EventArgs e)
         {
-
+            new Estadistica().Show();
+            this.Dispose();
         }
     }
 }
