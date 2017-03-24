@@ -8,8 +8,8 @@ namespace Proyecto_Escuela.Models
 {
     public class Desempeño
     {
-        int aciertos=0;
-        int errores=0;
+        private int aciertos=0;
+        private int errores=0;
 
         public Desempeño()
         {
