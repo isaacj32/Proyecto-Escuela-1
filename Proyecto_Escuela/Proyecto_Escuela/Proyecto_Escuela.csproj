@@ -109,7 +109,7 @@
     <Compile Include="Views\ConfiguracionSecuencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ConfiguracionSecuencia.Designer.cs">
+    <Compile Include="Views\ConfiguracionSecuencia.designer.cs">
       <DependentUpon>ConfiguracionSecuencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ConfigurarTexto.cs">

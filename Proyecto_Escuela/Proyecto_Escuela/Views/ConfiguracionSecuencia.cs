@@ -22,7 +22,7 @@ namespace Proyecto_Escuela.Views
             List<DescribeImagenModel> titulosDisponibles = csc.LlenarActividades();
             for (int i = 0; i < titulosDisponibles.Count; i++)
             {
-                listTitulo.Items.Add(titulosDisponibles[i].GetTexto());
+                listTitulo.Items.Add(titulosDisponibles[i].GetTitulo());
             }
             gridSecuencia.Enabled = false;
         }
