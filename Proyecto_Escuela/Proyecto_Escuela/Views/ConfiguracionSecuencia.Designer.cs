@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.botonModificar = new System.Windows.Forms.Button();
-            this.botonAgregar = new System.Windows.Forms.Button();
-            this.gridSecuencia = new System.Windows.Forms.DataGridView();
+            this.eliminar = new System.Windows.Forms.Button();
+            this.tabla = new System.Windows.Forms.DataGridView();
             this.orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rutaEnTabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagen = new System.Windows.Forms.DataGridViewImageColumn();
@@ -45,7 +45,7 @@
             this.btnCarpeta = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtOrden = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSecuencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,34 +67,37 @@
             this.botonModificar.TabIndex = 7;
             this.botonModificar.Text = "Modificar";
             this.botonModificar.UseVisualStyleBackColor = true;
+            this.botonModificar.Click += new System.EventHandler(this.botonModificar_Click);
             // 
-            // botonAgregar
+            // eliminar
             // 
-            this.botonAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonAgregar.Location = new System.Drawing.Point(614, 129);
-            this.botonAgregar.Name = "botonAgregar";
-            this.botonAgregar.Size = new System.Drawing.Size(270, 30);
-            this.botonAgregar.TabIndex = 5;
-            this.botonAgregar.Text = "Eliminar imagen del listado";
-            this.botonAgregar.UseVisualStyleBackColor = true;
+            this.eliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminar.Location = new System.Drawing.Point(614, 129);
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Size = new System.Drawing.Size(270, 30);
+            this.eliminar.TabIndex = 5;
+            this.eliminar.Text = "Eliminar imagen del listado";
+            this.eliminar.UseVisualStyleBackColor = true;
+            this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
             // 
-            // gridSecuencia
+            // tabla
             // 
-            this.gridSecuencia.AllowUserToAddRows = false;
-            this.gridSecuencia.AllowUserToDeleteRows = false;
-            this.gridSecuencia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridSecuencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSecuencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tabla.AllowUserToAddRows = false;
+            this.tabla.AllowUserToDeleteRows = false;
+            this.tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orden,
             this.rutaEnTabla,
             this.imagen});
-            this.gridSecuencia.Location = new System.Drawing.Point(121, 227);
-            this.gridSecuencia.Name = "gridSecuencia";
-            this.gridSecuencia.ReadOnly = true;
-            this.gridSecuencia.RowTemplate.Height = 100;
-            this.gridSecuencia.Size = new System.Drawing.Size(763, 270);
-            this.gridSecuencia.TabIndex = 8;
-            this.gridSecuencia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSecuencia_CellClick);
+            this.tabla.Location = new System.Drawing.Point(121, 227);
+            this.tabla.Name = "tabla";
+            this.tabla.ReadOnly = true;
+            this.tabla.RowTemplate.Height = 100;
+            this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tabla.Size = new System.Drawing.Size(763, 270);
+            this.tabla.TabIndex = 8;
+            this.tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSecuencia_CellClick);
             // 
             // orden
             // 
@@ -227,14 +230,14 @@
             this.Controls.Add(this.titulo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.gridSecuencia);
+            this.Controls.Add(this.tabla);
             this.Controls.Add(this.botonModificar);
-            this.Controls.Add(this.botonAgregar);
+            this.Controls.Add(this.eliminar);
             this.Controls.Add(this.label1);
             this.Name = "ConfiguracionSecuencia";
             this.Text = "ConfiguracionSecuencia";
             this.Load += new System.EventHandler(this.ConfiguracionSecuencia_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridSecuencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,8 +247,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button botonModificar;
-        private System.Windows.Forms.Button botonAgregar;
-        private System.Windows.Forms.DataGridView gridSecuencia;
+        private System.Windows.Forms.Button eliminar;
+        private System.Windows.Forms.DataGridView tabla;
         private System.Windows.Forms.ComboBox titulo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

@@ -30,23 +30,33 @@ namespace Proyecto_Escuela.Views
             {
                 txtRutaCarpeta.Text = escanerDeCarpeta.SelectedPath;
             }
-            gridSecuencia.Enabled = true;
+            tabla.Enabled = true;
             //Aquí estan las rutas de las imagenes en un arreglo de STRINGS
             string[] imagenes = Directory.GetFiles(txtRutaCarpeta.Text, "*.png");
             for(int i = 0; i < imagenes.Length; i++)
             {
-                gridSecuencia.Rows.Add(i, imagenes[i], Image.FromFile(imagenes[i]));
+                tabla.Rows.Add(i, imagenes[i], Image.FromFile(imagenes[i]));
             }
         }
 
         private void gridSecuencia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            txtOrden.Text = tabla.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void ConfiguracionSecuencia_Load(object sender, EventArgs e)
         {
-            secuenciaController.BuscarTextos(t);
+            secuenciaController.BuscarTextos(titulo);
+        }
+
+        private void botonModificar_Click(object sender, EventArgs e)
+        {
+            tabla.CurrentRow.Cells[0].Value = txtOrden.Text;
+        }
+
+        private void eliminar_Click(object sender, EventArgs e)
+        {
+            tabla.Rows.Remove(tabla.CurrentRow);
         }
     }
 }

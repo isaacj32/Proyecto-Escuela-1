@@ -14,13 +14,13 @@ namespace Proyecto_Escuela.Controllers
 {
     public class ConfiguracionDescribeControler
     {
-        ConfigDescribeImagen describeImagen;
+        //ConfigDescribeImagen describeImagen;
         ConexionDB conexion = new ConexionDB();
 
         public ConfiguracionDescribeControler()
         {
-            describeImagen = new ConfigDescribeImagen(this);
-            describeImagen.Show();
+            //describeImagen = new ConfigDescribeImagen(this);
+            //describeImagen.Show();
         }
         
 

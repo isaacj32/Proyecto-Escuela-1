@@ -10,7 +10,7 @@ namespace Proyecto_Escuela.Models
     {
         private string texto;
         private Imagen[] imagenes;
-        private string[] secuencia;
+        private string[] secuenciaCorrecta;
         public SecuenciaImagenModel(string secuencia)
         {
             imagenes = new Imagen[8];
@@ -30,9 +30,9 @@ namespace Proyecto_Escuela.Models
         }
         public string GetSecuencia()
         {
-            string cadena = secuencia[0];
+            string cadena = secuenciaCorrecta[0];
             for (int i = 1; i < 8; i++) {
-                cadena = cadena + secuencia[i];
+                cadena = cadena + secuenciaCorrecta[i];
             }
             return cadena;
         }

@@ -13,7 +13,7 @@ namespace Proyecto_Escuela.Controllers
         private SecuenciaImagenes secuenciaImagenes;
         private SecuenciaImagenModel secuenciaImagenModel;
 
-        public SecuenciaImagenController(int n, string ruta, string[] ordenCorrecto)
+        public SecuenciaImagenController()
         {
             //secuenciaImagenes = new SecuenciaImagenes(n, ruta, ordenCorrecto);
             secuenciaImagenes.Show();

@@ -18,6 +18,7 @@ namespace Proyecto_Escuela.Controllers
         public ConfiguracionSecuenciaController()
         {
             configuracionSecuencia = new ConfiguracionSecuencia(this);
+            configuracionSecuencia.Show();
         }
 
         public void BuscarTextos(ComboBox combo)
