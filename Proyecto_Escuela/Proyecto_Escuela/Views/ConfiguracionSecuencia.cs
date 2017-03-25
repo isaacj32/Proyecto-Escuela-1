@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto_Escuela.Models;
+using Proyecto_Escuela.Controllers;
+using System.IO;
 
 namespace Proyecto_Escuela.Views
 {
@@ -15,6 +18,35 @@ namespace Proyecto_Escuela.Views
         public ConfiguracionSecuencia()
         {
             InitializeComponent();
+            ConfiguracionSecuenciaController csc = new ConfiguracionSecuenciaController();
+            List<DescribeImagenModel> titulosDisponibles = csc.LlenarActividades();
+            for (int i = 0; i < titulosDisponibles.Count; i++)
+            {
+                listTitulo.Items.Add(titulosDisponibles[i].GetTexto());
+            }
+            gridSecuencia.Enabled = false;
+        }
+
+        private void btnCarpeta_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog escanerDeCarpeta = new FolderBrowserDialog();
+            DialogResult res = escanerDeCarpeta.ShowDialog();
+            if(res == DialogResult.OK)
+            {
+                txtRutaCarpeta.Text = escanerDeCarpeta.SelectedPath;
+            }
+            gridSecuencia.Enabled = true;
+            //Aquí estan las rutas de las imagenes en un arreglo de STRINGS
+            string[] imagenes = Directory.GetFiles(txtRutaCarpeta.Text, "*.png");
+            for(int i = 0; i < imagenes.Length; i++)
+            {
+                gridSecuencia.Rows.Add(i, imagenes[i], Image.FromFile(imagenes[i]));
+            }
+        }
+
+        private void gridSecuencia_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
