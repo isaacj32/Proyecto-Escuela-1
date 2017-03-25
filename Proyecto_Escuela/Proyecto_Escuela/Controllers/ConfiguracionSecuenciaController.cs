@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Proyecto_Escuela.Models;
 using Proyecto_Escuela.DAOS;
 using Proyecto_Escuela.Views;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Proyecto_Escuela.Controllers
 {
@@ -18,14 +20,27 @@ namespace Proyecto_Escuela.Controllers
             configuracionSecuencia = new ConfiguracionSecuencia(this);
         }
 
-        public IList<Texto> LlenarActividades()
+        public void BuscarTextos(ComboBox combo)
         {
-            if (conexion.AbrirConexion() == true)
+            try
             {
-                IList<Texto> listaActividades = DAOTexto.ListarTextos(conexion.GetConexion());
-                return listaActividades;
+                if (conexion.AbrirConexion() == true)
+                {
+                    IList<Texto> lista = DAOTexto.ListarTextos(conexion.GetConexion());
+
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        combo.Items.Add(lista[i].getTitulo());
+                    }
+                    conexion.CerrarConexion();
+
+                }
             }
-            return null;
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                conexion.CerrarConexion();
+            }
         }
     }
 }

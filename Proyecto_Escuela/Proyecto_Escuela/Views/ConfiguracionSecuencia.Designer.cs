@@ -35,7 +35,7 @@
             this.orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rutaEnTabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagen = new System.Windows.Forms.DataGridViewImageColumn();
-            this.listTitulo = new System.Windows.Forms.ComboBox();
+            this.titulo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboGrados = new System.Windows.Forms.ComboBox();
@@ -115,14 +115,14 @@
             this.imagen.Name = "imagen";
             this.imagen.ReadOnly = true;
             // 
-            // listTitulo
+            // titulo
             // 
-            this.listTitulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listTitulo.FormattingEnabled = true;
-            this.listTitulo.Location = new System.Drawing.Point(122, 67);
-            this.listTitulo.Name = "listTitulo";
-            this.listTitulo.Size = new System.Drawing.Size(262, 28);
-            this.listTitulo.TabIndex = 17;
+            this.titulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo.FormattingEnabled = true;
+            this.titulo.Location = new System.Drawing.Point(122, 67);
+            this.titulo.Name = "titulo";
+            this.titulo.Size = new System.Drawing.Size(262, 28);
+            this.titulo.TabIndex = 17;
             // 
             // label3
             // 
@@ -224,7 +224,7 @@
             this.Controls.Add(this.labelRuta);
             this.Controls.Add(this.txtRutaCarpeta);
             this.Controls.Add(this.comboGrados);
-            this.Controls.Add(this.listTitulo);
+            this.Controls.Add(this.titulo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gridSecuencia);
@@ -233,6 +233,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ConfiguracionSecuencia";
             this.Text = "ConfiguracionSecuencia";
+            this.Load += new System.EventHandler(this.ConfiguracionSecuencia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridSecuencia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,7 +246,7 @@
         private System.Windows.Forms.Button botonModificar;
         private System.Windows.Forms.Button botonAgregar;
         private System.Windows.Forms.DataGridView gridSecuencia;
-        private System.Windows.Forms.ComboBox listTitulo;
+        private System.Windows.Forms.ComboBox titulo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboGrados;

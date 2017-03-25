@@ -16,17 +16,10 @@ namespace Proyecto_Escuela.Views
     public partial class ConfiguracionSecuencia : Form
     {
         ConfiguracionSecuenciaController secuenciaController;
-
         public ConfiguracionSecuencia(ConfiguracionSecuenciaController controller)
         {
             InitializeComponent();
-            ConfiguracionSecuenciaController csc = new ConfiguracionSecuenciaController();
-            List<DescribeImagenModel> titulosDisponibles = csc.LlenarActividades();
-            for (int i = 0; i < titulosDisponibles.Count; i++)
-            {
-                listTitulo.Items.Add(titulosDisponibles[i].GetTitulo());
-            }
-            gridSecuencia.Enabled = false;
+            secuenciaController = controller;            
         }
 
         private void btnCarpeta_Click(object sender, EventArgs e)
@@ -49,6 +42,11 @@ namespace Proyecto_Escuela.Views
         private void gridSecuencia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void ConfiguracionSecuencia_Load(object sender, EventArgs e)
+        {
+            secuenciaController.BuscarTextos(t);
         }
     }
 }
