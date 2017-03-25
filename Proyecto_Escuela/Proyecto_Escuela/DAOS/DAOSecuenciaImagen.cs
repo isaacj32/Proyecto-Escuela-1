@@ -36,7 +36,7 @@ namespace Proyecto_Escuela.DAOS
             Imagen imagen = new Imagen();
             List<SecuenciaImagenModel> lista = new List<SecuenciaImagenModel>();
             MySqlCommand comando;
-            comando = new MySqlCommand(string.Format("SELECT * FROM SecuenciaImagen WHERE titulo LIKE ('%{0}%')", model.GetTexto()), conexion);
+            comando = new MySqlCommand(string.Format("SELECT * FROM SecuenciaImagen WHERE titulo LIKE ('%{0}%')", model.GetTitulo()), conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
             while (reader.Read())
@@ -90,7 +90,7 @@ namespace Proyecto_Escuela.DAOS
         public static int ModificarActividad(MySqlConnection conexion, DescribeImagenModel modelo)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("UPDATE DescribeImagen set imagen 1='{1}', imagen 2='{2}', imagen 3='{3}', imagen 4='{4}', imagen 5='{5}' WHERE titulo='{0}'", modelo.GetTexto(), modelo.GetImagen(0).GetRuta(), modelo.GetImagen(1).GetRuta(), modelo.GetImagen(2).GetRuta(), modelo.GetImagen(3).GetRuta(), modelo.GetImagen(4).GetRuta()), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("UPDATE DescribeImagen set imagen 1='{1}', imagen 2='{2}', imagen 3='{3}', imagen 4='{4}', imagen 5='{5}' WHERE titulo='{0}'", modelo.GetTitulo(), modelo.GetImagen(0).GetRuta(), modelo.GetImagen(1).GetRuta(), modelo.GetImagen(2).GetRuta(), modelo.GetImagen(3).GetRuta(), modelo.GetImagen(4).GetRuta()), conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
@@ -107,7 +107,7 @@ namespace Proyecto_Escuela.DAOS
             while (reader.Read())
             {
 
-                actividad.SetTexto(reader.GetString(0));
+                actividad.SetTitulo(reader.GetString(0));
                 imagen.SetRuta(reader.GetString(1));
                 actividad.SetImagen(imagen, 0);
 
@@ -144,7 +144,7 @@ namespace Proyecto_Escuela.DAOS
             {
                 DescribeImagenModel actividad = new DescribeImagenModel();
 
-                actividad.SetTexto(reader.GetString(0));
+                actividad.SetTitulo(reader.GetString(0));
                 imagen.SetRuta(reader.GetString(1));
                 actividad.SetImagen(imagen, 0);
 

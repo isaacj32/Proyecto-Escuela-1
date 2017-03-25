@@ -88,6 +88,7 @@
             this.describe.TabIndex = 4;
             this.describe.Text = "Describe Imagen";
             this.describe.UseVisualStyleBackColor = true;
+            this.describe.Click += new System.EventHandler(this.describe_Click);
             // 
             // jugadores
             // 

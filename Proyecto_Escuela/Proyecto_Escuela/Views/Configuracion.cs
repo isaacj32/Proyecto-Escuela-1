@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto_Escuela.Controllers;
 
 namespace Proyecto_Escuela.Views
 {
@@ -34,6 +35,11 @@ namespace Proyecto_Escuela.Views
         {
             new ConfigurarTexto().Show();
             this.Dispose();
+        }
+
+        private void describe_Click(object sender, EventArgs e)
+        {
+            new ConfiguracionDescribeControler();
         }
     }
 }

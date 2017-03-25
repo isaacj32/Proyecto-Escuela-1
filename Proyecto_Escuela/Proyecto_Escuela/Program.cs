@@ -26,8 +26,8 @@ namespace Proyecto_Escuela
                 if (conexion.AbrirConexion() == true)
                 {
                     Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    //conexion.CerrarConexion();
+                    Application.SetCompatibleTextRenderingDefault(true);
+                    conexion.CerrarConexion();
                     new Inicio().Show();
                     Application.Run();
                     
