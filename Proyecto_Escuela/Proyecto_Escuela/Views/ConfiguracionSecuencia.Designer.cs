@@ -43,7 +43,6 @@
             this.labelRuta = new System.Windows.Forms.Label();
             this.botonAceptar = new System.Windows.Forms.Button();
             this.btnCarpeta = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtOrden = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridSecuencia)).BeginInit();
@@ -62,7 +61,7 @@
             // botonModificar
             // 
             this.botonModificar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonModificar.Location = new System.Drawing.Point(614, 127);
+            this.botonModificar.Location = new System.Drawing.Point(614, 165);
             this.botonModificar.Name = "botonModificar";
             this.botonModificar.Size = new System.Drawing.Size(270, 30);
             this.botonModificar.TabIndex = 7;
@@ -72,7 +71,7 @@
             // botonAgregar
             // 
             this.botonAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonAgregar.Location = new System.Drawing.Point(614, 65);
+            this.botonAgregar.Location = new System.Drawing.Point(614, 129);
             this.botonAgregar.Name = "botonAgregar";
             this.botonAgregar.Size = new System.Drawing.Size(270, 30);
             this.botonAgregar.TabIndex = 5;
@@ -160,7 +159,7 @@
             // 
             // txtRutaCarpeta
             // 
-            this.txtRutaCarpeta.Location = new System.Drawing.Point(122, 201);
+            this.txtRutaCarpeta.Location = new System.Drawing.Point(121, 191);
             this.txtRutaCarpeta.Name = "txtRutaCarpeta";
             this.txtRutaCarpeta.Size = new System.Drawing.Size(228, 20);
             this.txtRutaCarpeta.TabIndex = 20;
@@ -169,7 +168,7 @@
             // 
             this.labelRuta.AutoSize = true;
             this.labelRuta.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRuta.Location = new System.Drawing.Point(118, 175);
+            this.labelRuta.Location = new System.Drawing.Point(117, 165);
             this.labelRuta.Name = "labelRuta";
             this.labelRuta.Size = new System.Drawing.Size(151, 20);
             this.labelRuta.TabIndex = 21;
@@ -187,7 +186,7 @@
             // 
             // btnCarpeta
             // 
-            this.btnCarpeta.Location = new System.Drawing.Point(356, 198);
+            this.btnCarpeta.Location = new System.Drawing.Point(355, 188);
             this.btnCarpeta.Name = "btnCarpeta";
             this.btnCarpeta.Size = new System.Drawing.Size(28, 23);
             this.btnCarpeta.TabIndex = 24;
@@ -195,21 +194,11 @@
             this.btnCarpeta.UseVisualStyleBackColor = true;
             this.btnCarpeta.Click += new System.EventHandler(this.btnCarpeta_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(614, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(270, 31);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Guardar en B.D.";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(419, 106);
+            this.label4.Location = new System.Drawing.Point(610, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 26;
@@ -218,7 +207,7 @@
             // txtOrden
             // 
             this.txtOrden.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrden.Location = new System.Drawing.Point(423, 131);
+            this.txtOrden.Location = new System.Drawing.Point(614, 100);
             this.txtOrden.Name = "txtOrden";
             this.txtOrden.Size = new System.Drawing.Size(136, 26);
             this.txtOrden.TabIndex = 27;
@@ -230,7 +219,6 @@
             this.ClientSize = new System.Drawing.Size(1008, 537);
             this.Controls.Add(this.txtOrden);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCarpeta);
             this.Controls.Add(this.botonAceptar);
             this.Controls.Add(this.labelRuta);
@@ -268,7 +256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orden;
         private System.Windows.Forms.DataGridViewTextBoxColumn rutaEnTabla;
         private System.Windows.Forms.DataGridViewImageColumn imagen;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtOrden;
     }

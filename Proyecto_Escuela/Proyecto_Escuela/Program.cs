@@ -28,7 +28,7 @@ namespace Proyecto_Escuela
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(true);
                     conexion.CerrarConexion();
-                    new Inicio().Show();
+                    new ConfiguracionSecuenciaController().Show();
                     Application.Run();
                     
                 }

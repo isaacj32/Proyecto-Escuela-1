@@ -15,7 +15,9 @@ namespace Proyecto_Escuela.Views
 {
     public partial class ConfiguracionSecuencia : Form
     {
-        public ConfiguracionSecuencia()
+        ConfiguracionSecuenciaController secuenciaController;
+
+        public ConfiguracionSecuencia(ConfiguracionSecuenciaController controller)
         {
             InitializeComponent();
             ConfiguracionSecuenciaController csc = new ConfiguracionSecuenciaController();

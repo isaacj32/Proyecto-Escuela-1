@@ -5,21 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using Proyecto_Escuela.Models;
 using Proyecto_Escuela.DAOS;
+using Proyecto_Escuela.Views;
 
 namespace Proyecto_Escuela.Controllers
 {
-    class ConfiguracionSecuenciaController
+    public class ConfiguracionSecuenciaController
     {
+        ConexionDB conexion = new ConexionDB();
+        ConfiguracionSecuencia configuracionSecuencia;
         public ConfiguracionSecuenciaController()
         {
-
+            configuracionSecuencia = new ConfiguracionSecuencia(this);
         }
 
-        public List<DescribeImagenModel> LlenarActividades()
+        public IList<Texto> LlenarActividades()
         {
-            ConexionDB conexion = new ConexionDB();
-            List<DescribeImagenModel> listaActividades = DAOSecuenciaImagen.ListarActividades(conexion.GetConexion());
-            return listaActividades;
+            if (conexion.AbrirConexion() == true)
+            {
+                IList<Texto> listaActividades = DAOTexto.ListarTextos(conexion.GetConexion());
+                return listaActividades;
+            }
+            return null;
         }
     }
 }
