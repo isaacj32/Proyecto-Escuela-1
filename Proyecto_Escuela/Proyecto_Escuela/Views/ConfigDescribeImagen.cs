@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Proyecto_Escuela.Controllers;
+﻿using Proyecto_Escuela.Controllers;
 using Proyecto_Escuela.Models;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Proyecto_Escuela.Views
 {
@@ -53,7 +47,7 @@ namespace Proyecto_Escuela.Views
 
         private void modificar_Click(object sender, EventArgs e)
         {
-            campoDescripcion.Text=describeModel.GetImagen(tabla.CurrentRow.Index).GetDescripcion();
+            campoDescripcion.Text = describeModel.GetImagen(tabla.CurrentRow.Index).GetDescripcion();
             campoImagen.Image = Image.FromFile(describeModel.GetImagen(tabla.CurrentRow.Index).GetRuta());
             modificar.Enabled = false;
             modificacion = true;
@@ -77,7 +71,7 @@ namespace Proyecto_Escuela.Views
                 image.SetRuta(ruta);
                 tabla.Rows.Add(image.GetDescripcion(), Image.FromFile(image.GetRuta()));
                 describeModel.AgregarImagen(image);
-                indice = indice + 1;                
+                indice = indice + 1;
             }
             campoImagen.Image = null;
             campoDescripcion.Clear();
@@ -88,7 +82,7 @@ namespace Proyecto_Escuela.Views
             }
             if (tabla.Rows.Count == 5)
             {
-                botnoAceptar.Enabled = true;
+                botonAceptar.Enabled = true;
             }
         }
 
@@ -100,7 +94,7 @@ namespace Proyecto_Escuela.Views
         private void Aceptar_Click(object sender, EventArgs e)
         {
             describeModel.SetTitulo(titulo.SelectedItem.ToString());
-            if (cambiar==false)
+            if (cambiar == false)
             {
                 describeContrller.Agregar(describeModel);
 
