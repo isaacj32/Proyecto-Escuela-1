@@ -196,6 +196,7 @@
             this.intentos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.intentos.Location = new System.Drawing.Point(139, 11);
             this.intentos.Name = "intentos";
+            this.intentos.ReadOnly = true;
             this.intentos.Size = new System.Drawing.Size(96, 31);
             this.intentos.TabIndex = 48;
             this.intentos.Text = "0";
@@ -205,6 +206,7 @@
             this.aciertos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aciertos.Location = new System.Drawing.Point(139, 47);
             this.aciertos.Name = "aciertos";
+            this.aciertos.ReadOnly = true;
             this.aciertos.Size = new System.Drawing.Size(96, 31);
             this.aciertos.TabIndex = 49;
             this.aciertos.Text = "0";
@@ -228,6 +230,7 @@
             this.errores.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errores.Location = new System.Drawing.Point(139, 81);
             this.errores.Name = "errores";
+            this.errores.ReadOnly = true;
             this.errores.Size = new System.Drawing.Size(96, 31);
             this.errores.TabIndex = 51;
             this.errores.Text = "0";

@@ -14,13 +14,13 @@ namespace Proyecto_Escuela.Controllers
 {
     public class ConfiguracionDescribeControler
     {
-        //ConfigDescribeImagen describeImagen;
+        ConfigDescribeImagen describeImagen;
         ConexionDB conexion = new ConexionDB();
 
         public ConfiguracionDescribeControler()
         {
-            //describeImagen = new ConfigDescribeImagen(this);
-            //describeImagen.Show();
+            describeImagen = new ConfigDescribeImagen(this);
+            describeImagen.Show();
         }
         
 
@@ -97,7 +97,7 @@ namespace Proyecto_Escuela.Controllers
             {
                 if (conexion.AbrirConexion() == true)
                 {
-                    DescribeImagenModel lista = DAOS.DAODescribeImagen.ListarActividades(conexion.GetConexion(), titulo);
+                    DescribeImagenModel lista = DAOS.DAODescribeImagen.ObtenerActividad(conexion.GetConexion(), titulo);
                     tabla.Rows.Clear();
                     for (int i = 0; i < lista.GetImagenes().Count; i++)
                     {

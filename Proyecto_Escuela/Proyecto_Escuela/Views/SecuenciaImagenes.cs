@@ -34,7 +34,7 @@ namespace Proyecto_Escuela.Views
         /// <summary>
         /// Empty constructor
         /// </summary>
-        public SecuenciaImagenes(int numImagenes, Jugador nino, string rutaDeImagenes, string[] ordenCorrectoImagenes)
+        public SecuenciaImagenes(int numImagenes, Jugador nino, string[] rutaDeImagenes, string[] ordenCorrectoImagenes)
         {
             InitializeComponent();
             this.BackColor = Color.Chocolate;
@@ -42,8 +42,7 @@ namespace Proyecto_Escuela.Views
             int xSpot;
             int ySpot;
             int pp;
-            string pathImg = rutaDeImagenes;
-            string[] imagenes = Directory.GetFiles(pathImg, "*.png");
+            string[] imagenes = rutaDeImagenes;
             ordenCorrecto = ordenCorrectoImagenes;
             Random rnd = new Random();
             bool[] imgUsada = new bool[numImagenes];

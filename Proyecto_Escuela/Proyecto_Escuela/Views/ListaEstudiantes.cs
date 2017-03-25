@@ -29,13 +29,14 @@ namespace Proyecto_Escuela.Views
         }
         private void Listar()
         {
-            filasEstudiantes = listaEstudianteController.Listar(tablaPrimero);
+            filasEstudiantes = listaEstudianteController.Listar(tabla);
         }
 
         private void tablaPrimero_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Jugador play = new Jugador();
-            play = listaEstudianteController.retornarEstudiante(tablaPrimero, filasEstudiantes);
+            play = listaEstudianteController.retornarEstudiante(tabla, filasEstudiantes);
+            Console.WriteLine(play.GetApellido());
             ListaTextosController ListaTextos = new ListaTextosController(play);
             this.Dispose();
         }

@@ -13,9 +13,11 @@ namespace Proyecto_Escuela.Models
         private int posicion;
         private string descripcion;
         private string ruta="";
+        
 
         public Imagen()
-        {           
+        {
+            this.BackgroundImageLayout = ImageLayout.Zoom;    
         }        
         public int GetPosicion()
         {
@@ -50,6 +52,10 @@ namespace Proyecto_Escuela.Models
         {
             this.ruta = path;
         }
-        
+        public static void SetPicture(Imagen imagen)
+        {
+            imagen.BackgroundImage = Image.FromFile(imagen.GetRuta());
+        }
+
     }
 }

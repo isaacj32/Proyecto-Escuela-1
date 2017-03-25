@@ -28,193 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.primero = new System.Windows.Forms.TabPage();
-            this.tablaPrimero = new System.Windows.Forms.DataGridView();
-            this.segundo = new System.Windows.Forms.TabPage();
-            this.tablaSegundo = new System.Windows.Forms.DataGridView();
-            this.tercero = new System.Windows.Forms.TabPage();
-            this.tablaTercero = new System.Windows.Forms.DataGridView();
+            this.tabla = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tabControl1.SuspendLayout();
-            this.primero.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaPrimero)).BeginInit();
-            this.segundo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaSegundo)).BeginInit();
-            this.tercero.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaTercero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabla
             // 
-            this.tabControl1.Controls.Add(this.primero);
-            this.tabControl1.Controls.Add(this.segundo);
-            this.tabControl1.Controls.Add(this.tercero);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1008, 537);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // primero
-            // 
-            this.primero.Controls.Add(this.tablaPrimero);
-            this.primero.Location = new System.Drawing.Point(4, 39);
-            this.primero.Name = "primero";
-            this.primero.Padding = new System.Windows.Forms.Padding(3);
-            this.primero.Size = new System.Drawing.Size(1000, 494);
-            this.primero.TabIndex = 0;
-            this.primero.Text = "Primero";
-            this.primero.UseVisualStyleBackColor = true;
-            // 
-            // tablaPrimero
-            // 
-            this.tablaPrimero.AllowUserToAddRows = false;
-            this.tablaPrimero.AllowUserToDeleteRows = false;
-            this.tablaPrimero.AllowUserToResizeColumns = false;
-            this.tablaPrimero.AllowUserToResizeRows = false;
-            this.tablaPrimero.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tablaPrimero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tablaPrimero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaPrimero.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tabla.AllowUserToAddRows = false;
+            this.tabla.AllowUserToDeleteRows = false;
+            this.tabla.AllowUserToResizeColumns = false;
+            this.tabla.AllowUserToResizeRows = false;
+            this.tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.tablaPrimero.Location = new System.Drawing.Point(3, 3);
-            this.tablaPrimero.Name = "tablaPrimero";
-            this.tablaPrimero.RowTemplate.Height = 120;
-            this.tablaPrimero.Size = new System.Drawing.Size(994, 491);
-            this.tablaPrimero.TabIndex = 1;
-            this.tablaPrimero.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaPrimero_CellDoubleClick);
-            // 
-            // segundo
-            // 
-            this.segundo.Controls.Add(this.tablaSegundo);
-            this.segundo.Location = new System.Drawing.Point(4, 39);
-            this.segundo.Name = "segundo";
-            this.segundo.Padding = new System.Windows.Forms.Padding(3);
-            this.segundo.Size = new System.Drawing.Size(1000, 494);
-            this.segundo.TabIndex = 1;
-            this.segundo.Text = "Segundo";
-            this.segundo.UseVisualStyleBackColor = true;
-            // 
-            // tablaSegundo
-            // 
-            this.tablaSegundo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tablaSegundo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaSegundo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablaSegundo.Location = new System.Drawing.Point(3, 3);
-            this.tablaSegundo.Name = "tablaSegundo";
-            this.tablaSegundo.Size = new System.Drawing.Size(994, 488);
-            this.tablaSegundo.TabIndex = 1;
-            // 
-            // tercero
-            // 
-            this.tercero.Controls.Add(this.tablaTercero);
-            this.tercero.Location = new System.Drawing.Point(4, 39);
-            this.tercero.Name = "tercero";
-            this.tercero.Padding = new System.Windows.Forms.Padding(3);
-            this.tercero.Size = new System.Drawing.Size(1000, 494);
-            this.tercero.TabIndex = 2;
-            this.tercero.Text = "Tercero";
-            this.tercero.UseVisualStyleBackColor = true;
-            // 
-            // tablaTercero
-            // 
-            this.tablaTercero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tablaTercero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaTercero.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablaTercero.Location = new System.Drawing.Point(3, 3);
-            this.tablaTercero.Name = "tablaTercero";
-            this.tablaTercero.Size = new System.Drawing.Size(994, 488);
-            this.tablaTercero.TabIndex = 0;
+            this.tabla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabla.Location = new System.Drawing.Point(0, 0);
+            this.tabla.Name = "tabla";
+            this.tabla.RowTemplate.Height = 120;
+            this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.tabla.Size = new System.Drawing.Size(1008, 537);
+            this.tabla.TabIndex = 0;
+            this.tabla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaPrimero_CellDoubleClick);
             // 
             // Column1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "null";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column1.HeaderText = "";
             this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column2
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "null";
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column2.HeaderText = "";
             this.Column2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column3
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "null";
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column3.HeaderText = "";
             this.Column3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column3.Name = "Column3";
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column4
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "null";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column4.HeaderText = "";
             this.Column4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // ListaEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabla);
             this.Name = "ListaEstudiantes";
             this.Text = "ListaEstudiante";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ListaEstudiantes_FormClosed);
             this.Load += new System.EventHandler(this.ListaEstudiantes_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.primero.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tablaPrimero)).EndInit();
-            this.segundo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tablaSegundo)).EndInit();
-            this.tercero.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tablaTercero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage primero;
-        private System.Windows.Forms.TabPage segundo;
-        private System.Windows.Forms.DataGridView tablaPrimero;
-        private System.Windows.Forms.DataGridView tablaSegundo;
-        private System.Windows.Forms.TabPage tercero;
-        private System.Windows.Forms.DataGridView tablaTercero;
+        private System.Windows.Forms.DataGridView tabla;
         private System.Windows.Forms.DataGridViewImageColumn Column1;
         private System.Windows.Forms.DataGridViewImageColumn Column2;
         private System.Windows.Forms.DataGridViewImageColumn Column3;

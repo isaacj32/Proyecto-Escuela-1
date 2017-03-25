@@ -15,11 +15,12 @@ namespace Proyecto_Escuela.Views
     public partial class MenuActividades : Form
     {
         DescribeImagenModel describeImagenModel = new DescribeImagenModel();
-
-        public MenuActividades(string titulo)
+        Jugador jugador;
+        public MenuActividades(string titulo, Jugador jugador)
         {
             InitializeComponent();
             tituloLabel.Text = titulo;
+            this.jugador = jugador;
         }
 
         //Getter y Setter de los componentes para su utilización
@@ -48,21 +49,13 @@ namespace Proyecto_Escuela.Views
                 case 2:                    
                     secuencia.Enabled = false;
                     secuencia.ForeColor = Color.Black;
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
+                    break;               
             }
         }
 
         private void describe_Click(object sender, EventArgs e)
         {            
-            new DescribeImagenController(describeImagenModel,describeImagenModel, this);
+            new DescribeImagenController(this,jugador);
             this.Visible = false;
         }
 

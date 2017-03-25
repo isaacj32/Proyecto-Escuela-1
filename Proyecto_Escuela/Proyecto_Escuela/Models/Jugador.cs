@@ -8,24 +8,20 @@ namespace Proyecto_Escuela.Models
 {
     public class Jugador: Estudiante 
     {
-        Desempeño desempeño;
+        Desempeño[] desempeño = new Desempeño[2];
                 
         public Jugador()
-        {
-            desempeño = new Desempeño();
+        {            
         }
 
-        public Desempeño GetDesempeño()
+        public Desempeño[] GetDesempeño()
         {
             return desempeño;
         }
 
-        public void SetDesempeño(int aciertos, int errores)
-        {
-            this.desempeño = new Desempeño(aciertos, errores);
-        }
-
         
+
+
 
 
     }

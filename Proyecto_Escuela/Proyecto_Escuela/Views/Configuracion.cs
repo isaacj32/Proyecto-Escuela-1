@@ -40,6 +40,13 @@ namespace Proyecto_Escuela.Views
         private void describe_Click(object sender, EventArgs e)
         {
             new ConfiguracionDescribeControler();
+            this.Dispose();
+        }
+
+        private void secuencia_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            new ConfiguracionSecuenciaController();
         }
     }
 }

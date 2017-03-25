@@ -31,7 +31,7 @@
             this.estudiantes = new System.Windows.Forms.Button();
             this.textos = new System.Windows.Forms.Button();
             this.atras = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.secuencia = new System.Windows.Forms.Button();
             this.describe = new System.Windows.Forms.Button();
             this.jugadores = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -69,15 +69,16 @@
             this.atras.UseVisualStyleBackColor = true;
             this.atras.Click += new System.EventHandler(this.atras_Click);
             // 
-            // button1
+            // secuencia
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(313, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(248, 95);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.secuencia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secuencia.Location = new System.Drawing.Point(313, 127);
+            this.secuencia.Name = "secuencia";
+            this.secuencia.Size = new System.Drawing.Size(248, 95);
+            this.secuencia.TabIndex = 3;
+            this.secuencia.Text = "Secuencia de Imagenes";
+            this.secuencia.UseVisualStyleBackColor = true;
+            this.secuencia.Click += new System.EventHandler(this.secuencia_Click);
             // 
             // describe
             // 
@@ -107,7 +108,7 @@
             this.ClientSize = new System.Drawing.Size(908, 482);
             this.Controls.Add(this.jugadores);
             this.Controls.Add(this.describe);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.secuencia);
             this.Controls.Add(this.atras);
             this.Controls.Add(this.textos);
             this.Controls.Add(this.estudiantes);
@@ -122,7 +123,7 @@
         private System.Windows.Forms.Button estudiantes;
         private System.Windows.Forms.Button textos;
         private System.Windows.Forms.Button atras;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button secuencia;
         private System.Windows.Forms.Button describe;
         private System.Windows.Forms.Button jugadores;
     }
