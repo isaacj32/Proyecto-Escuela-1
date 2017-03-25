@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.modificar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.agregar = new System.Windows.Forms.Button();
-            this.titulo = new System.Windows.Forms.ComboBox();
-            this.botnoAceptar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.campoImagen = new System.Windows.Forms.PictureBox();
-            this.tabla = new System.Windows.Forms.DataGridView();
+            this.borrar = new System.Windows.Forms.Button();
+            this.modificar = new System.Windows.Forms.Button();
+            this.campoDescripcion = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.campoDescripcion = new System.Windows.Forms.TextBox();
@@ -57,37 +55,32 @@
             // 
             // agregar
             // 
-            this.agregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agregar.Location = new System.Drawing.Point(692, 83);
-            this.agregar.Name = "agregar";
-            this.agregar.Size = new System.Drawing.Size(195, 31);
-            this.agregar.TabIndex = 38;
-            this.agregar.Text = "Agregar Imagen";
-            this.agregar.UseVisualStyleBackColor = true;
-            this.agregar.Click += new System.EventHandler(this.agregar_Click);
+            this.botonAgregar.Location = new System.Drawing.Point(671, 59);
+            this.botonAgregar.Name = "botonAgregar";
+            this.botonAgregar.Size = new System.Drawing.Size(195, 30);
+            this.botonAgregar.TabIndex = 2;
+            this.botonAgregar.Text = "Agregar Imagen";
+            this.botonAgregar.UseVisualStyleBackColor = true;
             // 
-            // titulo
+            // borrar
             // 
-            this.titulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo.FormattingEnabled = true;
-            this.titulo.Location = new System.Drawing.Point(125, 83);
-            this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(195, 28);
-            this.titulo.TabIndex = 37;
-            this.titulo.SelectedIndexChanged += new System.EventHandler(this.titulo_SelectedIndexChanged);
+            this.botonBorrar.Location = new System.Drawing.Point(671, 95);
+            this.botonBorrar.Name = "botonBorrar";
+            this.botonBorrar.Size = new System.Drawing.Size(195, 30);
+            this.botonBorrar.TabIndex = 3;
+            this.botonBorrar.Text = "Borrar Imagen";
+            this.botonBorrar.UseVisualStyleBackColor = true;
             // 
-            // botnoAceptar
+            // modificar
             // 
-            this.botnoAceptar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnoAceptar.Location = new System.Drawing.Point(692, 499);
-            this.botnoAceptar.Name = "botnoAceptar";
-            this.botnoAceptar.Size = new System.Drawing.Size(195, 27);
-            this.botnoAceptar.TabIndex = 36;
-            this.botnoAceptar.Text = "Aceptar";
-            this.botnoAceptar.UseVisualStyleBackColor = true;
-            this.botnoAceptar.Click += new System.EventHandler(this.Aceptar_Click);
+            this.botonModificar.Location = new System.Drawing.Point(671, 131);
+            this.botonModificar.Name = "botonModificar";
+            this.botonModificar.Size = new System.Drawing.Size(195, 30);
+            this.botonModificar.TabIndex = 4;
+            this.botonModificar.Text = "Modificar";
+            this.botonModificar.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // campoDescripcion
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,7 +141,45 @@
             this.imagen.Name = "imagen";
             this.imagen.ReadOnly = true;
             // 
-            // campoDescripcion
+            // campoImagen
+            // 
+            this.campoImagen.Location = new System.Drawing.Point(372, 59);
+            this.campoImagen.Name = "campoImagen";
+            this.campoImagen.Size = new System.Drawing.Size(240, 144);
+            this.campoImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.campoImagen.TabIndex = 7;
+            this.campoImagen.TabStop = false;
+            // 
+            // botonBuscar
+            // 
+            this.botonBuscar.Location = new System.Drawing.Point(432, 167);
+            this.botonBuscar.Name = "botonBuscar";
+            this.botonBuscar.Size = new System.Drawing.Size(106, 23);
+            this.botonBuscar.TabIndex = 8;
+            this.botonBuscar.Text = "Buscar Imagen";
+            this.botonBuscar.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(100, 140);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(217, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Palabra clave de la imagen:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(100, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Título del texto:";
+            // 
+            // botnoAceptar
             // 
             this.campoDescripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoDescripcion.Location = new System.Drawing.Point(124, 168);
@@ -193,12 +224,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button modificar;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button agregar;
-        private System.Windows.Forms.ComboBox titulo;
-        private System.Windows.Forms.Button botnoAceptar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button borrar;
+        private System.Windows.Forms.Button modificar;
+        private System.Windows.Forms.TextBox campoDescripcion;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox campoImagen;
         private System.Windows.Forms.DataGridView tabla;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
