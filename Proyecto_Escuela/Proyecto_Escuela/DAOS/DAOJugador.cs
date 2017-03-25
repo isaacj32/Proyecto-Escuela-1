@@ -49,8 +49,6 @@ namespace Proyecto_Escuela.DAOS
                 jugador.SetDesempeño(reader.GetInt32(1), reader.GetInt32(2));
                 lista.Add(jugador);
             }
-
-
             return lista;
         }
     }

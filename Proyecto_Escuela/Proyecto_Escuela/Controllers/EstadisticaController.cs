@@ -14,6 +14,7 @@ namespace Proyecto_Escuela.Controllers
     class EstadisticaController
     {
         ConexionDB conexion = new ConexionDB();
+        Jugador jugador = new Jugador();
 
         public EstadisticaController()
         {
@@ -29,11 +30,12 @@ namespace Proyecto_Escuela.Controllers
                     tabla.Rows.Clear();
                     for (int i = 0; i < lista.Count; i++)
                     {
-                        Estudiante estudiante = DAOEstudiante.ObtenerEstudiante(conexion.GetConexion(), lista[0].GetDocumento());
+                        Jugador estudiante = DAOJugador.ObtenerJugador(conexion.GetConexion(), lista[0]);                        
                         lista[0].SetNombre(estudiante.GetNombre());
                         lista[0].SetApellido(estudiante.GetApellido());
                         lista[0].SetGrado(estudiante.GetGrado());
                         lista[0].SetGrupo(estudiante.GetGrado());
+                        lista[0].SetDesempeño(estudiante.GetDesempeño().GetAciertos(),estudiante.GetDesempeño().GetErrores());
                     }
                     for (int i = 0; i < lista.Count; i++)
                     {

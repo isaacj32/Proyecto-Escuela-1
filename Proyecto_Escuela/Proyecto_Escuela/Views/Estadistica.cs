@@ -60,7 +60,7 @@ namespace Proyecto_Escuela.Views
             if (comboEstadisticas.SelectedIndex == 1 && comboOpciones.SelectedIndex == 0)
             {
                 labelGrupos.Text = "Seleccione un grupo:";
-                comboGrupos.Items.Add("tu puta madre");
+                comboGrupos.Items.Add("Algo va acá");
                 comboGrupos.Enabled = true;
             }
         }
@@ -81,6 +81,36 @@ namespace Proyecto_Escuela.Views
         private void button1_Click(object sender, EventArgs e)
         {
             estadisticaController.CalcularEstadisticas(tabla);
+        }
+
+        private void Listar()
+        {
+            estadisticaController.Listar(tabla);
+        }
+
+        private void Estadistica_Load(object sender, EventArgs e)
+        {
+            Listar();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //if (comboEstadisticas.SelectedIndex == 0)
+            //{
+            //    estadisticaController.Filtrar(comboEstadisticas.SelectedText);
+            //}
+            //else if(comboEstadisticas.SelectedIndex == 1)
+            //{
+            //    estadisticaController.Filtrar(comboEstadisticas.SelectedText, comboGrupos.SelectedText);
+            //}
+            //else if (comboEstadisticas.SelectedIndex ==2)
+            //{
+            //    estadisticaController.Filtrar(comboEstadisticas.SelectedText);
+            //}
+            //else if (comboEstadisticas.SelectedIndex == 3)
+            //{
+            //    estadisticaController.Filtrar(comboEstadisticas.SelectedText);
+            //}
         }
     }
 }
