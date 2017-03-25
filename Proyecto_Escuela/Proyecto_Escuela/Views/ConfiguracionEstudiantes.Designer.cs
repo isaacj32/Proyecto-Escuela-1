@@ -43,18 +43,19 @@
             this.eliminar = new System.Windows.Forms.Button();
             this.modificar = new System.Windows.Forms.Button();
             this.tabla = new System.Windows.Forms.DataGridView();
-            this.dbescuelaDataSet = new Proyecto_Escuela.dbescuelaDataSet();
-            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.estudianteTableAdapter = new Proyecto_Escuela.dbescuelaDataSetTableAdapters.estudianteTableAdapter();
-            this.clear = new System.Windows.Forms.Button();
-            this.aceptar = new System.Windows.Forms.Button();
-            this.foto = new System.Windows.Forms.PictureBox();
             this.documentoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gradoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grupoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fotoE = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dbescuelaDataSet = new Proyecto_Escuela.dbescuelaDataSet();
+            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.estudianteTableAdapter = new Proyecto_Escuela.dbescuelaDataSetTableAdapters.estudianteTableAdapter();
+            this.clear = new System.Windows.Forms.Button();
+            this.aceptar = new System.Windows.Forms.Button();
+            this.foto = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbescuelaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
@@ -85,38 +86,42 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 26);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 4;
-            this.label1.Text = "documento";
+            this.label1.Text = "Documento";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(232, 26);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(232, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(75, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "nombre(s)";
+            this.label2.Text = "Nombre(s)";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(450, 26);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(450, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(66, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "apellidos";
+            this.label3.Text = "Apellidos";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(669, 25);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(781, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.Size = new System.Drawing.Size(49, 17);
             this.label4.TabIndex = 7;
-            this.label4.Text = "grupo";
+            this.label4.Text = "Grupo";
             // 
             // grado
             // 
@@ -140,41 +145,45 @@
             // 
             // guardar
             // 
+            this.guardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardar.Location = new System.Drawing.Point(12, 91);
             this.guardar.Name = "guardar";
             this.guardar.Size = new System.Drawing.Size(198, 23);
             this.guardar.TabIndex = 11;
-            this.guardar.Text = "guardar";
+            this.guardar.Text = "Guardar";
             this.guardar.UseVisualStyleBackColor = true;
             this.guardar.Click += new System.EventHandler(this.guardar_Click);
             // 
             // buscar
             // 
+            this.buscar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscar.Location = new System.Drawing.Point(235, 91);
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(195, 23);
             this.buscar.TabIndex = 12;
-            this.buscar.Text = "buscar";
+            this.buscar.Text = "Buscar";
             this.buscar.UseVisualStyleBackColor = true;
             this.buscar.Click += new System.EventHandler(this.buscar_Click);
             // 
             // eliminar
             // 
+            this.eliminar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eliminar.Location = new System.Drawing.Point(453, 91);
             this.eliminar.Name = "eliminar";
             this.eliminar.Size = new System.Drawing.Size(195, 23);
             this.eliminar.TabIndex = 13;
-            this.eliminar.Text = "eliminar";
+            this.eliminar.Text = "Eliminar";
             this.eliminar.UseVisualStyleBackColor = true;
             this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
             // 
             // modificar
             // 
+            this.modificar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificar.Location = new System.Drawing.Point(672, 91);
             this.modificar.Name = "modificar";
             this.modificar.Size = new System.Drawing.Size(106, 23);
             this.modificar.TabIndex = 14;
-            this.modificar.Text = "modificar";
+            this.modificar.Text = "Modificar";
             this.modificar.UseVisualStyleBackColor = true;
             this.modificar.Click += new System.EventHandler(this.modificar_Click);
             // 
@@ -203,52 +212,6 @@
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(984, 375);
             this.tabla.TabIndex = 15;
-            // 
-            // dbescuelaDataSet
-            // 
-            this.dbescuelaDataSet.DataSetName = "dbescuelaDataSet";
-            this.dbescuelaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // estudianteBindingSource
-            // 
-            this.estudianteBindingSource.DataMember = "estudiante";
-            this.estudianteBindingSource.DataSource = this.dbescuelaDataSet;
-            // 
-            // estudianteTableAdapter
-            // 
-            this.estudianteTableAdapter.ClearBeforeFill = true;
-            // 
-            // clear
-            // 
-            this.clear.Location = new System.Drawing.Point(784, 91);
-            this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(83, 23);
-            this.clear.TabIndex = 17;
-            this.clear.Text = "clear";
-            this.clear.UseVisualStyleBackColor = true;
-            this.clear.Click += new System.EventHandler(this.clear_Click);
-            // 
-            // aceptar
-            // 
-            this.aceptar.Location = new System.Drawing.Point(846, 502);
-            this.aceptar.Name = "aceptar";
-            this.aceptar.Size = new System.Drawing.Size(150, 23);
-            this.aceptar.TabIndex = 18;
-            this.aceptar.Text = "Aceptar";
-            this.aceptar.UseVisualStyleBackColor = true;
-            this.aceptar.Click += new System.EventHandler(this.aceptar_Click);
-            // 
-            // foto
-            // 
-            this.foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.foto.Location = new System.Drawing.Point(873, 9);
-            this.foto.Name = "foto";
-            this.foto.Size = new System.Drawing.Size(123, 105);
-            this.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.foto.TabIndex = 16;
-            this.foto.TabStop = false;
-            this.foto.Click += new System.EventHandler(this.foto_Click);
             // 
             // documentoE
             // 
@@ -283,11 +246,69 @@
             this.fotoE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.fotoE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // dbescuelaDataSet
+            // 
+            this.dbescuelaDataSet.DataSetName = "dbescuelaDataSet";
+            this.dbescuelaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // estudianteBindingSource
+            // 
+            this.estudianteBindingSource.DataMember = "estudiante";
+            this.estudianteBindingSource.DataSource = this.dbescuelaDataSet;
+            // 
+            // estudianteTableAdapter
+            // 
+            this.estudianteTableAdapter.ClearBeforeFill = true;
+            // 
+            // clear
+            // 
+            this.clear.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear.Location = new System.Drawing.Point(784, 91);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(83, 23);
+            this.clear.TabIndex = 17;
+            this.clear.Text = "Limpiar";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
+            // 
+            // aceptar
+            // 
+            this.aceptar.Location = new System.Drawing.Point(846, 502);
+            this.aceptar.Name = "aceptar";
+            this.aceptar.Size = new System.Drawing.Size(150, 23);
+            this.aceptar.TabIndex = 18;
+            this.aceptar.Text = "Aceptar";
+            this.aceptar.UseVisualStyleBackColor = true;
+            this.aceptar.Click += new System.EventHandler(this.aceptar_Click);
+            // 
+            // foto
+            // 
+            this.foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.foto.Location = new System.Drawing.Point(873, 9);
+            this.foto.Name = "foto";
+            this.foto.Size = new System.Drawing.Size(123, 105);
+            this.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.foto.TabIndex = 16;
+            this.foto.TabStop = false;
+            this.foto.Click += new System.EventHandler(this.foto_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(672, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 17);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Grado";
+            // 
             // ConfiguracionEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.aceptar);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.foto);
@@ -345,5 +366,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gradoE;
         private System.Windows.Forms.DataGridViewTextBoxColumn grupoE;
         private System.Windows.Forms.DataGridViewImageColumn fotoE;
+        private System.Windows.Forms.Label label5;
     }
 }
