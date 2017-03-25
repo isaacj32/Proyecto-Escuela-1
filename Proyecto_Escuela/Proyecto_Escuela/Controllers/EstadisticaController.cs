@@ -37,7 +37,7 @@ namespace Proyecto_Escuela.Controllers
                     }
                     for (int i = 0; i < lista.Count; i++)
                     {
-                        tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo(), lista[i].GetDesempeño().GetAciertos(), lista[i].GetDesempeño().GetErrores());
+                        //tabla.Rows.Add(lista[i].GetDocumento(), lista[i].GetNombre(), lista[i].GetApellido(), lista[i].GetGrado(), lista[i].GetGrupo(), lista[i].GetDesempeño().GetAciertos(), lista[i].GetDesempeño().GetErrores());
                     }
                     conexion.CerrarConexion();
                 }
@@ -57,7 +57,7 @@ namespace Proyecto_Escuela.Controllers
                 {
                     jugador = DAOJugador.ObtenerJugador(conexion.GetConexion(), jugador);
                     tabla.Rows.Clear();                   
-                    tabla.Rows.Add(jugador.GetDocumento(), jugador.GetNombre(), jugador.GetApellido(), jugador.GetGrado(), jugador.GetGrupo(), jugador.GetDesempeño().GetAciertos(), jugador.GetDesempeño().GetErrores());
+                    //tabla.Rows.Add(jugador.GetDocumento(), jugador.GetNombre(), jugador.GetApellido(), jugador.GetGrado(), jugador.GetGrupo(), jugador.GetDesempeño().GetAciertos(), jugador.GetDesempeño().GetErrores());
                     Console.WriteLine("holi " + jugador.GetDocumento());                    
                     conexion.CerrarConexion();
                 }

@@ -42,11 +42,7 @@ namespace Proyecto_Escuela.Views
             textoController.Listar(tabla, 1);
         }
 
-        //Evento para salir de la aplicación
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+       
 
         private void tabla_CellClick(object sender, DataGridViewCellEventArgs e)
         {

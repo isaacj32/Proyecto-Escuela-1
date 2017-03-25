@@ -16,21 +16,21 @@ namespace Proyecto_Escuela.DAOS
         public static int AgregarJugador(MySqlConnection conexion, Jugador jugador)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO Jugador (documento, aciertos, errores) VALUES('{0}', '{1}', '{2}')", jugador.GetDocumento(), jugador.GetDesempeño().GetAciertos(), jugador.GetDesempeño().GetErrores()), conexion);
-            retorno = comando.ExecuteNonQuery();
+            //MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO Jugador (documento, aciertos, errores) VALUES('{0}', '{1}', '{2}')", jugador.GetDocumento(), jugador.GetDesempeño().GetAciertos(), jugador.GetDesempeño().GetErrores()), conexion);
+            //retorno = comando.ExecuteNonQuery();
             return retorno;
         }
-        
+
         public static Jugador ObtenerJugador(MySqlConnection conexion, Jugador jugador)
         {
             Jugador estudiante = new Jugador();
-            MySqlCommand comando = new MySqlCommand(string.Format("SELECT documento, aciertos, errores FROM Jugador WHERE documento LIKE ('%{0}%')", jugador.GetDocumento()), conexion);
-            MySqlDataReader reader = comando.ExecuteReader();
+            //MySqlCommand comando = new MySqlCommand(string.Format("SELECT documento, aciertos, errores FROM Jugador WHERE documento LIKE ('%{0}%')", jugador.GetDocumento()), conexion);
+            //MySqlDataReader reader = comando.ExecuteReader();
 
-            while (reader.Read())
+            //while (reader.Read())
             {
                 estudiante.SetDocumento(jugador.GetDocumento().ToString());
-                estudiante.SetDesempeño(reader.GetInt32(1), reader.GetInt32(2));
+                //estudiante.SetDesempeño(reader.GetInt32(1), reader.GetInt32(2));
                 
             }
             return estudiante;
@@ -46,7 +46,7 @@ namespace Proyecto_Escuela.DAOS
             {
                 Jugador jugador = new Jugador();
                 jugador.SetDocumento(reader.GetString(0));
-                jugador.SetDesempeño(reader.GetInt32(1), reader.GetInt32(2));
+                //jugador.SetDesempeño(reader.GetInt32(1), reader.GetInt32(2));
                 lista.Add(jugador);
             }
 
