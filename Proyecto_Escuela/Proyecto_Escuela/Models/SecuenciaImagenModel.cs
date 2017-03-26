@@ -8,52 +8,28 @@ namespace Proyecto_Escuela.Models
 {
     public class SecuenciaImagenModel
     {
-        private string texto;
-        private Imagen[] imagenes;
-        private string[] secuencia;
-        public SecuenciaImagenModel(string secuencia)
-        {
-            imagenes = new Imagen[8];
+        private string titulo;
+        private string[] secuencia = new string[8];
+        public SecuenciaImagenModel()
+        {            
         }
 
         public string GetTitulo()
         {
-            return texto;
+            return titulo;
         }
-        public Imagen[] GetImagenes()
+        public string[] GetSecuencia()
         {
-            return imagenes;
+            return secuencia;
         }
-        public Imagen GetImagen(int i)
+        public void SetSecuencia(string[] cadena)
         {
-            return imagenes[i];
+            secuencia = cadena;
         }
-        public string GetSecuencia()
+        public void SetTitulo(string titulo)
         {
-            string cadena = secuencia[0];
-            for (int i = 1; i < 8; i++) {
-                cadena = cadena + secuencia[i];
-            }
-            return cadena;
+            this.titulo = titulo;
         }
-        public void SetSecuencia(string cadena)
-        {
-            string[] arreglo = new string[8];
-            for(int i = 0; i< cadena.Length; i++)
-            {
-                arreglo[i] = cadena[0].ToString();
-            }
-        }
-        public void SetTexto(string titulo)
-        {
-            this.texto = titulo;
-        }
-        public void SetImagen(Imagen imagen, int i)
-        {
-            this.imagenes[i] = imagen;
-        }
-
-
-
+       
     }
 }

@@ -10,6 +10,8 @@ namespace Proyecto_Escuela.Models
     {
         private int aciertos=0;
         private int errores=0;
+        private int intentos = 0;
+        private string juego = "";
 
         public Desempeño()
         {
@@ -29,13 +31,24 @@ namespace Proyecto_Escuela.Models
         {
             return errores;
         }
-        public void SumarAcierto()
+        public void SumarAcierto(int i)
         {
-            aciertos++;
+            aciertos += i;
         }
-        public void SumarError()
+        public void SumarError(int i)
         {
-            errores++;
+            errores += i;
+        }
+        public void SetDesempeño(int aciertos, int errores)
+        {
+            SumarAcierto(aciertos);
+            SumarError(errores);
+            intentos = errores + aciertos;
+        }
+        
+        public void SetJuego(string juego)
+        {
+            this.juego = juego;
         }
     }
 }

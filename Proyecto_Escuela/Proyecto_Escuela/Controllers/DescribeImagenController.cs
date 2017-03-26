@@ -3,9 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using System.Threading.Tasks;
 using Proyecto_Escuela.Views;
+using Proyecto_Escuela.DAOS;
 using System.Drawing;
+using MySql.Data.MySqlClient;
 
 namespace Proyecto_Escuela.Controllers
 {
@@ -13,13 +16,16 @@ namespace Proyecto_Escuela.Controllers
     {
         DescripcionImagen describeImagenView;
         DescribeImagenModel describeImagenModel;
-        
+        ConexionDB conexion = new ConexionDB();
+        string titulo;
 
-        public DescribeImagenController(DescribeImagenModel frame,DescribeImagenModel model, MenuActividades menu)
+        public DescribeImagenController(MenuActividades menu, Jugador jugador)
         {
-            describeImagenModel = frame;
+            titulo = menu.GetTitulo();
+            describeImagenModel= new DescribeImagenModel();
             ListarImagenes();
-            describeImagenView = new DescripcionImagen(this, model, menu);
+            AsignarImagenes(describeImagenModel.GetImagenes());
+            describeImagenView = new DescripcionImagen(this, describeImagenModel, menu, jugador);
             describeImagenView.Show();
 
         }
@@ -41,19 +47,28 @@ namespace Proyecto_Escuela.Controllers
 
         private void ListarImagenes()
         {
-            Imagen imagen = new Imagen();
-            imagen.SetDescripcion("varita magica");
-            imagen.SetImagen(Proyecto_Escuela.Properties.Resources.barita);
-            describeImagenModel.AgregarImagen(imagen);
-            imagen = new Imagen();
-            imagen.SetDescripcion("buho");
-            imagen.SetImagen(Proyecto_Escuela.Properties.Resources.buho);
-            describeImagenModel.AgregarImagen(imagen);
-            imagen = new Imagen();
-            imagen.SetDescripcion("dragon");
-            imagen.SetImagen(Proyecto_Escuela.Properties.Resources.dragon);
-            describeImagenModel.AgregarImagen(imagen);
+            try
+            {
+                if (conexion.AbrirConexion() == true)
+                {
+                    describeImagenModel = DAODescribeImagen.ObtenerActividad(conexion.GetConexion(), titulo);
+                    conexion.CerrarConexion();
+                }
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
 
+        }
+
+        public void AsignarImagenes(List<Imagen> lista)
+        {
+            for(int i =0; i < lista.Count; i++)
+            {
+               Imagen.SetPicture(lista[i]);
+            }
         }
     }    
 }

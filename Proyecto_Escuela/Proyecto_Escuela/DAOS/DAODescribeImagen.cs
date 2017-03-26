@@ -30,7 +30,7 @@ namespace Proyecto_Escuela.DAOS
             return retorno;
         }
 
-        public static DescribeImagenModel ListarActividades(MySqlConnection conexion, string titulo)
+        public static DescribeImagenModel ObtenerActividad(MySqlConnection conexion, string titulo)
         {
             DescribeImagenModel actividad = new DescribeImagenModel();
             MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM DescribeImagen WHERE titulo='{0}'", titulo), conexion);
@@ -41,27 +41,27 @@ namespace Proyecto_Escuela.DAOS
                 Imagen imagen = new Imagen();
                 imagen.SetRuta(reader.GetString(1));
                 imagen.SetDescripcion(reader.GetString(6));
-                actividad.SetImagen(imagen, 0);
+                actividad.AgregarImagen(imagen);
 
                 imagen = new Imagen();
                 imagen.SetRuta(reader.GetString(2));
                 imagen.SetDescripcion(reader.GetString(7));
-                actividad.SetImagen(imagen, 1);
+                actividad.AgregarImagen(imagen);
 
                 imagen = new Imagen();
                 imagen.SetRuta(reader.GetString(3));
                 imagen.SetDescripcion(reader.GetString(8));
-                actividad.SetImagen(imagen, 2);
+                actividad.AgregarImagen(imagen);
 
                 imagen = new Imagen();
                 imagen.SetRuta(reader.GetString(4));
                 imagen.SetDescripcion(reader.GetString(9));
-                actividad.SetImagen(imagen, 3);
+                actividad.AgregarImagen(imagen);
 
                 imagen = new Imagen();
                 imagen.SetRuta(reader.GetString(5));
                 imagen.SetDescripcion(reader.GetString(10));
-                actividad.SetImagen(imagen, 4);                
+                actividad.AgregarImagen(imagen);                
             }
             return actividad;
         }

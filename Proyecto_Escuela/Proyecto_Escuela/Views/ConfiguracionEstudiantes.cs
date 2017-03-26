@@ -12,6 +12,7 @@ namespace Proyecto_Escuela.Views
         EstudianteController estudianteController = new EstudianteController();
         Estudiante estudiante = new Estudiante();
         Estudiante limpio = new Estudiante();
+        string aux;
         public ConfiguracionEstudiantes()
         {
             InitializeComponent();
@@ -40,8 +41,9 @@ namespace Proyecto_Escuela.Views
             estudiante.SetDocumento(documento.Text);
             estudiante.SetGrupo(grupo.Text);
             estudiante.SetGrado(grado.SelectedItem.ToString());
+            estudiante.SetFoto(aux);
 
-            if (documento.ReadOnly == false)
+            if (documento.Enabled == true)
             {
                 if (estudianteController.Agregar(estudiante) != 0)
                 {
@@ -67,7 +69,7 @@ namespace Proyecto_Escuela.Views
                     HabilitarEntrada();
                     HabilitarBotones();
                     Listar();
-                    documento.ReadOnly = false;
+                    documento.Enabled = true;
 
 
                 }
@@ -99,7 +101,9 @@ namespace Proyecto_Escuela.Views
                 grupo.Text = estudiante.GetGrupo().ToString();
                 asignarGrado(estudiante.GetGrado());
                 foto.Image = Image.FromFile(estudiante.GetFoto());
-                documento.Enabled = true;
+                string a = "\\".Substring(0);
+                aux = estudiante.GetFoto().Replace(a, "\\\\");
+                documento.Enabled = false;
                 BloquearBotones();
                 guardar.Enabled = true;
             }
@@ -200,9 +204,8 @@ namespace Proyecto_Escuela.Views
             if (getImagen.ShowDialog() == DialogResult.OK)
             {
                 string a = "\\".Substring(0);
-                Console.WriteLine(a);
                 foto.Image = Image.FromFile(getImagen.FileName);
-                string aux = getImagen.FileName.Replace(a, "\\\\");
+                aux = getImagen.FileName.Replace(a, "\\\\");
                 estudiante.SetFoto(aux);
             }
             else

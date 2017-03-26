@@ -93,6 +93,7 @@ namespace Proyecto_Escuela.Views
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
+            
             describeModel.SetTitulo(titulo.SelectedItem.ToString());
             if (cambiar == false)
             {
@@ -113,6 +114,12 @@ namespace Proyecto_Escuela.Views
             {
                 cambiar = true;
             }
+        }
+
+        private void cancelar_Click(object sender, EventArgs e)
+        {
+            new Configuracion().Show();
+            this.Dispose();
         }
     }
 }

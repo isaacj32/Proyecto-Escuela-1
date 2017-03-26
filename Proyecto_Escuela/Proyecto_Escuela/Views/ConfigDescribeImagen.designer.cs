@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoImagen)).BeginInit();
             this.SuspendLayout();
@@ -82,15 +83,18 @@
             this.botonAceptar.TabIndex = 1;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // campoImagen
             // 
+            this.campoImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.campoImagen.Location = new System.Drawing.Point(414, 65);
             this.campoImagen.Name = "campoImagen";
             this.campoImagen.Size = new System.Drawing.Size(134, 129);
             this.campoImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.campoImagen.TabIndex = 2;
             this.campoImagen.TabStop = false;
+            this.campoImagen.Click += new System.EventHandler(this.campoImagen_Click);
             // 
             // label1
             // 
@@ -111,6 +115,7 @@
             this.modificar.TabIndex = 4;
             this.modificar.Text = "Modificar";
             this.modificar.UseVisualStyleBackColor = true;
+            this.modificar.Click += new System.EventHandler(this.modificar_Click);
             // 
             // campoDescripcion
             // 
@@ -129,6 +134,7 @@
             this.agregar.TabIndex = 6;
             this.agregar.Text = "Agregar";
             this.agregar.UseVisualStyleBackColor = true;
+            this.agregar.Click += new System.EventHandler(this.agregar_Click);
             // 
             // label2
             // 
@@ -148,6 +154,7 @@
             this.titulo.Name = "titulo";
             this.titulo.Size = new System.Drawing.Size(196, 28);
             this.titulo.TabIndex = 8;
+            this.titulo.SelectedIndexChanged += new System.EventHandler(this.titulo_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -159,11 +166,23 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Seleccione el texto asociado:";
             // 
+            // cancelar
+            // 
+            this.cancelar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelar.Location = new System.Drawing.Point(12, 491);
+            this.cancelar.Name = "cancelar";
+            this.cancelar.Size = new System.Drawing.Size(133, 34);
+            this.cancelar.TabIndex = 10;
+            this.cancelar.Text = "Cancelar";
+            this.cancelar.UseVisualStyleBackColor = true;
+            this.cancelar.Click += new System.EventHandler(this.cancelar_Click);
+            // 
             // ConfigDescribeImagen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
+            this.Controls.Add(this.cancelar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.titulo);
             this.Controls.Add(this.label2);
@@ -177,6 +196,7 @@
             this.Name = "ConfigDescribeImagen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfigDescribeImagen";
+            this.Load += new System.EventHandler(this.ConfigDescribeImagen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoImagen)).EndInit();
             this.ResumeLayout(false);
@@ -198,5 +218,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox titulo;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button cancelar;
     }
 }

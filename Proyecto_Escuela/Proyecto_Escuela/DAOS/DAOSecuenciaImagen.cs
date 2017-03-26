@@ -9,7 +9,7 @@ using Proyecto_Escuela.Models;
 
 namespace Proyecto_Escuela.DAOS
 {
-    class DAOSecuenciaImagen
+    public class DAOSecuenciaImagen
     {
         public DAOSecuenciaImagen()
         {
@@ -18,156 +18,34 @@ namespace Proyecto_Escuela.DAOS
         public static int AgregarActividad(MySqlConnection conexion, SecuenciaImagenModel modelo)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO SecuenciaImagen (titulo, imagen 1, imagen 2, imagen 3, imagen 4, imagen 5, imagen 6, imagen 7, imagen 8, secuencia) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')", modelo.GetTitulo(), modelo.GetImagen(0).GetRuta(), modelo.GetImagen(1).GetRuta(), modelo.GetImagen(2).GetRuta(), modelo.GetImagen(3).GetRuta(), modelo.GetImagen(4).GetRuta(), modelo.GetImagen(5).GetRuta(), modelo.GetImagen(6).GetRuta(), modelo.GetImagen(7).GetRuta(), modelo.GetSecuencia()), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO SecuenciaImagen (titulo, imagen1, imagen2, imagen3, imagen4, imagen5, imagen6, imagen7, imagen8) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')", modelo.GetTitulo(), modelo.GetSecuencia()[0], modelo.GetSecuencia()[1], modelo.GetSecuencia()[2], modelo.GetSecuencia()[3], modelo.GetSecuencia()[4], modelo.GetSecuencia()[5], modelo.GetSecuencia()[6], modelo.GetSecuencia()[7]), conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
-
-        public static int ElimminarActividad(MySqlConnection conexion, int documento)
+        public static int ModificarActividad(MySqlConnection conexion, SecuenciaImagenModel modelo)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("DELETE FROM SecuenciaImagen WHERE titulo='{0}'", documento), conexion);
+            MySqlCommand comando = new MySqlCommand(string.Format("UPDATE SecuenciaImagen set imagen1='{1}', imagen2='{2}', imagen3='{3}', imagen4='{4}', imagen5='{5}', imagen6='{6}', imagen7='{7}', imagen8='{8}' WHERE titulo='{0}'", modelo.GetTitulo(), modelo.GetSecuencia()[0], modelo.GetSecuencia()[1], modelo.GetSecuencia()[2], modelo.GetSecuencia()[3], modelo.GetSecuencia()[4], modelo.GetSecuencia()[5], modelo.GetSecuencia()[6], modelo.GetSecuencia()[7]), conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
-
-        public static IList<SecuenciaImagenModel> BuscarActividad(MySqlConnection conexion, DescribeImagenModel model, int i)
+        public static SecuenciaImagenModel ObtenerActividad(MySqlConnection conexion, string titulo)
         {
-            Imagen imagen = new Imagen();
-            List<SecuenciaImagenModel> lista = new List<SecuenciaImagenModel>();
-            MySqlCommand comando;
-            comando = new MySqlCommand(string.Format("SELECT * FROM SecuenciaImagen WHERE titulo LIKE ('%{0}%')", model.GetTitulo()), conexion);
+            SecuenciaImagenModel secuencia = new SecuenciaImagenModel();
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM SecuenciaImagen WHERE titulo='{0}'", titulo), conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
             while (reader.Read())
             {
-                
-                SecuenciaImagenModel actividad = new SecuenciaImagenModel(reader.GetString(9));
-
-
-                actividad.SetTexto(reader.GetString(0));
-
-                imagen.SetRuta(reader.GetString(1));
-                actividad.SetImagen(imagen, 0);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(2));
-                actividad.SetImagen(imagen, 1);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(3));
-                actividad.SetImagen(imagen, 2);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(4));
-                actividad.SetImagen(imagen, 3);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(5));
-                actividad.SetImagen(imagen, 4);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(6));
-                actividad.SetImagen(imagen, 5);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(7));
-                actividad.SetImagen(imagen, 6);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(8));
-                actividad.SetImagen(imagen, 7);
-
-
-
-                lista.Add(actividad);
+                string[] arreglo = new string[8];
+                for (int i = 0; i < 8; i++)
+                {
+                    arreglo[i] = reader.GetString(i+1);
+                }
+                secuencia.SetSecuencia(arreglo);
             }
 
-
-            return lista;
-        }
-
-        public static int ModificarActividad(MySqlConnection conexion, DescribeImagenModel modelo)
-        {
-            int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("UPDATE DescribeImagen set imagen 1='{1}', imagen 2='{2}', imagen 3='{3}', imagen 4='{4}', imagen 5='{5}' WHERE titulo='{0}'", modelo.GetTitulo(), modelo.GetImagen(0).GetRuta(), modelo.GetImagen(1).GetRuta(), modelo.GetImagen(2).GetRuta(), modelo.GetImagen(3).GetRuta(), modelo.GetImagen(4).GetRuta()), conexion);
-            retorno = comando.ExecuteNonQuery();
-            return retorno;
-        }
-
-        public static DescribeImagenModel ObtenerActividad(MySqlConnection conexion, string titulo)
-        {
-            Estudiante estudiante = new Estudiante();
-            Imagen imagen = new Imagen();
-            DescribeImagenModel actividad = new DescribeImagenModel();
-
-            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM DescribeImagen WHERE titulo='{0}'", titulo), conexion);
-            MySqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
-            {
-
-                actividad.SetTitulo(reader.GetString(0));
-                imagen.SetRuta(reader.GetString(1));
-                actividad.SetImagen(imagen, 0);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(2));
-                actividad.SetImagen(imagen, 1);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(3));
-                actividad.SetImagen(imagen, 2);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(4));
-                actividad.SetImagen(imagen, 3);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(5));
-                actividad.SetImagen(imagen, 4);
-            }
-
-            return actividad;
-        }
-
-        public static List<DescribeImagenModel> ListarActividades(MySqlConnection conexion)
-        {
-            List<DescribeImagenModel> lista = new List<DescribeImagenModel>();
-            MySqlCommand comando = new MySqlCommand("SELECT * FROM DescribeImagen", conexion);
-            Imagen imagen = new Imagen();
-            MySqlDataReader reader = comando.ExecuteReader();
-
-
-
-            while (reader.Read())
-            {
-                DescribeImagenModel actividad = new DescribeImagenModel();
-
-                actividad.SetTitulo(reader.GetString(0));
-                imagen.SetRuta(reader.GetString(1));
-                actividad.SetImagen(imagen, 0);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(2));
-                actividad.SetImagen(imagen, 1);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(3));
-                actividad.SetImagen(imagen, 2);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(4));
-                actividad.SetImagen(imagen, 3);
-
-                imagen = new Imagen();
-                imagen.SetRuta(reader.GetString(5));
-                actividad.SetImagen(imagen, 4);
-
-
-                lista.Add(actividad);
-            }
-            return lista;
-        }
+            return secuencia;
+        }        
     }
 }

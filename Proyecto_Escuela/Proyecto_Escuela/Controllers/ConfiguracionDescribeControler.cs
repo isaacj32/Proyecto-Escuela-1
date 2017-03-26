@@ -97,7 +97,7 @@ namespace Proyecto_Escuela.Controllers
             {
                 if (conexion.AbrirConexion() == true)
                 {
-                    DescribeImagenModel lista = DAOS.DAODescribeImagen.ListarActividades(conexion.GetConexion(), titulo);
+                    DescribeImagenModel lista = DAOS.DAODescribeImagen.ObtenerActividad(conexion.GetConexion(), titulo);
                     tabla.Rows.Clear();
                     for (int i = 0; i < lista.GetImagenes().Count; i++)
                     {

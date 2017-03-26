@@ -17,15 +17,17 @@ namespace Proyecto_Escuela.Views
         DescribeImagenModel describeImagenModel;
         MenuActividades menuActividades;
         Imagen imagenAux;
+        Jugador jugador;
         int indice=0;
 
-        public DescripcionImagen(DescribeImagenController controller, DescribeImagenModel model, MenuActividades menu)
+        public DescripcionImagen(DescribeImagenController controller, DescribeImagenModel model, MenuActividades menu, Jugador jugador)
         {
             InitializeComponent();
             describeImagenController = controller;
             describeImagenModel = model;
             textoLabel.Text = menu.GetTitulo();
             menuActividades = menu;
+            this.jugador = jugador;
         }
 
         public string GetRespuesta()
@@ -34,18 +36,35 @@ namespace Proyecto_Escuela.Views
         }
         private void DescripcionImagen_Load(object sender, EventArgs e)
         {
-            imagenAux = describeImagenModel.GetImagen(0);
-            imagen.BackgroundImage = imagenAux.GetImagen();
-            if (indice == describeImagenModel.GetImagenes().Count-1)
+            try
             {
-                siguiente.Enabled = false;
+                imagenAux = describeImagenModel.GetImagen(0);
+                imagen.BackgroundImage = imagenAux.GetImagen();
+                if (indice == describeImagenModel.GetImagenes().Count - 1)
+                {
+                    siguiente.Enabled = false;
+                }
+                anterior.Enabled = false;
+                reintentar.Enabled = false;
             }
-            anterior.Enabled = false;
-            reintentar.Enabled = false;
+            catch
+            {
+                MessageBox.Show("No hay actividad");
+            }
+            
         }
 
         private void probar_Click(object sender, EventArgs e)
         {
+            if (int.Parse(aciertos.Text) == 5)
+            {
+                MessageBox.Show("Felicitaciones. Has completado la actividad");
+                jugador.GetDesempeño()[0].SetDesempeño(int.Parse(aciertos.Text), int.Parse(errores.Text));
+                menuActividades.Visible = true;
+                menuActividades.JuegoTerminado(1);
+
+                this.Dispose();
+            }
             intentos.Text = (int.Parse(intentos.Text) + 1).ToString();
             bool acierto = describeImagenController.compararRespuesta(indice, respuesta.Text);
             if (acierto == true)
@@ -84,6 +103,8 @@ namespace Proyecto_Escuela.Views
             probar.Enabled = true;
             reintentar.Enabled = false;
             anterior.Enabled = true;
+            respuesta.Clear();
+
             imagenAux = describeImagenModel.GetImagen(indice);
             imagen.BackgroundImage = imagenAux.GetImagen();
             if (imagenAux.GetPosicion() == 1)
@@ -105,6 +126,7 @@ namespace Proyecto_Escuela.Views
             probar.Enabled = true;
             reintentar.Enabled = false;
             siguiente.Enabled = true;
+            respuesta.Clear();
             imagenAux = describeImagenModel.GetImagen(indice);
             imagen.BackgroundImage = imagenAux.GetImagen();
             if (imagenAux.GetPosicion() == 1)

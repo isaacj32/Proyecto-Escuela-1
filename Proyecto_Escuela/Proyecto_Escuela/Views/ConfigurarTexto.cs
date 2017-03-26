@@ -158,7 +158,6 @@ namespace Proyecto_Escuela.Views
             if (getImagen.ShowDialog() == DialogResult.OK)
             {
                 string a = "\\".Substring(0);                    
-                Console.WriteLine(a);
                 foto.Image = Image.FromFile(getImagen.FileName);
                 string aux = getImagen.FileName.Replace(a, "\\\\");
                 texto.setImagen(aux);                

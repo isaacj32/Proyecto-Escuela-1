@@ -91,7 +91,7 @@
     <Compile Include="Views\ConfigDescribeImagen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ConfigDescribeImagen.Designer.cs">
+    <Compile Include="Views\ConfigDescribeImagen.designer.cs">
       <DependentUpon>ConfigDescribeImagen.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Configuracion.cs">
